@@ -22,6 +22,11 @@
 		F32796C019654B7300082B6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969F19654B7200082B6A /* UIKit.framework */; };
 		F32796C819654B7300082B6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32796C619654B7300082B6A /* InfoPlist.strings */; };
 		F32796CA19654B7300082B6A /* ZestyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796C919654B7300082B6A /* ZestyAppTests.m */; };
+		F32796E2197E9FE700082B6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32796E1197E9FE700082B6A /* CoreLocation.framework */; };
+		F32796E5197FB88F00082B6A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796E4197FB88F00082B6A /* SWRevealViewController.m */; };
+		F32796E8197FBA1000082B6A /* sideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796E7197FBA1000082B6A /* sideBarTableViewController.m */; };
+		F32796EE1981149300082B6A /* iconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796ED1981149300082B6A /* iconCell.m */; };
+		F32796F1198151B300082B6A /* bookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796F0198151B300082B6A /* bookingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,15 @@
 		F32796C519654B7300082B6A /* ZestyAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZestyAppTests-Info.plist"; sourceTree = "<group>"; };
 		F32796C719654B7300082B6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F32796C919654B7300082B6A /* ZestyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZestyAppTests.m; sourceTree = "<group>"; };
+		F32796E1197E9FE700082B6A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F32796E3197FB88F00082B6A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		F32796E4197FB88F00082B6A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
+		F32796E6197FBA1000082B6A /* sideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sideBarTableViewController.h; path = ../sideBarTableViewController.h; sourceTree = "<group>"; };
+		F32796E7197FBA1000082B6A /* sideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = sideBarTableViewController.m; path = ../sideBarTableViewController.m; sourceTree = "<group>"; };
+		F32796EC1981149300082B6A /* iconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iconCell.h; path = ../iconCell.h; sourceTree = "<group>"; };
+		F32796ED1981149300082B6A /* iconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iconCell.m; path = ../iconCell.m; sourceTree = "<group>"; };
+		F32796EF198151B300082B6A /* bookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bookingViewController.h; path = ../bookingViewController.h; sourceTree = "<group>"; };
+		F32796F0198151B300082B6A /* bookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bookingViewController.m; path = ../bookingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32796E2197E9FE700082B6A /* CoreLocation.framework in Frameworks */,
 				F327969E19654B7200082B6A /* CoreGraphics.framework in Frameworks */,
 				F32796A019654B7200082B6A /* UIKit.framework in Frameworks */,
 				F327969C19654B7200082B6A /* Foundation.framework in Frameworks */,
@@ -103,6 +118,7 @@
 		F327969A19654B7200082B6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F32796E1197E9FE700082B6A /* CoreLocation.framework */,
 				F327969B19654B7200082B6A /* Foundation.framework */,
 				F327969D19654B7200082B6A /* CoreGraphics.framework */,
 				F327969F19654B7200082B6A /* UIKit.framework */,
@@ -116,10 +132,16 @@
 			children = (
 				F32796AA19654B7200082B6A /* AppDelegate.h */,
 				F32796AB19654B7200082B6A /* AppDelegate.m */,
+				F32796EC1981149300082B6A /* iconCell.h */,
+				F32796ED1981149300082B6A /* iconCell.m */,
 				F32796AD19654B7200082B6A /* Main_iPhone.storyboard */,
 				F32796B019654B7200082B6A /* Main_iPad.storyboard */,
 				F32796B319654B7200082B6A /* ViewController.h */,
 				F32796B419654B7200082B6A /* ViewController.m */,
+				F32796E6197FBA1000082B6A /* sideBarTableViewController.h */,
+				F32796E7197FBA1000082B6A /* sideBarTableViewController.m */,
+				F32796EF198151B300082B6A /* bookingViewController.h */,
+				F32796F0198151B300082B6A /* bookingViewController.m */,
 				F32796B619654B7200082B6A /* Images.xcassets */,
 				F32796A219654B7200082B6A /* Supporting Files */,
 			);
@@ -129,6 +151,8 @@
 		F32796A219654B7200082B6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F32796E3197FB88F00082B6A /* SWRevealViewController.h */,
+				F32796E4197FB88F00082B6A /* SWRevealViewController.m */,
 				F32796A319654B7200082B6A /* ZestyApp-Info.plist */,
 				F32796A419654B7200082B6A /* InfoPlist.strings */,
 				F32796A719654B7200082B6A /* main.m */,
@@ -254,8 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32796B519654B7200082B6A /* ViewController.m in Sources */,
+				F32796F1198151B300082B6A /* bookingViewController.m in Sources */,
 				F32796AC19654B7200082B6A /* AppDelegate.m in Sources */,
+				F32796E8197FBA1000082B6A /* sideBarTableViewController.m in Sources */,
 				F32796A819654B7200082B6A /* main.m in Sources */,
+				F32796EE1981149300082B6A /* iconCell.m in Sources */,
+				F32796E5197FB88F00082B6A /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
