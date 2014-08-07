@@ -23,6 +23,8 @@
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
+-(void)sayHello;
+
 @end
 //BOOL selectedCell;
 //BOOL isSelectable;
@@ -39,6 +41,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [self sayHello];
     
 //    [self.navigationController.navigationBar setTranslucent:NO];
     
@@ -333,6 +336,11 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.servicesTableView.dataSource = self;
     [self.scroll addSubview:self.servicesTableView];
     
+}
+
+-(void)sayHello
+{
+    NSLog(@"say hello");
 }
 
 -(void)showServices:(id)sender
