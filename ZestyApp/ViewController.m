@@ -389,7 +389,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                          }completion:nil];
         
         //hide the tableview of other verticals
-    
     }
 }
 
