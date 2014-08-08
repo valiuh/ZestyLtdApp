@@ -41,8 +41,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self sayHello];
-    
 //    [self.navigationController.navigationBar setTranslucent:NO];
     
     
@@ -272,7 +270,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
     allServices = [[NSMutableArray alloc] initWithObjects:@"Dental Hygienist", @"Health Screening", @"General Consultation",@"Travel Health",@"Private Sexual Health Services", @"NHS Sexual Health Services",@"Sports Massage", nil];
     
-    pastUrls = [[NSMutableArray alloc] initWithObjects:@"Dentist",@"Dental Hygienist", @"Chiropractor",@"Health Screen", @"General Consultation",@"Travel Health",@"Private Sexual Health Services", @"NHS Sexual Health Services", @"", @"Osteopathy", @"Private GP", @"Podiatrist",@"Sports Massage", @"Physiotherapy", nil];
+    pastUrls = [[NSMutableArray alloc] initWithObjects:@"Dentist",@"Dental Hygienist", @"Chiropractor",@"Health Screening", @"General Consultation",@"Travel Health",@"Private Sexual Health Services", @"NHS Sexual Health Services", @"", @"Osteopathy", @"Private GP", @"Podiatrist",@"Sports Massage", @"Physiotherapy", nil];
     
     iconLabel = [[NSMutableArray alloc] initWithObjects:@"Dentist",@"Podiatry",@"Physiotherapy",@"Chiropractor",@"Osteopathy",@"Private GP", nil];
     
@@ -286,14 +284,14 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //
     //setup auto-complete for service textField
     self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-                                  CGRectMake(20, 80, self.service.frame.size.width, 120) style:UITableViewStylePlain];
+                                  CGRectMake(20, 184, self.service.frame.size.width, 120) style:UITableViewStylePlain];
     self.autocompleteTableView.delegate = self;
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
     self.autocompleteTableView.hidden = YES;
     [self.autocompleteTableView setSeparatorColor:[UIColor colorWithRed:69.0/255.0 green:208.0/255.0 blue:249.0/255.0  alpha:1.0]];
-    [self.autocompleteTableView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:1.0]];
-//    [self.view addSubview:self.autocompleteTableView];
+//    [self.autocompleteTableView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:1.0]];
+    [self.view addSubview:self.autocompleteTableView];
     
     //collection view
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
@@ -336,11 +334,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.servicesTableView.dataSource = self;
     [self.scroll addSubview:self.servicesTableView];
     
-}
-
--(void)sayHello
-{
-    NSLog(@"say hello");
 }
 
 -(void)showServices:(id)sender
@@ -661,6 +654,11 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         }
         
+//        [self.autocompleteTableView numberOfRowsInSection:autocompleteUrls.count];
+        
+        cell.textLabel.text = [autocompleteUrls objectAtIndex:indexPath.row];
+        [cell.textLabel setTextColor:[UIColor redColor]];
+        
         return cell;
     }
 
@@ -708,9 +706,10 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 
 //set the uitextfield text as the selected cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Cell selected");
     
     if (tableView == self.autocompleteTableView) {
+        
+        NSLog(@"Predictive cell selected");
     
         UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
         self.service.text = selectedCell.textLabel.text;
@@ -719,6 +718,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     }
     
     if (tableView == self.servicesTableView) {
+        
+        NSLog(@"Service cell selected");
     
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
       
