@@ -361,6 +361,9 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                              
                              [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 180)];
                              
+                             CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
+                             [self.scroll setContentOffset:bottomOffset animated:YES];
+                             
                              //show the tableview of other verticals
 
                              
