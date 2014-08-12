@@ -301,6 +301,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //    [self.autocompleteTableView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:1.0]];
     [self.view addSubview:self.autocompleteTableView];
     
+    
+    
     //collection view
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
     if( IS_IPHONE_5 )
