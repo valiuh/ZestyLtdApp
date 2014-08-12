@@ -15,7 +15,7 @@
     NSMutableArray *allServices;
     NSMutableArray *iconLabel;
     NSMutableArray *autocompleteUrls;
-
+    NSArray *sortedArray;
 }
 
 @property (nonatomic, strong) UIButton *findAppointments;

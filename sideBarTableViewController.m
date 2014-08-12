@@ -31,11 +31,13 @@
     
     self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
     self.tableView.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0f];
+//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondon"]];
+    
     //    self.tableView.backgroundColor = [
-    self.tableView.separatorColor = [UIColor colorWithRed:69.0/255.0 green:208.0/255.0 blue:249.0/255.0 alpha:1.0];
+    self.tableView.separatorColor = [UIColor whiteColor];
  
     //Initialize the iconArray
-    self.sideBarIcons1 = [[NSMutableArray alloc]initWithObjects:@"zestySB.png",@"pressSB.png",@"blogSB.png", nil];
+    self.sideBarIcons1 = [[NSMutableArray alloc]initWithObjects:@"zestyIcon",@"pressSB.png",@"blogSB.png", nil];
     self.sideBarIcons2 = [[NSMutableArray alloc]initWithObjects:@"trustSB",@"termsSB",@"privacySB", nil];
     
     //Initialize the dataArray
@@ -50,7 +52,7 @@
     NSArray *secondItemsArray = [[NSArray alloc] initWithObjects:@"Trust & Safety", @"Terms & Conditions", @"Privacy Policy", nil];
     NSDictionary *secondItemsArrayDict = [NSDictionary dictionaryWithObject:secondItemsArray forKey:@"data"];
     [self.dataArray addObject:secondItemsArrayDict];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,11 +105,11 @@
     cell.textLabel.text = cellValue;
     cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:18.0f];
     cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor colorWithRed:48.0/255.0 green:89.0/255.0 blue:156.0/255.0 alpha:1.0];
+    cell.backgroundColor = [UIColor colorWithRed:48.0/255.0 green:89.0/255.0 blue:156.0/255.0 alpha:0.50];
     
 //    cell.textLabel.frame = CGRectMake(0, 20, 100, 60);
     
-    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(10,20, 20, 25)];
+    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(10 , 15, 20 , 20)];
     if (indexPath.section == 0){
         imv.image = [UIImage imageNamed:[self.sideBarIcons1 objectAtIndex:indexPath.row]];
     }else if(indexPath.section == 1){
@@ -122,7 +124,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    return 60;
+    return 50;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -154,9 +156,9 @@
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    
+ 
     header.textLabel.textColor = [UIColor whiteColor];
-    header.backgroundView.backgroundColor = [UIColor grayColor];
+    header.backgroundView.backgroundColor = [UIColor clearColor];
     header.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:20.0f];
     header.textLabel.textAlignment = NSTextAlignmentLeft;
 }

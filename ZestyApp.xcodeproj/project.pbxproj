@@ -498,6 +498,7 @@
 				F32796CF19654B7300082B6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F32796D019654B7300082B6A /* Build configuration list for PBXNativeTarget "ZestyAppTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +507,7 @@
 				F32796D219654B7300082B6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

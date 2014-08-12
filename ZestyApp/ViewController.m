@@ -190,6 +190,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //
     //setup the service label
     self.service = [[UITextField alloc] initWithFrame:CGRectMake(20, 85, self.view.frame.size.width - 40, 35)];
+    self.service.delegate = self;
     self.service.font = [UIFont fontWithName:@"AvenirNext-Medium" size:16.0];
     [self.service setTag:3];
     self.service.placeholder = @"What service do you need?";
@@ -200,7 +201,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self.service.layer setCornerRadius:0.0f];
     [self.service setAdjustsFontSizeToFitWidth:NO];
     [self.service setTintColor:[UIColor colorWithRed:69.0/255.0 green:208.0/255.0 blue:249.0/255.0  alpha:1.0]];
-    [self.service setDelegate:self];
     [self.service setAutocapitalizationType:UITextAutocapitalizationTypeWords];
     [self.service addTarget:self
                       action:@selector(editingBegun:)
@@ -245,7 +245,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //        self.viewServices.enabled = NO;
 //    }
 //    [self.viewServices setBackgroundImage:[UIImage imageNamed:@"viewAll"] forState:UIControlStateNormal];
-    [self.viewServices setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.1]];
+    [self.viewServices setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3]];
     self.viewServices.titleLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:20.0f];
     [self.viewServices setTitle:@"View All Services" forState:UIControlStateNormal];
     self.viewServices.layer.cornerRadius = 0.0f;
@@ -270,7 +270,13 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
     allServices = [[NSMutableArray alloc] initWithObjects:@"Dental Hygienist", @"Health Screening", @"General Consultation",@"Travel Health",@"Private Sexual Health Services", @"NHS Sexual Health Services",@"Sports Massage", nil];
     
-    pastUrls = [[NSMutableArray alloc] initWithObjects:@"Dentist",@"Dental Hygienist", @"Chiropractor",@"Health Screening", @"General Consultation",@"Travel Health",@"Private Sexual Health Services", @"NHS Sexual Health Services", @"", @"Osteopathy", @"Private GP", @"Podiatrist",@"Sports Massage", @"Physiotherapy", nil];
+    pastUrls = [[NSMutableArray alloc] initWithObjects:@"Dentist",@"Dental Hygienist", @"Chiropractor",@"Health Screening", @"General Consultation",@"Travel Health",@"Private Sexual Health Services", @"NHS Sexual Health Services", @"Osteopathy", @"Private GP", @"Podiatrist",@"Sports Massage", @"Physiotherapy", nil];
+    
+    sortedArray = [[NSMutableArray alloc] init];
+    sortedArray = [pastUrls sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    NSLog(@"%@",sortedArray);
+    
     
     iconLabel = [[NSMutableArray alloc] initWithObjects:@"Dentist",@"Podiatry",@"Physiotherapy",@"Chiropractor",@"Osteopathy",@"Private GP", nil];
     
@@ -279,6 +285,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.verticalIconsSelected = [NSArray arrayWithObjects:@"dentistSelected",@"podiatrySelected",@"physioSelected",@"chiropractorSelected",@"osteoSelected",@"privateGPSelected", nil];
     
     autocompleteUrls = [[NSMutableArray alloc] init];
+    
     
     //
     //
@@ -289,7 +296,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
     self.autocompleteTableView.hidden = YES;
-    [self.autocompleteTableView setSeparatorColor:[UIColor colorWithRed:69.0/255.0 green:208.0/255.0 blue:249.0/255.0  alpha:1.0]];
+    [self.autocompleteTableView setSeparatorColor:[UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0  alpha:1.0]];
+    self.autocompleteTableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
 //    [self.autocompleteTableView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:1.0]];
     [self.view addSubview:self.autocompleteTableView];
     
@@ -469,8 +477,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 
 - (void)dismissKeyboard
 {
-    [_location resignFirstResponder];
-    [_service resignFirstResponder];
+    [self.location resignFirstResponder];
+    [self.service resignFirstResponder];
     self.autocompleteTableView.hidden = YES;
 
 }
@@ -598,6 +606,16 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     }
 }
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self dismissKeyboard];
+    
+    NSLog(@"Delegate method being sent");
+    
+    return YES;
+}
+
 //- (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat;
 //{
 //    CABasicAnimation* rotationAnimation;
@@ -621,6 +639,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     substring = [substring
                  stringByReplacingCharactersInRange:range withString:string];
     [self searchAutocompleteEntriesWithSubstring:substring];
+    [self.autocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, autocompleteUrls.count * 35)];
+    
     return YES;
 }
 
@@ -657,11 +677,12 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         }
         
-//        [self.autocompleteTableView numberOfRowsInSection:autocompleteUrls.count];
-        
+//      [self.autocompleteTableView numberOfRowsInSection:autocompleteUrls.count]
+
         cell.textLabel.text = [autocompleteUrls objectAtIndex:indexPath.row];
-        [cell.textLabel setTextColor:[UIColor redColor]];
-        
+        [cell.textLabel setTextColor:[UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:1.0]];
+        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:16.0f];
+        cell.backgroundColor = [UIColor whiteColor];
         return cell;
     }
 
@@ -680,7 +701,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
          cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
         cell.backgroundColor = [UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:0.5];
-        cell.textLabel.text = [allServices objectAtIndex:indexPath.row];
+        cell.textLabel.text = [sortedArray objectAtIndex:indexPath.row];
         [cell.textLabel setTextColor:[UIColor whiteColor]];
         [cell.textLabel setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:16.0f]];
         [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
@@ -698,13 +719,22 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     }
     
     if (tableView == self.servicesTableView){
-        return allServices.count;
+        return pastUrls.count;
     }
     
     return 0;
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.servicesTableView){
+        
+        return 44;
+    }
+    
+    return 35;
+}
 
 
 //set the uitextfield text as the selected cell
