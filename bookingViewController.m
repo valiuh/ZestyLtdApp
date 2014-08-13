@@ -26,7 +26,7 @@
     self.navigationItem.titleView = title;
     //setup the uibarbuttonitems
     UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc]
-                                    initWithImage:[UIImage imageNamed:@"phoneIcon"]
+                                    initWithImage:[UIImage imageNamed:@"callIcon"]
                                     style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(call:)];
@@ -46,22 +46,6 @@
     self.zestyBooking.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0];
     self.zestyBooking.delegate = self;
     [self.view addSubview:self.zestyBooking];
-
-//    NSString *urlAddress = @"http://www.zesty.co.uk/find/%@/@%/1",;
-//    if ((self.searchService = @"Dentist")) {
-//        self.searchService = @"dentist";
-//    }else if ((self.searchService = @"Podiatry")){
-//        self.searchService = @"podiatry-consultation";
-//    } else if ((self.searchService = @"Physiotherapy")) {
-//        self.searchService = @"physiotherapy-consultation";
-//    } else if ((self.searchService = @"Chiropractor")) {
-//        self.searchService = @"chiropractic-consultation";
-//    } else if ((self.searchService = @"Osteopathy")) {
-//        self.searchService = @"osteopathic-consultation";
-//    }else if ((self.searchService = @"Private GP")) {
-//        self.searchService = @"general-consultation";
-//    }
-    
     
     self.urlAddress = [NSString stringWithFormat:@"http://www.zesty.co.uk/find/%@/%@/1",self.searchService, self.searchLocation];
     
@@ -71,11 +55,6 @@
     
     NSLog(@"%@",self.urlAddress);
     NSLog(@"%@", self.searchService);
-    
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicator.frame = CGRectMake(self.view.frame.size.height/2,self.view.frame.size.width/2,40,40);
-    [self.view addSubview:self.activityIndicator];
-    [self.view bringSubviewToFront:self.activityIndicator];
     
     self.ishome = YES;
 
@@ -89,14 +68,39 @@
 
 - (BOOL)webView:(UIWebView *)wv shouldStartLoadWithRequest:(NSURLRequest *)rq
 {
-    [self.activityIndicator startAnimating];
+
+
     return YES;
 }
 
-- (void)webViewDidFinishLoading:(UIWebView *)wv
+-(void)webViewDidStartLoad:(UIWebView *)webView
 {
+    //create an activity indicator to give user feedback
+    self.activityIndicator =[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicator.center=self.view.center;
+    [self.activityIndicator startAnimating];
+    self.activityIndicator.hidden = NO;
+    [self.view addSubview:self.activityIndicator];
+    [self.view bringSubviewToFront:self.activityIndicator];
+    
+    NSLog(@"start spinning");
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    
+    NSLog(@"stop spinning");
+    
     [self.activityIndicator stopAnimating];
 }
+
+//- (void)webViewDidFinishLoading:(UIWebView *)zestyBooking
+//{
+//    
+//    NSLog(@"stop spinning");
+//   
+//    [self.activityIndicator stopAnimating];
+//}
 
 
 -(IBAction)cancel:(UIBarButtonItem *)sender

@@ -26,6 +26,7 @@
 @property (nonatomic, strong) UIImageView *serviceIcon;
 @property (nonatomic, strong) UILabel *searchLabel;
 @property (nonatomic, strong) UITableView *autocompleteTableView;
+@property (nonatomic, strong) UITableView *startAutocompleteTableView;
 @property (nonatomic, strong) UITableView *servicesTableView;
 @property (nonatomic, strong) UIView *labelBackground;
 @property (nonatomic, strong) UIScrollView *scroll;
