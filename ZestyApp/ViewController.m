@@ -141,7 +141,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //search title label text
     self.searchLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 6, 320, 20)];
     self.searchLabel.text = @"Find and book Healthcare in London";
-    self.searchLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:18.0f];
+    self.searchLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:16.0f];
     self.searchLabel.textColor = [UIColor whiteColor];
     [self.searchLabel setTextAlignment:NSTextAlignmentCenter];
     [self.labelBackground addSubview:self.searchLabel];
@@ -151,7 +151,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //setup the location label
     self.location = [[UITextField alloc] initWithFrame:CGRectMake(20, 40, self.view.frame.size.width - 40, 35)];
     self.location.delegate = self;
-    self.location.font = [UIFont fontWithName:@"AvenirNext-Medium" size:16.0f];
+    self.location.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:12.0f];
     [self.location setTag:2];
     self.location.placeholder = @"Enter your Postcode or Area";
     [self.location setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.25]];
@@ -192,7 +192,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //setup the service label
     self.service = [[UITextField alloc] initWithFrame:CGRectMake(20, 85, self.view.frame.size.width - 40, 35)];
     self.service.delegate = self;
-    self.service.font = [UIFont fontWithName:@"AvenirNext-Medium" size:16.0];
+    self.service.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:12.0f];
     [self.service setTag:3];
     self.service.placeholder = @"What service do you need?";
     [self.service setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.25]];
@@ -247,7 +247,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //    }
 //    [self.viewServices setBackgroundImage:[UIImage imageNamed:@"viewAll"] forState:UIControlStateNormal];
     [self.viewServices setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3]];
-    self.viewServices.titleLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:20.0f];
+    self.viewServices.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:50.0f];
     [self.viewServices setTitle:@"View All Services" forState:UIControlStateNormal];
     self.viewServices.layer.cornerRadius = 0.0f;
     self.viewServices.titleLabel.textColor = [UIColor whiteColor];
@@ -261,7 +261,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //setup findAppointments button
     self.findAppointments = [[UIButton alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 50)];
     [self.findAppointments setTitle:@"Find Appointments" forState:UIControlStateNormal];
-    self.findAppointments.titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:20.0f];
+    self.findAppointments.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:40.0f];
     [self.findAppointments.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self.findAppointments setBackgroundImage:[UIImage imageNamed:@"findAppts"] forState:UIControlStateNormal];
     [self.findAppointments.layer setCornerRadius:8.0f];
@@ -348,6 +348,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 375+20, 280, 0)];
     self.servicesTableView.backgroundColor = [UIColor  clearColor];
     self.servicesTableView.scrollEnabled = YES;
+    self.servicesTableView.bounces = NO;
     [self.servicesTableView setShowsHorizontalScrollIndicator:NO];
     [self.servicesTableView setShowsVerticalScrollIndicator:NO];
 //    [self.servicesTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -705,7 +706,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         cell.textLabel.text = [sortedArray objectAtIndex:indexPath.row];
         [cell.textLabel setTextColor:[UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:1.0]];
-        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:16.0f];
+        cell.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:18.0f];
         cell.backgroundColor = [UIColor whiteColor];
         return cell;
     }
@@ -728,10 +729,9 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         }
         
 //      [self.autocompleteTableView numberOfRowsInSection:autocompleteUrls.count]
-
             cell.textLabel.text = [autocompleteUrls objectAtIndex:indexPath.row];
         [cell.textLabel setTextColor:[UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:1.0]];
-        cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:16.0f];
+        cell.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:18.0f];
         cell.backgroundColor = [UIColor whiteColor];
         return cell;
     }
@@ -748,12 +748,20 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 
         }
         
-         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-        cell.backgroundColor = [UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:0.5];
+//        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+        
+        // this is where you set your color view
+        UIView *customColorView = [[UIView alloc] init];
+        customColorView.backgroundColor = [UIColor colorWithRed:48/255.0
+                                                          green:79/255.0
+                                                           blue:116/255.0
+                                                          alpha:1.0];
+        cell.selectedBackgroundView =  customColorView;
+        
+        cell.backgroundColor = [UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:0.25];
         cell.textLabel.text = [sortedArray objectAtIndex:indexPath.row];
         [cell.textLabel setTextColor:[UIColor whiteColor]];
-        [cell.textLabel setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:16.0f]];
+        [cell.textLabel setFont:[UIFont fontWithName:@"GothamNarrow-Medium" size:16.0f]];
         [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
         return cell;
 
@@ -806,6 +814,20 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
         self.service.text = selectedCell.textLabel.text;
         
+        NSArray *visibleCells = [self.collectionView visibleCells];
+        for (iconCell *cell in visibleCells) {
+            
+            cell.tickImage.hidden = YES;
+            cell.selected = NO;
+            cell.alpha = 0.9f;
+            
+            cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:cell.tag]];
+        }
+        
+        self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
+        self.service.layer.borderWidth = 1.0f;
+
+        
         self.startAutocompleteTableView.hidden = YES;
         
         self.screenTap.enabled = YES;
@@ -822,6 +844,9 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
         UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
         self.service.text = selectedCell.textLabel.text;
+        
+        self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
+        self.service.layer.borderWidth = 1.0f;
 
         self.autocompleteTableView.hidden = YES;
     }
@@ -831,10 +856,26 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         NSLog(@"Service cell selected");
     
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-      
-        cell.backgroundColor = [UIColor blueColor];
         
-        self.service.text = [allServices objectAtIndex:indexPath.row];
+        NSArray *visibleCells = [self.collectionView visibleCells];
+        for (iconCell *cell in visibleCells) {
+            
+            cell.tickImage.hidden = YES;
+            cell.selected = NO;
+            cell.alpha = 0.9f;
+        
+            cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:cell.tag]];
+        }
+        
+//        iconCell *selectedCell = [self.collectionView cellForItemAtIndexPath:visibleCells];
+//        selectedCell.tickImage.hidden = YES;
+        
+//
+        [self showServices:self];
+        
+        self.service.text = cell.textLabel.text;
+        self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
+        self.service.layer.borderWidth = 1.0f;
       
     }
 }
@@ -860,19 +901,16 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     iconCell *cell = (iconCell *)[cv dequeueReusableCellWithReuseIdentifier:@"newCell"
                                                                            forIndexPath:indexPath];
     
-//    cv.alpha = 0.5f;
     cell.selected = YES;
-    cell.tag = 100;
+    cell.tag = indexPath.row;
     cell.backgroundColor = [UIColor clearColor];
-//    cell.backgroundColor=[UIColor  colorWithRed:46.0/255.0 green:71.0/255.0 blue:107.0/255.0 alpha:1.0f];
     cell.alpha = 1.0f;
     [cv selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     cell.label.text = [iconLabel objectAtIndex:indexPath.row];
-    [cell.label setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:13.0f]];
     
-//    cell.tickImage.image = [UIImage imageNamed:@"tickImage"];
-
+//    [cell.label setFont:[UIFont fontWithName:@"GothamNarrow" size:50.0f]];
+    
     
     if (self.selectedItemIndexPath != nil && [indexPath compare:self.selectedItemIndexPath] == NSOrderedSame) {
 //        cell.layer.borderColor = [[UIColor whiteColor] CGColor];
@@ -889,7 +927,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         cell.label.textColor = [UIColor whiteColor];
         cell.tickImage.hidden = YES;
         cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:indexPath.row]];
-
     }
     
     return cell;
@@ -903,19 +940,17 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     // always reload the selected cell, so we wi§ll add the border to that cell
     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
     
     if (self.selectedItemIndexPath)
     {
-
         // if we had a previously selected cell
         self.service.text = @"";
         self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
         self.service.layer.borderWidth = 0.0f;
         _serviceIcon.tintColor = [UIColor whiteColor];
-
+        
 
         if ([indexPath compare:self.selectedItemIndexPath] == NSOrderedSame)
         {
@@ -923,8 +958,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
             self.selectedItemIndexPath = nil;
 //            self.service.text = @"";
 //            self.serviceString = @"";
-
-
         }
         else
         {
@@ -933,9 +966,10 @@ UIPanGestureRecognizer *labelBackgroundDrag;
             [indexPaths addObject:self.selectedItemIndexPath];
             self.selectedItemIndexPath = indexPath;
             self.service.text = [iconLabel objectAtIndex:indexPath.row];
+            self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
+            self.service.layer.borderWidth = 1.0f;
 //            self.serviceString = [iconLabel objectAtIndex:indexPath.row];
 //            _serviceIcon.tintColor = [UIColor colorWithRed:69.0/255.0 green:208.0/255.0 blue:249.0/255.0  alpha:1.0];
-
         }
     }
     else
@@ -944,8 +978,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         self.service.text = [iconLabel objectAtIndex:indexPath.row];
         self.selectedItemIndexPath = indexPath;
         self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
-//        self.service.layer.borderWidth = 1.0f;
-
+        self.service.layer.borderWidth = 1.0f;
 //        _serviceIcon.tintColor = [UIColor colorWithRed:69.0/255.0 green:208.0/255.0 blue:249.0/255.0  alpha:1.0];
 
     }
@@ -970,7 +1003,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 // Layout: Set cell size
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"SETTING SIZE FOR ITEM AT INDEX %d", indexPath.row);
+    NSLog(@"SETTING SIZE FOR ITEM AT INDEX %ld", (long)indexPath.row);
     CGSize mElementSize = CGSizeMake(98.5, 92);
     return mElementSize;
 }
