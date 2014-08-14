@@ -325,7 +325,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     else
     {_collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10, 204-74+5, 300, 206/2) collectionViewLayout:layout];
     }
-        [_collectionView setDataSource:self];
+    [_collectionView setDataSource:self];
     [_collectionView setDelegate:self];
     [_collectionView setScrollEnabled:YES];
     [_collectionView registerClass:[iconCell class] forCellWithReuseIdentifier:@"newCell"];
@@ -637,6 +637,18 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                     curve:UIViewAnimationCurveEaseIn degrees:0];
         
         [self.service.layer setBorderWidth:0.0f];
+        
+        NSArray *visibleCells = [self.collectionView visibleCells];
+        for (iconCell *cell in visibleCells) {
+            
+            cell.tickImage.hidden = YES;
+            cell.selected = NO;
+            cell.alpha = 0.9f;
+            
+            cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:cell.tag]];
+        }
+        self.service.layer.borderWidth = 1.0f;
+        self.service.layer.borderColor =[[UIColor whiteColor]CGColor];
         
         _serviceIcon.tintColor = [UIColor whiteColor];
 
@@ -1063,7 +1075,9 @@ UIPanGestureRecognizer *labelBackgroundDrag;
             controller.searchService = @"facial-fillers";
         } else if ([self.service.text isEqualToString:@"General Consultation"]){
             controller.searchService = @"general-consultation";
-        }
+        } else if ([self.service.text isEqualToString:@"Podiatrist"]){
+            controller.searchService = @"podiatry-consultation";
+        };
 
 
         //set the web -address location
