@@ -43,5 +43,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GothamNarrow-Book.otf</string>
+		<string>GothamNarrow-Medium.otf</string>
+		<string>GothamNarrow-Bold.otf</string>
+	</array>
 </dict>
 </plist>

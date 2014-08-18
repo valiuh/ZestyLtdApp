@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F31B3342199E1C570015422F /* GothamNarrow-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3332199E1C560015422F /* GothamNarrow-Black.otf */; };
+		F31B3343199E1C570015422F /* GothamNarrow-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3333199E1C560015422F /* GothamNarrow-BlackItalic.otf */; };
+		F31B3344199E1C570015422F /* GothamNarrow-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3334199E1C560015422F /* GothamNarrow-Bold.otf */; };
+		F31B3345199E1C570015422F /* GothamNarrow-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3335199E1C560015422F /* GothamNarrow-BoldItalic.otf */; };
+		F31B3346199E1C570015422F /* GothamNarrow-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3336199E1C560015422F /* GothamNarrow-Book.otf */; };
+		F31B3347199E1C570015422F /* GothamNarrow-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3337199E1C560015422F /* GothamNarrow-BookItalic.otf */; };
+		F31B3348199E1C570015422F /* GothamNarrow-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3338199E1C570015422F /* GothamNarrow-Light.otf */; };
+		F31B3349199E1C570015422F /* GothamNarrow-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3339199E1C570015422F /* GothamNarrow-LightItalic.otf */; };
+		F31B334A199E1C570015422F /* GothamNarrow-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333A199E1C570015422F /* GothamNarrow-Medium.otf */; };
+		F31B334B199E1C570015422F /* GothamNarrow-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333B199E1C570015422F /* GothamNarrow-MediumItalic.otf */; };
+		F31B334C199E1C570015422F /* GothamNarrow-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333C199E1C570015422F /* GothamNarrow-Thin.otf */; };
+		F31B334D199E1C570015422F /* GothamNarrow-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333D199E1C570015422F /* GothamNarrow-ThinItalic.otf */; };
+		F31B334E199E1C570015422F /* GothamNarrow-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333E199E1C570015422F /* GothamNarrow-Ultra.otf */; };
+		F31B334F199E1C570015422F /* GothamNarrow-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333F199E1C570015422F /* GothamNarrow-UltraItalic.otf */; };
+		F31B3350199E1C570015422F /* GothamNarrow-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3340199E1C570015422F /* GothamNarrow-XLight.otf */; };
+		F31B3351199E1C570015422F /* GothamNarrow-XLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3341199E1C570015422F /* GothamNarrow-XLightItalic.otf */; };
 		F327969C19654B7200082B6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969B19654B7200082B6A /* Foundation.framework */; };
 		F327969E19654B7200082B6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969D19654B7200082B6A /* CoreGraphics.framework */; };
 		F32796A019654B7200082B6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969F19654B7200082B6A /* UIKit.framework */; };
@@ -40,6 +56,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F31B3332199E1C560015422F /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Black.otf"; path = "../GothamNarrow-Black.otf"; sourceTree = "<group>"; };
+		F31B3333199E1C560015422F /* GothamNarrow-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-BlackItalic.otf"; path = "../GothamNarrow-BlackItalic.otf"; sourceTree = "<group>"; };
+		F31B3334199E1C560015422F /* GothamNarrow-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Bold.otf"; path = "../GothamNarrow-Bold.otf"; sourceTree = "<group>"; };
+		F31B3335199E1C560015422F /* GothamNarrow-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-BoldItalic.otf"; path = "../GothamNarrow-BoldItalic.otf"; sourceTree = "<group>"; };
+		F31B3336199E1C560015422F /* GothamNarrow-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Book.otf"; path = "../GothamNarrow-Book.otf"; sourceTree = "<group>"; };
+		F31B3337199E1C560015422F /* GothamNarrow-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-BookItalic.otf"; path = "../GothamNarrow-BookItalic.otf"; sourceTree = "<group>"; };
+		F31B3338199E1C570015422F /* GothamNarrow-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Light.otf"; path = "../GothamNarrow-Light.otf"; sourceTree = "<group>"; };
+		F31B3339199E1C570015422F /* GothamNarrow-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-LightItalic.otf"; path = "../GothamNarrow-LightItalic.otf"; sourceTree = "<group>"; };
+		F31B333A199E1C570015422F /* GothamNarrow-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Medium.otf"; path = "../GothamNarrow-Medium.otf"; sourceTree = "<group>"; };
+		F31B333B199E1C570015422F /* GothamNarrow-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-MediumItalic.otf"; path = "../GothamNarrow-MediumItalic.otf"; sourceTree = "<group>"; };
+		F31B333C199E1C570015422F /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Thin.otf"; path = "../GothamNarrow-Thin.otf"; sourceTree = "<group>"; };
+		F31B333D199E1C570015422F /* GothamNarrow-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-ThinItalic.otf"; path = "../GothamNarrow-ThinItalic.otf"; sourceTree = "<group>"; };
+		F31B333E199E1C570015422F /* GothamNarrow-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Ultra.otf"; path = "../GothamNarrow-Ultra.otf"; sourceTree = "<group>"; };
+		F31B333F199E1C570015422F /* GothamNarrow-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-UltraItalic.otf"; path = "../GothamNarrow-UltraItalic.otf"; sourceTree = "<group>"; };
+		F31B3340199E1C570015422F /* GothamNarrow-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-XLight.otf"; path = "../GothamNarrow-XLight.otf"; sourceTree = "<group>"; };
+		F31B3341199E1C570015422F /* GothamNarrow-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-XLightItalic.otf"; path = "../GothamNarrow-XLightItalic.otf"; sourceTree = "<group>"; };
 		F327969819654B7200082B6A /* ZestyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZestyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F327969B19654B7200082B6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F327969D19654B7200082B6A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,22 +101,6 @@
 		F32796ED1981149300082B6A /* iconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iconCell.m; path = ../iconCell.m; sourceTree = "<group>"; };
 		F32796EF198151B300082B6A /* bookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bookingViewController.h; path = ../bookingViewController.h; sourceTree = "<group>"; };
 		F32796F0198151B300082B6A /* bookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bookingViewController.m; path = ../bookingViewController.m; sourceTree = "<group>"; };
-		F3A38973199CC97B004499CD /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Black.otf"; sourceTree = "<group>"; };
-		F3A38974199CC97B004499CD /* GothamNarrow-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-BlackItalic.otf"; sourceTree = "<group>"; };
-		F3A38975199CC97B004499CD /* GothamNarrow-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Bold.otf"; sourceTree = "<group>"; };
-		F3A38976199CC97B004499CD /* GothamNarrow-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-BoldItalic.otf"; sourceTree = "<group>"; };
-		F3A38977199CC97B004499CD /* GothamNarrow-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Book.otf"; sourceTree = "<group>"; };
-		F3A38978199CC97B004499CD /* GothamNarrow-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-BookItalic.otf"; sourceTree = "<group>"; };
-		F3A38979199CC97B004499CD /* GothamNarrow-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Light.otf"; sourceTree = "<group>"; };
-		F3A3897A199CC97B004499CD /* GothamNarrow-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-LightItalic.otf"; sourceTree = "<group>"; };
-		F3A3897B199CC97B004499CD /* GothamNarrow-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Medium.otf"; sourceTree = "<group>"; };
-		F3A3897C199CC97B004499CD /* GothamNarrow-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-MediumItalic.otf"; sourceTree = "<group>"; };
-		F3A3897D199CC97B004499CD /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Thin.otf"; sourceTree = "<group>"; };
-		F3A3897E199CC97B004499CD /* GothamNarrow-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-ThinItalic.otf"; sourceTree = "<group>"; };
-		F3A3897F199CC97B004499CD /* GothamNarrow-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Ultra.otf"; sourceTree = "<group>"; };
-		F3A38980199CC97B004499CD /* GothamNarrow-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-UltraItalic.otf"; sourceTree = "<group>"; };
-		F3A38981199CC97B004499CD /* GothamNarrow-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-XLight.otf"; sourceTree = "<group>"; };
-		F3A38982199CC97B004499CD /* GothamNarrow-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-XLightItalic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,22 +215,22 @@
 		F3A38984199CC98E004499CD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F3A38973199CC97B004499CD /* GothamNarrow-Black.otf */,
-				F3A38974199CC97B004499CD /* GothamNarrow-BlackItalic.otf */,
-				F3A38975199CC97B004499CD /* GothamNarrow-Bold.otf */,
-				F3A38976199CC97B004499CD /* GothamNarrow-BoldItalic.otf */,
-				F3A38977199CC97B004499CD /* GothamNarrow-Book.otf */,
-				F3A38978199CC97B004499CD /* GothamNarrow-BookItalic.otf */,
-				F3A38979199CC97B004499CD /* GothamNarrow-Light.otf */,
-				F3A3897A199CC97B004499CD /* GothamNarrow-LightItalic.otf */,
-				F3A3897B199CC97B004499CD /* GothamNarrow-Medium.otf */,
-				F3A3897C199CC97B004499CD /* GothamNarrow-MediumItalic.otf */,
-				F3A3897D199CC97B004499CD /* GothamNarrow-Thin.otf */,
-				F3A3897E199CC97B004499CD /* GothamNarrow-ThinItalic.otf */,
-				F3A3897F199CC97B004499CD /* GothamNarrow-Ultra.otf */,
-				F3A38980199CC97B004499CD /* GothamNarrow-UltraItalic.otf */,
-				F3A38981199CC97B004499CD /* GothamNarrow-XLight.otf */,
-				F3A38982199CC97B004499CD /* GothamNarrow-XLightItalic.otf */,
+				F31B3332199E1C560015422F /* GothamNarrow-Black.otf */,
+				F31B3333199E1C560015422F /* GothamNarrow-BlackItalic.otf */,
+				F31B3334199E1C560015422F /* GothamNarrow-Bold.otf */,
+				F31B3335199E1C560015422F /* GothamNarrow-BoldItalic.otf */,
+				F31B3336199E1C560015422F /* GothamNarrow-Book.otf */,
+				F31B3337199E1C560015422F /* GothamNarrow-BookItalic.otf */,
+				F31B3338199E1C570015422F /* GothamNarrow-Light.otf */,
+				F31B3339199E1C570015422F /* GothamNarrow-LightItalic.otf */,
+				F31B333A199E1C570015422F /* GothamNarrow-Medium.otf */,
+				F31B333B199E1C570015422F /* GothamNarrow-MediumItalic.otf */,
+				F31B333C199E1C570015422F /* GothamNarrow-Thin.otf */,
+				F31B333D199E1C570015422F /* GothamNarrow-ThinItalic.otf */,
+				F31B333E199E1C570015422F /* GothamNarrow-Ultra.otf */,
+				F31B333F199E1C570015422F /* GothamNarrow-UltraItalic.otf */,
+				F31B3340199E1C570015422F /* GothamNarrow-XLight.otf */,
+				F31B3341199E1C570015422F /* GothamNarrow-XLightItalic.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -299,6 +315,22 @@
 				F32796B719654B7200082B6A /* Images.xcassets in Resources */,
 				F32796AF19654B7200082B6A /* Main_iPhone.storyboard in Resources */,
 				F32796A619654B7200082B6A /* InfoPlist.strings in Resources */,
+				F31B3342199E1C570015422F /* GothamNarrow-Black.otf in Resources */,
+				F31B3343199E1C570015422F /* GothamNarrow-BlackItalic.otf in Resources */,
+				F31B3344199E1C570015422F /* GothamNarrow-Bold.otf in Resources */,
+				F31B3345199E1C570015422F /* GothamNarrow-BoldItalic.otf in Resources */,
+				F31B3346199E1C570015422F /* GothamNarrow-Book.otf in Resources */,
+				F31B3347199E1C570015422F /* GothamNarrow-BookItalic.otf in Resources */,
+				F31B3348199E1C570015422F /* GothamNarrow-Light.otf in Resources */,
+				F31B3349199E1C570015422F /* GothamNarrow-LightItalic.otf in Resources */,
+				F31B334A199E1C570015422F /* GothamNarrow-Medium.otf in Resources */,
+				F31B334B199E1C570015422F /* GothamNarrow-MediumItalic.otf in Resources */,
+				F31B334C199E1C570015422F /* GothamNarrow-Thin.otf in Resources */,
+				F31B334D199E1C570015422F /* GothamNarrow-ThinItalic.otf in Resources */,
+				F31B334E199E1C570015422F /* GothamNarrow-Ultra.otf in Resources */,
+				F31B334F199E1C570015422F /* GothamNarrow-UltraItalic.otf in Resources */,
+				F31B3350199E1C570015422F /* GothamNarrow-XLight.otf in Resources */,
+				F31B3351199E1C570015422F /* GothamNarrow-XLightItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

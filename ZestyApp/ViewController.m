@@ -43,6 +43,15 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
 //    [self.navigationController.navigationBar setTranslucent:NO];
     
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
     
     //make the screen tap recogniser
     self.screenTap = [[UITapGestureRecognizer alloc]
@@ -141,7 +150,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //search title label text
     self.searchLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 6, 320, 20)];
     self.searchLabel.text = @"Find and book Healthcare in London";
-    self.searchLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:16.0f];
+    self.searchLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:18.0f];
     self.searchLabel.textColor = [UIColor whiteColor];
     [self.searchLabel setTextAlignment:NSTextAlignmentCenter];
     [self.labelBackground addSubview:self.searchLabel];
@@ -151,7 +160,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //setup the location label
     self.location = [[UITextField alloc] initWithFrame:CGRectMake(20, 40, self.view.frame.size.width - 40, 35)];
     self.location.delegate = self;
-    self.location.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:12.0f];
+    self.location.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:16.0f];
     [self.location setTag:2];
     self.location.placeholder = @"Enter your Postcode or Area";
     [self.location setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.25]];
@@ -192,7 +201,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //setup the service label
     self.service = [[UITextField alloc] initWithFrame:CGRectMake(20, 85, self.view.frame.size.width - 40, 35)];
     self.service.delegate = self;
-    self.service.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:12.0f];
+    self.service.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:16.0f];
     [self.service setTag:3];
     self.service.placeholder = @"What service do you need?";
     [self.service setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.25]];
@@ -238,16 +247,10 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 328+20, self.view.frame.size.width-40, 48)];
     }
     else
-    {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 194, self.view.frame.size.width-40, 48)];
+    {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 240 , self.view.frame.size.width-40, 48)];
     }
-//    if (self.verticalIcons.count > 6) {
-//        self.viewServices.enabled = YES;
-//    } else {
-//        self.viewServices.enabled = NO;
-//    }
-//    [self.viewServices setBackgroundImage:[UIImage imageNamed:@"viewAll"] forState:UIControlStateNormal];
     [self.viewServices setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3]];
-    self.viewServices.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:50.0f];
+    self.viewServices.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:20.0f];
     [self.viewServices setTitle:@"View All Services" forState:UIControlStateNormal];
     self.viewServices.layer.cornerRadius = 0.0f;
     self.viewServices.titleLabel.textColor = [UIColor whiteColor];
@@ -261,7 +264,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //setup findAppointments button
     self.findAppointments = [[UIButton alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 50)];
     [self.findAppointments setTitle:@"Find Appointments" forState:UIControlStateNormal];
-    self.findAppointments.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:40.0f];
+    self.findAppointments.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:22.0f];
     [self.findAppointments.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self.findAppointments setBackgroundImage:[UIImage imageNamed:@"findAppts"] forState:UIControlStateNormal];
     [self.findAppointments.layer setCornerRadius:8.0f];
@@ -290,8 +293,19 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //
     //
     //setup auto-complete for service textField
-    self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-                                  CGRectMake(20, 184, self.service.frame.size.width, allServices.count * 35) style:UITableViewStylePlain];
+    if( IS_IPHONE_5 )
+    {
+        self.autocompleteTableView = [[UITableView alloc] initWithFrame:
+                                      CGRectMake(20, 184, self.service.frame.size.width, allServices.count * 35) style:UITableViewStylePlain];
+
+    }
+    else
+    {
+        self.autocompleteTableView = [[UITableView alloc] initWithFrame:
+                                      CGRectMake(20, 184, self.service.frame.size.width, (allServices.count /2) * 35) style:UITableViewStylePlain];
+
+    }
+
     self.autocompleteTableView.delegate = self;
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
@@ -305,8 +319,18 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //
     //
     //setup auto-complete for service textField
-    self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
-                                  CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/2 - 10) style:UITableViewStylePlain];
+    if( IS_IPHONE_5 )
+    {
+        self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
+                                           CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/2 - 10) style:UITableViewStylePlain];
+        
+    }
+    else
+    {
+        self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
+                                           CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/4 + 40) style:UITableViewStylePlain];
+        
+    }
     self.startAutocompleteTableView.delegate = self;
     self.startAutocompleteTableView.dataSource = self;
     self.startAutocompleteTableView.scrollEnabled = YES;
@@ -344,8 +368,16 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self.locationManager startUpdatingLocation];
 //    [self animateSearchFieldsUp];
     
-    
-    self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 375+20, 280, 0)];
+    if( IS_IPHONE_5 )
+    {
+        self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 375+20, 280, 0)];
+
+    }
+    else
+    {
+        self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 240+20, 280, 0)];
+
+    }
     self.servicesTableView.backgroundColor = [UIColor  clearColor];
     self.servicesTableView.scrollEnabled = YES;
     self.servicesTableView.bounces = NO;
@@ -384,8 +416,17 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //        [self.scroll setFrame:CGRectMake(0, 0, 320, 640)];]
         
         [self.viewServices setTitle:@"Hide All Services" forState:UIControlStateNormal];
+        
+        if( IS_IPHONE_5 )
+        {
+            [self.scroll setContentSize:CGSizeMake(320, 800)];
 
-        [self.scroll setContentSize:CGSizeMake(320, 800)];
+        }
+        else
+        {
+            [self.scroll setContentSize:CGSizeMake(320, 800)];
+
+        }
         
         [UIView animateWithDuration:0.4
                               delay:0.0
@@ -393,12 +434,28 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                          animations:^{
                              
                              //move the find appointments button to the bottom
-                             [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 200-25+20, 280, 48)];
-                             
-                             [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 180)];
-                             
-                             CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
-                             [self.scroll setContentOffset:bottomOffset animated:YES];
+                            
+                             if( IS_IPHONE_5 )
+                             {
+                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 200-25+20, 280, 48)];
+                                 
+                                 [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 180)];
+                                 
+                                 CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
+                                 [self.scroll setContentOffset:bottomOffset animated:YES];
+                                 
+                                 
+                             }
+                             else
+                             {
+                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 300, 280, 48)];
+                                 
+                                 [self.servicesTableView setFrame:CGRectMake(20, 267+20, 280, 180)];
+                                 
+                                 CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
+                                 [self.scroll setContentOffset:bottomOffset animated:YES];
+                                 
+                             }
                              
                              //show the tableview of other verticals
 
@@ -419,12 +476,28 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              
-                             [self.scroll setContentSize:CGSizeMake(320, 640)];
-                             
-                             [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 0)];
-                          
-                             [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 48)];
+                             if( IS_IPHONE_5 )
+                             {
+                                 [self.scroll setContentSize:CGSizeMake(320, 640)];
+                                 
+                                 [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 0)];
+                                 
+                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 48)];
 
+                                 
+                             }
+                             else
+                             {
+                                 [self.scroll setContentSize:CGSizeMake(320, 640)];
+                                 
+                                 [self.servicesTableView setFrame:CGRectMake(20, 267+20, 280, 0)];
+                                 
+                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-160, self.view.frame.size.width - 40, 48)];
+
+                                 
+                             }
+                             
+                             
                              
                          }completion:nil];
         
@@ -508,6 +581,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self.location resignFirstResponder];
     
     [self.service resignFirstResponder];
+    
     self.autocompleteTableView.hidden = YES;
 
 }
@@ -551,7 +625,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         self.screenTap.enabled = NO;
         self.scroll.scrollEnabled = NO;
-
         
         //Do some cool shit to the service text field
         [self.service.layer setBorderWidth:1.0f];
@@ -566,6 +639,10 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 
 -(IBAction)editingChanged:(id)sender{
     if ([sender tag] == 2) {
+        
+        self.autocompleteTableView.hidden = YES;
+
+        
         //Do some cool shit to the location text field
     }else if([sender tag] == 3){
         if(self.service.text.length== 0){
@@ -670,15 +747,28 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //auto-complete methods
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    self.autocompleteTableView.hidden = NO;
-    [self.view bringSubviewToFront:self.autocompleteTableView];
-    NSString *substring = [NSString stringWithString:textField.text];
-    substring = [substring
-                 stringByReplacingCharactersInRange:range withString:string];
-    [self searchAutocompleteEntriesWithSubstring:substring];
-    [self.autocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, autocompleteUrls.count * 35)];
-    
-    return YES;
+    if (textField.tag == 3) {
+        self.autocompleteTableView.hidden = NO;
+        [self.view bringSubviewToFront:self.autocompleteTableView];
+        NSString *substring = [NSString stringWithString:textField.text];
+        substring = [substring
+                     stringByReplacingCharactersInRange:range withString:string];
+        [self searchAutocompleteEntriesWithSubstring:substring];
+        
+        if( IS_IPHONE_5 )
+        {
+            [self.autocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, autocompleteUrls.count * 35)];
+
+            
+        }
+        else
+        {
+            [self.autocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, (autocompleteUrls.count/2)* 35)];
+
+        }
+
+    }
+      return YES;
 }
 
 - (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
@@ -718,7 +808,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         cell.textLabel.text = [sortedArray objectAtIndex:indexPath.row];
         [cell.textLabel setTextColor:[UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:1.0]];
-        cell.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:18.0f];
+        cell.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:16.0f];
         cell.backgroundColor = [UIColor whiteColor];
         return cell;
     }
