@@ -287,7 +287,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F327969319654B7200082B6A /* Build configuration list for PBXProject "ZestyApp" */;
+			buildConfigurationList = F327969319654B7200082B6A /* Build configuration list for PBXProject "Zesty" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -554,7 +554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F327969319654B7200082B6A /* Build configuration list for PBXProject "ZestyApp" */ = {
+		F327969319654B7200082B6A /* Build configuration list for PBXProject "Zesty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F32796CB19654B7300082B6A /* Debug */,

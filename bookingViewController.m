@@ -40,14 +40,12 @@
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
-    
-    
-    self.zestyBooking = [[UIWebView alloc]initWithFrame:CGRectMake(0, -56, self.view.frame.size.width, self.view.frame.size.height)];
+    self.zestyBooking = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.zestyBooking.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0];
     self.zestyBooking.delegate = self;
     [self.view addSubview:self.zestyBooking];
     
-    self.urlAddress = [NSString stringWithFormat:@"http://www.zesty.co.uk/find/%@/%@/1",self.searchService, self.searchLocation];
+    self.urlAddress = [NSString stringWithFormat:@"http://www.staging.zesty.co.uk/find/%@/%@/1",self.searchService, self.searchLocation];
     
     NSURL *url = [NSURL URLWithString:self.urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
@@ -73,26 +71,26 @@
     return YES;
 }
 
--(void)webViewDidStartLoad:(UIWebView *)webView
-{
-    //create an activity indicator to give user feedback
-    self.activityIndicator =[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicator.center=self.view.center;
-    [self.activityIndicator startAnimating];
-    self.activityIndicator.hidden = NO;
-    [self.view addSubview:self.activityIndicator];
-    [self.view bringSubviewToFront:self.activityIndicator];
-    
-    NSLog(@"start spinning");
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    
-    NSLog(@"stop spinning");
-    
-    [self.activityIndicator stopAnimating];
-}
+//-(void)webViewDidStartLoad:(UIWebView *)webView
+//{
+//    //create an activity indicator to give user feedback
+//    self.activityIndicator =[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//    self.activityIndicator.center=self.view.center;
+//    [self.activityIndicator startAnimating];
+//    self.activityIndicator.hidden = NO;
+//    [self.view addSubview:self.activityIndicator];
+//    [self.view bringSubviewToFront:self.activityIndicator];
+//    
+//    NSLog(@"start spinning");
+//}
+//
+//- (void)webViewDidFinishLoad:(UIWebView *)webView
+//{
+//    
+//    NSLog(@"stop spinning");
+//    
+//    [self.activityIndicator stopAnimating];
+//}
 
 //- (void)webViewDidFinishLoading:(UIWebView *)zestyBooking
 //{

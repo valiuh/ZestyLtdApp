@@ -17,7 +17,7 @@
                BlueprintIdentifier = "F327969719654B7200082B6A"
                BuildableName = "ZestyApp.app"
                BlueprintName = "ZestyApp"
-               ReferencedContainer = "container:ZestyApp.xcodeproj">
+               ReferencedContainer = "container:Zesty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "F32796BB19654B7300082B6A"
                BuildableName = "ZestyAppTests.xctest"
                BlueprintName = "ZestyAppTests"
-               ReferencedContainer = "container:ZestyApp.xcodeproj">
+               ReferencedContainer = "container:Zesty.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "F327969719654B7200082B6A"
             BuildableName = "ZestyApp.app"
             BlueprintName = "ZestyApp"
-            ReferencedContainer = "container:ZestyApp.xcodeproj">
+            ReferencedContainer = "container:Zesty.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "F327969719654B7200082B6A"
             BuildableName = "ZestyApp.app"
             BlueprintName = "ZestyApp"
-            ReferencedContainer = "container:ZestyApp.xcodeproj">
+            ReferencedContainer = "container:Zesty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "F327969719654B7200082B6A"
             BuildableName = "ZestyApp.app"
             BlueprintName = "ZestyApp"
-            ReferencedContainer = "container:ZestyApp.xcodeproj">
+            ReferencedContainer = "container:Zesty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
