@@ -45,7 +45,24 @@
     self.zestyBooking.delegate = self;
     [self.view addSubview:self.zestyBooking];
     
-    self.urlAddress = [NSString stringWithFormat:@"http://www.staging.zesty.co.uk/find/%@/%@/1",self.searchService, self.searchLocation];
+    self.loadingPage = [[UIView alloc]initWithFrame:self.view.frame];
+    self.loadingPage.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondonSB"]];
+    self.loadingPage.hidden = NO;
+    [self.view addSubview:self.loadingPage];
+    
+    self.loadingLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, 90, 240, 30)];
+    self.loadingLabel.text = @"Loading practices now";
+    [self.loadingLabel setFont:[UIFont fontWithName:@"GothamNarrow-Medium" size:24.0f]];
+    self.loadingLabel.textColor = [UIColor whiteColor];
+    self.loadingLabel.backgroundColor = [UIColor clearColor];
+    [self.loadingLabel setTextAlignment:NSTextAlignmentCenter];
+    self.loadingLabel.hidden = NO;
+    [self.view addSubview:self.loadingLabel];
+    [self.view bringSubviewToFront:self.loadingLabel];
+    
+    _ishome = YES;
+    
+    self.urlAddress = [NSString stringWithFormat:@"http:ios.staging.zesty.co.uk/find/%@/%@/1",self.searchService, self.searchLocation];
     
     NSURL *url = [NSURL URLWithString:self.urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
@@ -67,39 +84,52 @@
 - (BOOL)webView:(UIWebView *)wv shouldStartLoadWithRequest:(NSURLRequest *)rq
 {
 
-
     return YES;
 }
 
-//-(void)webViewDidStartLoad:(UIWebView *)webView
-//{
-//    //create an activity indicator to give user feedback
-//    self.activityIndicator =[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//    self.activityIndicator.center=self.view.center;
-//    [self.activityIndicator startAnimating];
-//    self.activityIndicator.hidden = NO;
-//    [self.view addSubview:self.activityIndicator];
-//    [self.view bringSubviewToFront:self.activityIndicator];
-//    
-//    NSLog(@"start spinning");
-//}
+-(void)webViewDidStartLoad:(UIWebView *)webView
+{
+    if (_ishome == YES) {
+        
+        _ishome = !_ishome;
+        
+        //create an activity indicator to give user feedback
+        self.activityIndicator =[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activityIndicator.center = CGPointMake(self.view.frame.size.width/2, 180);
+        [self.activityIndicator startAnimating];
+        self.activityIndicator.hidden = NO;
+        [self.view addSubview:self.activityIndicator];
+        [self.view bringSubviewToFront:self.activityIndicator];
+        
+        self.loadingPage.hidden = NO;
+        
+        self.loadingLabel.hidden = NO;
+        
+        NSLog(@"start spinning");
+    }
+}
+    
+  
 //
-//- (void)webViewDidFinishLoad:(UIWebView *)webView
-//{
-//    
-//    NSLog(@"stop spinning");
-//    
-//    [self.activityIndicator stopAnimating];
-//}
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSLog(@"stop spinning");
+    
+    self.zestyBooking.hidden = NO;
+    self.loadingPage.hidden = YES;
+    self.loadingLabel.hidden = YES;
+
+    [self.activityIndicator stopAnimating];
+}
 
 //- (void)webViewDidFinishLoading:(UIWebView *)zestyBooking
 //{
 //    
-//    NSLog(@"stop spinning");
+//    NSLog(@"page loaded");
+//    
 //   
-//    [self.activityIndicator stopAnimating];
+////    [self.activityIndicator stopAnimating];
 //}
-
 
 -(IBAction)cancel:(UIBarButtonItem *)sender
 {
@@ -119,6 +149,15 @@
     
     self.currentURL = self.zestyBooking.request.URL.absoluteString;
     NSLog(@"%@",self.currentURL);
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == [alertView firstOtherButtonIndex]){
+        //Phone clicked
+        NSString *value=@"02032875416";
+        NSURL *url = [[ NSURL alloc ] initWithString:[NSString stringWithFormat:@"tel://%@",value]];
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
 -(void)call:(UIBarButtonItem *)sender

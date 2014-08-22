@@ -16,6 +16,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     // Override point for customization after application launch.
     NSLog(@"application did finish launching");
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 

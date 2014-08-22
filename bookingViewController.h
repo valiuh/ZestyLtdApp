@@ -14,6 +14,8 @@
 @property(nonatomic) NSString *searchLocation;
 @property(nonatomic) NSString *searchService;
 @property (nonatomic) NSString *urlAddress;
-//@property (nonatomic) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) UILabel *loadingLabel;
+@property (nonatomic) UIView *loadingPage;
 @property(nonatomic) NSString *currentURL;
 @end

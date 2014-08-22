@@ -92,8 +92,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self.scroll setShowsVerticalScrollIndicator:NO];
     [self.view addSubview:self.scroll];
     
-
-    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                              forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -492,7 +490,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                                  
                                  [self.servicesTableView setFrame:CGRectMake(20, 267+20, 280, 0)];
                                  
-                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-160, self.view.frame.size.width - 40, 48)];
+                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-180, self.view.frame.size.width - 40, 48)];
 
                                  
                              }
@@ -574,10 +572,10 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     }
 }
 
-
-
 - (void)dismissKeyboard
 {
+    [self.view endEditing:YES];
+    
     [self.location resignFirstResponder];
     
     [self.service resignFirstResponder];

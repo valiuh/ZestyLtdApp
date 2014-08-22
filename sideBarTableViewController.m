@@ -29,11 +29,9 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondonSB"]];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondonSB"]];
 //
-//    self.tableView.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0f];
+    self.tableView.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0f];
 //    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondon"]];
     
     //    self.tableView.backgroundColor = [
@@ -187,7 +185,7 @@
  
     header.textLabel.textColor = [UIColor whiteColor];
 //    header.backgroundView.backgroundColor = [UIColor clearColor];
-    header.textLabel.font = [UIFont fontWithName:@"GothicNarrow-Bold" size:20.0f];
+    header.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:20.0f];
     header.textLabel.textAlignment = NSTextAlignmentLeft;
 }
 
@@ -200,7 +198,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
         [label setFont:[UIFont boldSystemFontOfSize:12]];
         NSString *string =[NSString stringWithFormat:@"Discover Zesty"];
-        label.font = [UIFont fontWithName:@"GothicNarrow-Bold" size:20.0f];
+        label.font = [UIFont fontWithName:@"GothamNarrow-Book" size:20.0f];
         label.textColor = [UIColor whiteColor];
         /* Section header is in 0th index... */
         [label setText:string];
@@ -218,7 +216,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
         [label setFont:[UIFont boldSystemFontOfSize:12]];
         NSString *string =[NSString stringWithFormat:@"Zesty Information"];
-        label.font = [UIFont fontWithName:@"GothicNarrow-Bold" size:20.0f];
+        label.font = [UIFont fontWithName:@"GothamNarrow-Book" size:20.0f];
         label.textColor = [UIColor whiteColor];
         /* Section header is in 0th index... */
         [label setText:string];
