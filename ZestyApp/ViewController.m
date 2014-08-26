@@ -909,32 +909,59 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
     if (tableView == self.startAutocompleteTableView) {
         
-        NSLog(@"LIST CELL SELECTED");
+                NSLog(@"LIST CELL SELECTED");
+                
+                UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+                self.service.text = selectedCell.textLabel.text;
+                
+                NSArray *visibleCells = [self.collectionView visibleCells];
+                for (iconCell *cell in visibleCells) {
+                    
+                    cell.tickImage.hidden = YES;
+                    cell.selected = NO;
+                    cell.alpha = 0.9f;
+                    
+                    cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:cell.tag]];
+                    
+                }
+                
+                self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
+                self.service.layer.borderWidth = 1.0f;
+
+                
+                self.startAutocompleteTableView.hidden = YES;
+                
+                self.screenTap.enabled = YES;
+                
+                [self dismissKeyboard];
+
+//                [self keyboardWillHide];
         
-        UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-        self.service.text = selectedCell.textLabel.text;
-        
-        NSArray *visibleCells = [self.collectionView visibleCells];
-        for (iconCell *cell in visibleCells) {
-            
-            cell.tickImage.hidden = YES;
-            cell.selected = NO;
-            cell.alpha = 0.9f;
-            
-            cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:cell.tag]];
+        UINavigationBar *navBar = self.navigationController.navigationBar;
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        float animationDuration;
+        if(statusBarFrame.size.height > 20) { // in-call
+            animationDuration = 0.2;
+        } else { // normal status bar
+            animationDuration = 0.2;
         }
         
-        self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
-        self.service.layer.borderWidth = 1.0f;
+        [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                                withAnimation:UIStatusBarAnimationSlide];
+        [UIView animateWithDuration:animationDuration animations:^{
+            
+            navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                      statusBarFrame.size.height + 16,
+                                      navBar.frame.size.width,
+                                      navBar.frame.size.height);
+            
+        } completion:nil];
+        
+        // Animate the current view back to its original position
+        [UIView animateWithDuration:0.3f animations:^ {
+            self.view.frame = CGRectMake(0, 0, 320, 568);
+        }];
 
-        
-        self.startAutocompleteTableView.hidden = YES;
-        
-        self.screenTap.enabled = YES;
-        
-        [self dismissKeyboard];
-
-        [self keyboardWillHide];
         
     }
     
@@ -949,6 +976,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         self.service.layer.borderWidth = 1.0f;
 
         self.autocompleteTableView.hidden = YES;
+        
+        
     }
     
     if (tableView == self.servicesTableView) {
@@ -971,7 +1000,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //        selectedCell.tickImage.hidden = YES;
         
 //
-        [self showServices:self];
+//        [self showServices:self];
         
         self.service.text = cell.textLabel.text;
         self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
