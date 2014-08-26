@@ -43,6 +43,7 @@
 		F32796E8197FBA1000082B6A /* sideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796E7197FBA1000082B6A /* sideBarTableViewController.m */; };
 		F32796EE1981149300082B6A /* iconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796ED1981149300082B6A /* iconCell.m */; };
 		F32796F1198151B300082B6A /* bookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796F0198151B300082B6A /* bookingViewController.m */; };
+		F3AEEA8119ACA5060075DDA1 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,9 @@
 		F32796ED1981149300082B6A /* iconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iconCell.m; path = ../iconCell.m; sourceTree = "<group>"; };
 		F32796EF198151B300082B6A /* bookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bookingViewController.h; path = ../bookingViewController.h; sourceTree = "<group>"; };
 		F32796F0198151B300082B6A /* bookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bookingViewController.m; path = ../bookingViewController.m; sourceTree = "<group>"; };
+		F3AEEA7F19ACA5060075DDA1 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = ../InfoViewController.h; sourceTree = "<group>"; };
+		F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = ../InfoViewController.m; sourceTree = "<group>"; };
+		F3AEEA8319ACB8A40075DDA1 /* Zesty.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zesty.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		F327968F19654B7200082B6A = {
 			isa = PBXGroup;
 			children = (
+				F3AEEA8319ACB8A40075DDA1 /* Zesty.mobileprovision */,
 				F32796A119654B7200082B6A /* ZestyApp */,
 				F32796C319654B7300082B6A /* ZestyAppTests */,
 				F327969A19654B7200082B6A /* Frameworks */,
@@ -174,6 +179,8 @@
 				F32796E7197FBA1000082B6A /* sideBarTableViewController.m */,
 				F32796EF198151B300082B6A /* bookingViewController.h */,
 				F32796F0198151B300082B6A /* bookingViewController.m */,
+				F3AEEA7F19ACA5060075DDA1 /* InfoViewController.h */,
+				F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */,
 				F32796B619654B7200082B6A /* Images.xcassets */,
 				F32796A219654B7200082B6A /* Supporting Files */,
 			);
@@ -282,6 +289,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ZestyLtd;
 				TargetAttributes = {
+					F327969719654B7200082B6A = {
+						DevelopmentTeam = 56S6UBF69V;
+					};
 					F32796BB19654B7300082B6A = {
 						TestTargetID = F327969719654B7200082B6A;
 					};
@@ -351,6 +361,7 @@
 			files = (
 				F32796B519654B7200082B6A /* ViewController.m in Sources */,
 				F32796F1198151B300082B6A /* bookingViewController.m in Sources */,
+				F3AEEA8119ACA5060075DDA1 /* InfoViewController.m in Sources */,
 				F32796AC19654B7200082B6A /* AppDelegate.m in Sources */,
 				F32796E8197FBA1000082B6A /* sideBarTableViewController.m in Sources */,
 				F32796A819654B7200082B6A /* main.m in Sources */,
@@ -490,10 +501,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZestyApp/ZestyApp-Prefix.pch";
 				INFOPLIST_FILE = "ZestyApp/ZestyApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -503,10 +519,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZestyApp/ZestyApp-Prefix.pch";
 				INFOPLIST_FILE = "ZestyApp/ZestyApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

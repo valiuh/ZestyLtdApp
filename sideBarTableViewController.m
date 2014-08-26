@@ -8,6 +8,7 @@
 
 #import "sideBarTableViewController.h"
 #import "SWRevealViewController.h"
+#import "InfoViewController.h"
 
 
 @interface sideBarTableViewController ()
@@ -228,7 +229,6 @@
     }
     
     return 0;
-
     
 }
 
@@ -239,9 +239,51 @@
     NSArray *array = [dictionary objectForKey:@"data"];
     selectedCell = [array objectAtIndex:indexPath.row];
     
+    
     NSLog(@"%@", selectedCell);
     
+    [self performSegueWithIdentifier:@"info" sender:selectedCell];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    InfoViewController *controller = (InfoViewController *)segue.destinationViewController;
+
+    if ([sender isEqualToString:@"About Zesty"]) {
+        
+        NSLog(@"Zesty");        
+        [controller.sideBarText setText:@"tflyglbv v vh/h  lhv cfxyt ytgp ol h."];
+
+        
+        
+        
+        
+        
+        
+    } else if ([sender isEqualToString:@"Press"]) {
+        NSLog(@"Press");
+    } else if ([sender isEqualToString:@"Blog"]) {
+        NSLog(@"go to blog page");
+    }else if ([sender isEqualToString:@"Trust & Safety"]) {
+        NSLog(@"go to blog page");
+    }else if ([sender isEqualToString:@"Terms & Conditions"]) {
+        NSLog(@"go to Terms & Conditions page");
+    }else if ([sender isEqualToString:@"Privacy Policy"]) {
+        NSLog(@"go to Privacy Policy page");
+    }
+
+    
+        controller.navigationController.navigationBar.translucent = NO;
+        controller.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+        controller.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+        UIImageView *title = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 20)];
+        [title setContentMode:UIViewContentModeScaleAspectFit];
+        title.image = [UIImage imageNamed:@"zestyLogo"];
+        controller.navigationItem.titleView = title;
+  
+    
 }
 
 @end

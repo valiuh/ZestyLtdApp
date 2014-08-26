@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface sideBarTableViewController : UITableViewController <UITableViewDelegate>
+@interface sideBarTableViewController : UITableViewController <UITableViewDelegate, UIWebViewDelegate>
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @property (nonatomic) UITableView *mainTable;
