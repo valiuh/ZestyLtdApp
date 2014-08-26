@@ -951,7 +951,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         [UIView animateWithDuration:animationDuration animations:^{
             
             navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                      statusBarFrame.size.height + 16,
+                                      statusBarFrame.size.height + 20,
                                       navBar.frame.size.width,
                                       navBar.frame.size.height);
             
@@ -1000,7 +1000,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //        selectedCell.tickImage.hidden = YES;
         
 //
-//        [self showServices:self];
+        [self showServices:self];
         
         self.service.text = cell.textLabel.text;
         self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
