@@ -8,6 +8,7 @@
 
 #import "InfoViewController.h"
 #import "ViewController.h"
+#import "SWRevealViewController.h"
 
 @interface InfoViewController ()
 
@@ -28,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0/255.0 green:87.0/255.0 blue:158.0/255.0 alpha:1.0];
     UIImageView *title = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 20)];
     [title setContentMode:UIViewContentModeScaleAspectFit];
@@ -43,15 +44,19 @@
     self.navigationItem.rightBarButtonItem = phoneButton;
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                   initWithImage:[UIImage imageNamed:@"backIcon"]
+                                   initWithImage:[UIImage imageNamed:@"menuIcon"]
                                    style:UIBarButtonItemStylePlain
-                                   target:self
-                                   action:@selector(cancel:)];
+                                   target:self.revealViewController
+                                   action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
-    self.sideBarText = [[UITextField alloc]initWithFrame:CGRectMake(20, 100, 240, 120)];
-    self.sideBarText.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondonSB"]];
+
+    
+    self.sideBarText = [[UIScrollView alloc]initWithFrame:self.view.frame];
+    [self.sideBarText setContentSize:CGSizeMake(320, 800)];
+    self.sideBarText.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.sideBarText];
     
 }
@@ -65,9 +70,7 @@
 -(IBAction)cancel:(UIBarButtonItem *)sender
 {
     //go back to the login page
-    
-    [self performSegueWithIdentifier:@"homeScreen" sender:self];
-    
+        
 }
 -(void)call:(UIBarButtonItem *)sender
 {

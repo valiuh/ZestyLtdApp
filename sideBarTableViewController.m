@@ -9,6 +9,7 @@
 #import "sideBarTableViewController.h"
 #import "SWRevealViewController.h"
 #import "InfoViewController.h"
+#import "ViewController.h"
 
 
 @interface sideBarTableViewController ()
@@ -39,14 +40,14 @@
     self.tableView.separatorColor = [UIColor clearColor];
  
     //Initialize the iconArray
-    self.sideBarIcons1 = [[NSMutableArray alloc]initWithObjects:@"zestySB",@"pressSB.png",@"blogSB.png", nil];
+    self.sideBarIcons1 = [[NSMutableArray alloc]initWithObjects:@"zestySB",@"zestySB",@"pressSB.png",@"blogSB.png", nil];
     self.sideBarIcons2 = [[NSMutableArray alloc]initWithObjects:@"trustSB",@"termsSB",@"privacySB", nil];
     
     //Initialize the dataArray
     self.dataArray = [[NSMutableArray alloc] init];
     
     //First section data
-    NSArray *firstItemsArray = [[NSArray alloc] initWithObjects:@"About Zesty", @"Press", @"Blog", nil];
+    NSArray *firstItemsArray = [[NSArray alloc] initWithObjects:@"Home",@"About Zesty", @"Press", @"Blog", nil];
     NSDictionary *firstItemsArrayDict = [NSDictionary dictionaryWithObject:firstItemsArray forKey:@"data"];
     [self.dataArray addObject:firstItemsArrayDict];
     
@@ -108,37 +109,45 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.tag = indexPath.row;
     
-//    cell.textLabel.frame = CGRectMake(0, 20, 100, 60);
-    
-    
-    if (indexPath.section == 0) {
-        
-        
-        if (cell.tag == 0){
-            cell.backgroundColor = [UIColor colorWithRed:55.0/255.0 green:86.0/255.0 blue:129.0/255.0 alpha:0.50];
-        } else if (cell.tag == 1){
-            cell.backgroundColor = [UIColor colorWithRed:61.0/255.0 green:95.0/255.0 blue:143.0/255.0 alpha:0.50];
-        } else if (cell.tag == 2){
-            cell.backgroundColor = [UIColor colorWithRed:67.0/255.0 green:105.0/255.0 blue:157.0/255.0 alpha:0.50];
-        }
-        
-    } else if (indexPath.section == 1){
-        
-        if (cell.tag == 0){
-            cell.backgroundColor = [UIColor colorWithRed:73.0/255.0 green:114.0/255.0 blue:171.0/255.0 alpha:0.50];
-        } else if (cell.tag == 1){
-            cell.backgroundColor = [UIColor colorWithRed:84.0/255.0 green:124.0/255.0 blue:182.0/255.0 alpha:0.50];
-        } else if (cell.tag == 2){
-            cell.backgroundColor = [UIColor colorWithRed:98.0/255.0 green:135.0/255.0 blue:188.0/255.0 alpha:0.50];
-        }
+    cell.backgroundColor = [UIColor colorWithRed:55.0/255.0 green:86.0/255.0 blue:129.0/255.0 alpha:0.50];
 
-        
-    }
     
+//    
+//    if (indexPath.section == 0) {
+//        
+//        
+//        if (cell.tag == 0){
+//            cell.backgroundColor = [UIColor colorWithRed:55.0/255.0 green:86.0/255.0 blue:129.0/255.0 alpha:0.50];
+//        } else if (cell.tag == 1){
+//            cell.backgroundColor = [UIColor colorWithRed:61.0/255.0 green:95.0/255.0 blue:143.0/255.0 alpha:0.50];
+//        } else if (cell.tag == 2){
+//            cell.backgroundColor = [UIColor colorWithRed:67.0/255.0 green:105.0/255.0 blue:157.0/255.0 alpha:0.50];
+//        } else if (cell.tag == 3){
+//            cell.backgroundColor = [UIColor redColor];
+//        }
+//        
+//    } else if (indexPath.section == 1){
+//        
+//        if (cell.tag == 0){
+//            cell.backgroundColor = [UIColor colorWithRed:73.0/255.0 green:114.0/255.0 blue:171.0/255.0 alpha:0.50];
+//        } else if (cell.tag == 1){
+//            cell.backgroundColor = [UIColor colorWithRed:84.0/255.0 green:124.0/255.0 blue:182.0/255.0 alpha:0.50];
+//        } else if (cell.tag == 2){
+//            cell.backgroundColor = [UIColor colorWithRed:98.0/255.0 green:135.0/255.0 blue:188.0/255.0 alpha:0.50];
+//        }
+//
+//        
+//    }
+//    
     
     UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(10 , 15, 20 , 20)];
     if (indexPath.section == 0){
         imv.image = [UIImage imageNamed:[self.sideBarIcons1 objectAtIndex:indexPath.row]];
+        if (cell.tag == 0) {
+
+            imv.tintColor = [UIColor whiteColor];
+            
+        }
     }else if(indexPath.section == 1){
         imv.image = [UIImage imageNamed:[self.sideBarIcons2 objectAtIndex:indexPath.row]];
     }
@@ -229,7 +238,6 @@
     }
     
     return 0;
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -242,47 +250,51 @@
     
     NSLog(@"%@", selectedCell);
     
-    [self performSegueWithIdentifier:@"info" sender:selectedCell];
+    if ([selectedCell isEqualToString:@"Home"]) {
+        
+        [self performSegueWithIdentifier:@"showHome" sender:selectedCell];
+
+    } else {
+        
+        [self performSegueWithIdentifier:@"showInfo" sender:selectedCell];
+
+    }
+    
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    InfoViewController *controller = (InfoViewController *)segue.destinationViewController;
-
-    if ([sender isEqualToString:@"About Zesty"]) {
-        
-        NSLog(@"Zesty");        
-        [controller.sideBarText setText:@"tflyglbv v vh/h  lhv cfxyt ytgp ol h."];
-
-        
-        
-        
-        
-        
-        
-    } else if ([sender isEqualToString:@"Press"]) {
-        NSLog(@"Press");
-    } else if ([sender isEqualToString:@"Blog"]) {
-        NSLog(@"go to blog page");
-    }else if ([sender isEqualToString:@"Trust & Safety"]) {
-        NSLog(@"go to blog page");
-    }else if ([sender isEqualToString:@"Terms & Conditions"]) {
-        NSLog(@"go to Terms & Conditions page");
-    }else if ([sender isEqualToString:@"Privacy Policy"]) {
-        NSLog(@"go to Privacy Policy page");
-    }
-
     
-        controller.navigationController.navigationBar.translucent = NO;
-        controller.navigationController.navigationBar.backgroundColor = [UIColor redColor];
-        controller.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-        UIImageView *title = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 20)];
-        [title setContentMode:UIViewContentModeScaleAspectFit];
-        title.image = [UIImage imageNamed:@"zestyLogo"];
-        controller.navigationItem.titleView = title;
-  
+    
+    // Set the title of navigation bar by using the menu items
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
+    destViewController.title = @"Hello";
+    
+    // Set the photo if it navigates to the PhotoView
+    if ([segue.identifier isEqualToString:@"showInfo"]) {
+        InfoViewController *photoController = (InfoViewController*)segue.destinationViewController;
+        photoController.title = @"hello";
+        
+    } else if ([segue.identifier isEqualToString:@"showHome"]){
+        
+        ViewController *homeScreen = (ViewController *)segue.destinationViewController;
+        
+    }
+    
+    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
+        
+        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
+            
+            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
+            [navController setViewControllers: @[dvc] animated: NO ];
+            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        };
+        
+    }
     
 }
 

@@ -14,6 +14,6 @@
 
 @property (nonatomic) UIWebView *blogPage;
 
-@property (nonatomic) UITextField *sideBarText;
+@property (nonatomic) UIScrollView *sideBarText;
 
 @end

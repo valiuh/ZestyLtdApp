@@ -115,15 +115,15 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     UIBarButtonItem *menuButton = [[UIBarButtonItem alloc]
                                        initWithImage:[UIImage imageNamed:@"menuIcon"]
                                        style:UIBarButtonItemStylePlain
-                                       target:nil
-                                       action:nil];
+                                       target:self.revealViewController
+                                       action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = menuButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 
     
     // Set the sidebar button action. When it's tapped, it'll show up the sidebar.
-    self.navigationItem.leftBarButtonItem.target = self.revealViewController;
-    self.navigationItem.leftBarButtonItem.action = @selector(revealToggle:);
+//    self.navigationItem.leftBarButtonItem.target = self.revealViewController;
+//    self.navigationItem.leftBarButtonItem.action = @selector(revealToggle:);
     // Set the gestures up so the sideBar can be closed
     // Set the gesture
     SWRevealViewController *revealController = [self revealViewController];
