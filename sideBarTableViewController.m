@@ -31,14 +31,17 @@
 {
     [super viewDidLoad];
     
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondonSB"]];
-//
+
     self.tableView.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0f];
-//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondon"]];
+//    self.tableView.backgroundColor = [UIColor clearColor];
     
-    //    self.tableView.backgroundColor = [
-    self.tableView.separatorColor = [UIColor clearColor];
- 
+//    UIView *backgroundTable = [[UIView alloc]initWithFrame:self.view.frame];
+//    backgroundTable.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:backgroundTable];
+//    [self.view sendSubviewToBack:backgroundTable];
+    
+    self.tableView.separatorColor = [UIColor colorWithRed:87.0/255.0 green:107.0/255.0 blue:135.0/255.0 alpha:0.50];
+    
     //Initialize the iconArray
     self.sideBarIcons1 = [[NSMutableArray alloc]initWithObjects:@"zestySB",@"zestySB",@"pressSB.png",@"blogSB.png", nil];
     self.sideBarIcons2 = [[NSMutableArray alloc]initWithObjects:@"trustSB",@"termsSB",@"privacySB", nil];
@@ -104,13 +107,22 @@
     NSDictionary *dictionary = [self.dataArray objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"data"];
     NSString *cellValue = [array objectAtIndex:indexPath.row];
-    cell.textLabel.text = cellValue;
-    cell.textLabel.font = [UIFont fontWithName:@"GothicNarrow-Medium" size:18.0f];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.tag = indexPath.row;
     
     cell.backgroundColor = [UIColor colorWithRed:55.0/255.0 green:86.0/255.0 blue:129.0/255.0 alpha:0.50];
+//    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBackground"]];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, 280, 30)];
+    [cell.contentView addSubview:label];
+    label.text = cellValue;
+    label.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:18.0f];
+    label.textColor = [UIColor whiteColor];
+    label.tag = indexPath.row;
+    
+    UIView *selectionColor = [[UIView alloc] init];
+    selectionColor.backgroundColor = [UIColor colorWithRed:(73/255.0) green:(114/255.0) blue:(171/255.0) alpha:1];
+    cell.selectedBackgroundView = selectionColor;
 
+    cell.tag = indexPath.row;
     
 //    
 //    if (indexPath.section == 0) {
@@ -140,7 +152,7 @@
 //    }
 //    
     
-    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(10 , 15, 20 , 20)];
+    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 20 , 20)];
     if (indexPath.section == 0){
         imv.image = [UIImage imageNamed:[self.sideBarIcons1 objectAtIndex:indexPath.row]];
         if (cell.tag == 0) {
@@ -168,22 +180,32 @@
     return 4;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    if(section == 0)
-        return @"    Discover Zesty";
-    if(section == 1)
-        return @"    Legal";
-    
-    return 0;
-}
+//- (UILabel *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    
+//    if(section == 0){
+//        
+//        UILabel *header = [[UILabel alloc]initWithFrame:CGRectMake(20, 100, self.tableView.frame.size.width, self.tableView.frame.size.height)];
+//        header.text = @"Discover Zesty";
+//        header.backgroundColor = [UIColor redColor];
+//        [self.tableView addSubview:header];
+//        
+//        return header;
+////        return @"    Discover Zesty";
+//        
+//    }
+//    if(section == 1){
+////        return @"    Legal";
+//    }
+//    
+//    return 0;
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 30;
+        return 40;
     } else if(section == 1){
-        return 30;
+        return 40;
     }
     
     return YES;
@@ -205,7 +227,7 @@
     
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 30, tableView.frame.size.width, 18)];
         /* Create custom view to display section header... */
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, tableView.frame.size.width, 18)];
         [label setFont:[UIFont boldSystemFontOfSize:12]];
         NSString *string =[NSString stringWithFormat:@"Discover Zesty"];
         label.font = [UIFont fontWithName:@"GothamNarrow-Book" size:20.0f];
@@ -221,7 +243,7 @@
     
     if(section == 1){
         
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 10, tableView.frame.size.width, 18)];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 10, tableView.frame.size.width, 10)];
         /* Create custom view to display section header... */
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
         [label setFont:[UIFont boldSystemFontOfSize:12]];
@@ -275,14 +297,110 @@
     
     // Set the photo if it navigates to the PhotoView
     if ([segue.identifier isEqualToString:@"showInfo"]) {
-        InfoViewController *photoController = (InfoViewController*)segue.destinationViewController;
-        photoController.title = @"hello";
+        InfoViewController *page = (InfoViewController*)segue.destinationViewController;
         
-    } else if ([segue.identifier isEqualToString:@"showHome"]){
+        page.sideBarText = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height)];
+        [page.sideBarText setContentSize:CGSizeMake(320, 800)];
         
-        ViewController *homeScreen = (ViewController *)segue.destinationViewController;
+        page.infoText = [[UITextView alloc] initWithFrame:CGRectMake(20, 64, 280, 800)];
+        page.infoText.backgroundColor = [UIColor clearColor];
+        page.infoText.textColor = [UIColor whiteColor];
+        [page.infoText setTextAlignment:NSTextAlignmentJustified];
+        page.infoText.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:14.0f];
+        page.infoText.scrollEnabled = NO;
+        
+        page.infoPageTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
+        page.infoPageTitle.textColor = [UIColor whiteColor];
+        page.infoPageTitle.backgroundColor = [UIColor clearColor];
+        [page.infoPageTitle setTextAlignment:NSTextAlignmentCenter];
+        page.infoPageTitle.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:24.0f];
+
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"infoPage" ofType:@"plist"];
+        
+        // Load the file content and read the data into arrays
+        NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+        
+        
+        if ( [sender isEqualToString:@"About Zesty"] ) {
+        
+            page.infoPageTitle.text = @"About Zesty";
+            
+            page.infoText.text= [dict objectForKey:@"aboutZesty"];
+
+            
+        } else if ([sender isEqualToString:@"Press"]){
+            
+            page.infoPageTitle.text = @"Press Enquiries";
+
+            page.infoText.text= [dict objectForKey:@"press"];
+            
+
+
+        } else if ([sender isEqualToString:@"Trust & Safety"]){
+         
+            page.infoPageTitle.text = @"Trust & Safety";
+            
+            page.infoText.text= [dict objectForKey:@"trust"];
+            
+            page.infoText.frame = CGRectMake(20, 64, 280, 1000);
+            
+            page.sideBarText.contentSize = CGSizeMake(320, 1100);
+
+            
+        }else if ([sender isEqualToString:@"Privacy Policy"]){
+            
+            page.infoPageTitle.text = @"Privacy Policy";
+            
+            page.infoText.text= [dict objectForKey:@"privacy"];
+            
+            page.infoText.frame = CGRectMake(20, 64, 280, 5750);
+            
+            page.sideBarText.contentSize = CGSizeMake(320, 5750);
+            
+            
+        } else if ([sender isEqualToString:@"Terms & Conditions"]){
+            
+            page.infoPageTitle.text = @"Terms & Conditions";
+            
+            page.infoText.text= [dict objectForKey:@"terms"];
+            
+            page.infoText.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:12.0f];
+            
+            page.infoText.frame = CGRectMake(20, 64, 280, 8000);
+            
+            page.sideBarText.contentSize = CGSizeMake(320, 8000);
+            
+            
+        } else if ([sender isEqualToString:@"Blog"]){
+
+
+            
+            page.blogPage = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, 320, 640)];
+            
+            NSString * urlAddress = [NSString stringWithFormat:@"http://blog.zesty.co.uk/"];
+            
+            NSURL *url = [NSURL URLWithString:urlAddress];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+            [page.blogPage loadRequest:requestObj];
+            
+
+        }
+
+
+        
+        
+        
+        
         
     }
+    else if ([segue.identifier isEqualToString:@"showHome"]){
+        
+//        ViewController *homeScreen = (ViewController *)segue.destinationViewController;
+        
+    }
+    
+    
     
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
@@ -292,6 +410,8 @@
             UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
             [navController setViewControllers: @[dvc] animated: NO ];
             [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+            
+            
         };
         
     }

@@ -16,4 +16,8 @@
 
 @property (nonatomic) UIScrollView *sideBarText;
 
+@property (nonatomic) UITextView *infoText;
+
+@property (nonatomic) UILabel *infoPageTitle;
+
 @end

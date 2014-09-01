@@ -44,6 +44,7 @@
 		F32796EE1981149300082B6A /* iconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796ED1981149300082B6A /* iconCell.m */; };
 		F32796F1198151B300082B6A /* bookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796F0198151B300082B6A /* bookingViewController.m */; };
 		F3AEEA8119ACA5060075DDA1 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */; };
+		F3CFA68819B47923007DE224 /* infoPage.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3CFA68719B47923007DE224 /* infoPage.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		F3AEEA7F19ACA5060075DDA1 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = ../InfoViewController.h; sourceTree = "<group>"; };
 		F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = ../InfoViewController.m; sourceTree = "<group>"; };
 		F3AEEA8319ACB8A40075DDA1 /* Zesty.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zesty.mobileprovision; sourceTree = "<group>"; };
+		F3CFA68719B47923007DE224 /* infoPage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = infoPage.plist; path = ../infoPage.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				F32796E3197FB88F00082B6A /* SWRevealViewController.h */,
 				F32796E4197FB88F00082B6A /* SWRevealViewController.m */,
 				F32796A319654B7200082B6A /* ZestyApp-Info.plist */,
+				F3CFA68719B47923007DE224 /* infoPage.plist */,
 				F32796A419654B7200082B6A /* InfoPlist.strings */,
 				F32796A719654B7200082B6A /* main.m */,
 				F32796A919654B7200082B6A /* ZestyApp-Prefix.pch */,
@@ -339,6 +342,7 @@
 				F31B334D199E1C570015422F /* GothamNarrow-ThinItalic.otf in Resources */,
 				F31B334E199E1C570015422F /* GothamNarrow-Ultra.otf in Resources */,
 				F31B334F199E1C570015422F /* GothamNarrow-UltraItalic.otf in Resources */,
+				F3CFA68819B47923007DE224 /* infoPage.plist in Resources */,
 				F31B3350199E1C570015422F /* GothamNarrow-XLight.otf in Resources */,
 				F31B3351199E1C570015422F /* GothamNarrow-XLightItalic.otf in Resources */,
 			);

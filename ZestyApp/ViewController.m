@@ -435,7 +435,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                             
                              if( IS_IPHONE_5 )
                              {
-                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 200-25+20, 280, 48)];
+                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 200-25, 280, 48)];
                                  
                                  [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 180)];
                                  
@@ -480,7 +480,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                                  
                                  [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 0)];
                                  
-                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 48)];
+//                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-80-74, self.view.frame.size.width - 40, 48)];
 
                                  
                              }

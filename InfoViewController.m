@@ -54,10 +54,16 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondonSB"]];
 
     
-    self.sideBarText = [[UIScrollView alloc]initWithFrame:self.view.frame];
-    [self.sideBarText setContentSize:CGSizeMake(320, 800)];
-    self.sideBarText.backgroundColor = [UIColor clearColor];
+ 
     [self.view addSubview:self.sideBarText];
+    
+    [self.sideBarText addSubview:self.infoPageTitle];
+
+    [self.sideBarText addSubview:self.infoText];
+    
+        
+    [self.view addSubview:self.blogPage];
+
     
 }
 
