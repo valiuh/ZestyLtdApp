@@ -23,8 +23,6 @@
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
--(void)sayHello;
-
 @end
 //BOOL selectedCell;
 //BOOL isSelectable;
@@ -115,15 +113,15 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     UIBarButtonItem *menuButton = [[UIBarButtonItem alloc]
                                        initWithImage:[UIImage imageNamed:@"menuIcon"]
                                        style:UIBarButtonItemStylePlain
-                                       target:self.revealViewController
-                                       action:@selector(revealToggle:)];
+                                       target:nil
+                                       action:nil];
     self.navigationItem.leftBarButtonItem = menuButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 
     
     // Set the sidebar button action. When it's tapped, it'll show up the sidebar.
-//    self.navigationItem.leftBarButtonItem.target = self.revealViewController;
-//    self.navigationItem.leftBarButtonItem.action = @selector(revealToggle:);
+    self.navigationItem.leftBarButtonItem.target = self.revealViewController;
+    self.navigationItem.leftBarButtonItem.action = @selector(revealToggle:);
     // Set the gestures up so the sideBar can be closed
     // Set the gesture
     SWRevealViewController *revealController = [self revealViewController];
@@ -435,7 +433,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                             
                              if( IS_IPHONE_5 )
                              {
-                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 200-25, 280, 48)];
+                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 200-25+20, 280, 48)];
                                  
                                  [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 180)];
                                  
@@ -480,7 +478,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                                  
                                  [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 0)];
                                  
-//                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-80-74, self.view.frame.size.width - 40, 48)];
+                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 48)];
 
                                  
                              }
@@ -605,7 +603,12 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 
 -(IBAction)editingBegun:(id)sender{
     
+
+    
     if ([sender tag] == 2) {
+        
+        self.screenTap.enabled = YES;
+
         
         //Do some cool sh*t to the location text field
         self.autocompleteTableView.hidden = YES;
@@ -619,9 +622,33 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     }
     else if([sender tag] == 3){
         
-        [self keyboardWillShow];
-        
         self.screenTap.enabled = NO;
+
+        UINavigationBar *navBar = self.navigationController.navigationBar;
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        float animationDuration;
+        if(statusBarFrame.size.height > 20) { // in-call
+            animationDuration = 0.2;
+        } else { // normal status bar
+            animationDuration = 0.2;
+        }
+        
+   
+        [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                                withAnimation:UIStatusBarAnimationSlide];
+        [UIView animateWithDuration:animationDuration animations:^{
+            navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                      -navBar.frame.size.height,
+                                      navBar.frame.size.width,
+                                      navBar.frame.size.height);
+        } completion:nil];
+
+        
+        [UIView animateWithDuration:0.3f animations:^ {
+            self.view.frame = CGRectMake(0, -120, 320, 768);}];
+        
+//        [self keyboardWillShow];
+        
         self.scroll.scrollEnabled = NO;
         
         //Do some cool shit to the service text field
@@ -688,9 +715,39 @@ UIPanGestureRecognizer *labelBackgroundDrag;
             
             self.startAutocompleteTableView.hidden = YES;
             self.scroll.scrollEnabled = YES;
+            
+            
+            UINavigationBar *navBar = self.navigationController.navigationBar;
+            CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+            float animationDuration;
+            if(statusBarFrame.size.height > 20) { // in-call
+                animationDuration = 0.2;
+            } else { // normal status bar
+                animationDuration = 0.2;
+            
+            
+            navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                      -200,
+                                      navBar.frame.size.width,
+                                      navBar.frame.size.height);
+            
+
+            }
+            
+            [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                                    withAnimation:UIStatusBarAnimationSlide];
+            [UIView animateWithDuration:animationDuration animations:^{
+                
+                navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                          20,
+                                          navBar.frame.size.width,
+                                          navBar.frame.size.height);
+                
+            } completion:nil];
+
 
             
-            [self keyboardWillHide];
+            [self dismissKeyboard];
 
         }
         
@@ -726,7 +783,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         self.service.layer.borderColor =[[UIColor whiteColor]CGColor];
         
         _serviceIcon.tintColor = [UIColor whiteColor];
-
+       
     }
 }
 
@@ -736,6 +793,39 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self dismissKeyboard];
     
     [self keyboardWillHide];
+    
+                if (textField.tag == 3) {
+                
+                
+                
+                UINavigationBar *navBar = self.navigationController.navigationBar;
+                CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+                float animationDuration;
+                if(statusBarFrame.size.height > 20) { // in-call
+                    animationDuration = 0.2;
+                } else { // normal status bar
+                    animationDuration = 0.2;
+                    
+                    
+                    navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                              -200,
+                                              navBar.frame.size.width,
+                                              navBar.frame.size.height);
+                    
+                    
+                }
+                
+                [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                                        withAnimation:UIStatusBarAnimationSlide];
+                [UIView animateWithDuration:animationDuration animations:^{
+                    
+                    navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                              20,
+                                              navBar.frame.size.width,
+                                              navBar.frame.size.height);
+                    
+                } completion:nil];
+    }
     
     NSLog(@"Delegate method being sent");
     
@@ -808,6 +898,11 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         [cell.textLabel setTextColor:[UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:1.0]];
         cell.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:16.0f];
         cell.backgroundColor = [UIColor whiteColor];
+        
+        UIView *selectionColor = [[UIView alloc] init];
+        selectionColor.backgroundColor = [UIColor colorWithRed:(73/255.0) green:(114/255.0) blue:(171/255.0) alpha:1];
+        cell.selectedBackgroundView = selectionColor;
+
         return cell;
     }
     
@@ -927,15 +1022,11 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                 
                 self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
                 self.service.layer.borderWidth = 1.0f;
-
+        
                 
                 self.startAutocompleteTableView.hidden = YES;
                 
                 self.screenTap.enabled = YES;
-                
-                [self dismissKeyboard];
-
-//                [self keyboardWillHide];
         
         UINavigationBar *navBar = self.navigationController.navigationBar;
         CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
@@ -951,16 +1042,17 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         [UIView animateWithDuration:animationDuration animations:^{
             
             navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                      statusBarFrame.size.height + 20,
+                                      20,
                                       navBar.frame.size.width,
                                       navBar.frame.size.height);
             
         } completion:nil];
         
-        // Animate the current view back to its original position
         [UIView animateWithDuration:0.3f animations:^ {
             self.view.frame = CGRectMake(0, 0, 320, 568);
         }];
+        
+        [self dismissKeyboard];
 
         
     }
@@ -983,6 +1075,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     if (tableView == self.servicesTableView) {
         
         NSLog(@"Service cell selected");
+        
+
     
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
@@ -1221,52 +1315,52 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 -(void)keyboardWillShow {
     // Animate the current view out of the way if the textField is too low down the screen
     
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-    float animationDuration;
+//    UINavigationBar *navBar = self.navigationController.navigationBar;
+//    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+//    float animationDuration;
+////
+////    if(statusBarFrame.size.height > 20) { // in-call
+////        animationDuration = 0.2;
+////    } else { // normal status bar
+////        animationDuration = 0.2;
+////    }
+//
+////    if ([self.service isFirstResponder]) {
+//        [UIView animateWithDuration:0.3f animations:^ {
+//            self.view.frame = CGRectMake(0, -120, 320, 768);}];
     
-    if(statusBarFrame.size.height > 20) { // in-call
-        animationDuration = 0.2;
-    } else { // normal status bar
-        animationDuration = 0.2;
-    }
-
-    if ([self.service isFirstResponder]) {
-        [UIView animateWithDuration:0.3f animations:^ {
-            self.view.frame = CGRectMake(0, -120, 320, 768);}];
-        
-        [[UIApplication sharedApplication] setStatusBarHidden:YES
-                                                withAnimation:UIStatusBarAnimationSlide];
-        [UIView animateWithDuration:animationDuration animations:^{
-            navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                      -navBar.frame.size.height,
-                                      navBar.frame.size.width,
-                                      navBar.frame.size.height);
-                                } completion:nil];
-    }
+//        [[UIApplication sharedApplication] setStatusBarHidden:YES
+//                                                withAnimation:UIStatusBarAnimationSlide];
+//        [UIView animateWithDuration:animationDuration animations:^{
+//            navBar.frame = CGRectMake(navBar.frame.origin.x,
+//                                      -navBar.frame.size.height,
+//                                      navBar.frame.size.width,
+//                                      navBar.frame.size.height);
+//                                } completion:nil];
+//    }
 }
 
 -(void)keyboardWillHide {
     
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-    float animationDuration;
-    if(statusBarFrame.size.height > 20) { // in-call
-        animationDuration = 0.2;
-    } else { // normal status bar
-        animationDuration = 0.2;
-    }
-    
-    [[UIApplication sharedApplication] setStatusBarHidden:NO
-                                            withAnimation:UIStatusBarAnimationSlide];
-    [UIView animateWithDuration:animationDuration animations:^{
-        
-        navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                  statusBarFrame.size.height,
-                                  navBar.frame.size.width,
-                                  navBar.frame.size.height);
-        
-    } completion:nil];
+//    UINavigationBar *navBar = self.navigationController.navigationBar;
+//    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+//    float animationDuration;
+//    if(statusBarFrame.size.height > 20) { // in-call
+//        animationDuration = 0.2;
+//    } else { // normal status bar
+//        animationDuration = 0.2;
+//    }
+//    
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO
+//                                            withAnimation:UIStatusBarAnimationSlide];
+//    [UIView animateWithDuration:animationDuration animations:^{
+//        
+//        navBar.frame = CGRectMake(navBar.frame.origin.x,
+//                                  statusBarFrame.size.height,
+//                                  navBar.frame.size.width,
+//                                  navBar.frame.size.height);
+//        
+//    } completion:nil];
     
     // Animate the current view back to its original position
     [UIView animateWithDuration:0.3f animations:^ {

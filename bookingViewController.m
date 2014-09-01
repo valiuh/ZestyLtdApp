@@ -40,7 +40,7 @@
     self.navigationItem.leftBarButtonItem = backButton;
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
-    self.zestyBooking = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.zestyBooking = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 504)];
     self.zestyBooking.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0];
     self.zestyBooking.delegate = self;
     [self.view addSubview:self.zestyBooking];

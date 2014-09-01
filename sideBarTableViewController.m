@@ -111,7 +111,7 @@
     cell.backgroundColor = [UIColor colorWithRed:55.0/255.0 green:86.0/255.0 blue:129.0/255.0 alpha:0.50];
 //    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cellBackground"]];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, 280, 30)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, 200, 30)];
     [cell.contentView addSubview:label];
     label.text = cellValue;
     label.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:18.0f];
@@ -205,7 +205,7 @@
     if (section == 0) {
         return 40;
     } else if(section == 1){
-        return 40;
+        return 30;
     }
     
     return YES;
