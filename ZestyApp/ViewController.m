@@ -755,9 +755,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         [self rotateImage:self.locationIcon duration:0.2
                     curve:UIViewAnimationCurveEaseIn degrees:0];
-        
-//        [self.location.layer setBorderWidth:1.0f];
-//        _locationIcon.tintColor = [UIColor whiteColor];
+
        
     }else if([sender tag] == 3){
         
@@ -846,7 +844,25 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         if( IS_IPHONE_5 )
         {
             [self.autocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, autocompleteUrls.count * 35)];
-
+            
+            UINavigationBar *navBar = self.navigationController.navigationBar;
+            CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+            float animationDuration;
+            if(statusBarFrame.size.height > 20) { // in-call
+                animationDuration = 0.2;
+            } else { // normal status bar
+                animationDuration = 0.2;
+            
+            [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                                    withAnimation:UIStatusBarAnimationSlide];
+            [UIView animateWithDuration:animationDuration animations:^{
+                
+                navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                          20,
+                                          navBar.frame.size.width,
+                                          navBar.frame.size.height);
+                
+            } completion:nil];}
             
         }
         else

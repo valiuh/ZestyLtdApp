@@ -43,7 +43,7 @@
     self.tableView.separatorColor = [UIColor colorWithRed:87.0/255.0 green:107.0/255.0 blue:135.0/255.0 alpha:0.50];
     
     //Initialize the iconArray
-    self.sideBarIcons1 = [[NSMutableArray alloc]initWithObjects:@"zestySB",@"zestySB",@"pressSB.png",@"blogSB.png", nil];
+    self.sideBarIcons1 = [[NSMutableArray alloc]initWithObjects:@"homeSB",@"zestySB",@"pressSB.png",@"blogSB.png", nil];
     self.sideBarIcons2 = [[NSMutableArray alloc]initWithObjects:@"trustSB",@"termsSB",@"privacySB", nil];
     
     //Initialize the dataArray
