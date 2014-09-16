@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface bookingViewController : UIViewController <UIWebViewDelegate>
+@interface bookingViewController : UIViewController <UIWebViewDelegate, NSURLSessionDelegate>
 
 @property (nonatomic, strong) UIWebView *zestyBooking;
 @property(nonatomic) NSString *searchLocation;

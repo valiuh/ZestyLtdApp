@@ -64,16 +64,24 @@
     
     self.urlAddress = [NSString stringWithFormat:@"http:ios.staging.zesty.co.uk/find/%@/%@/1",self.searchService, self.searchLocation];
     
+//    self.urlAddress = [NSString stringWithFormat:@"http:ios.staging.zesty.co.uk/find/%@/%@/1",self.searchService, self.searchLocation];
+
+//    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:Nil];
+    
     NSURL *url = [NSURL URLWithString:self.urlAddress];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    NSURLRequest* requestObj = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+
     [self.zestyBooking loadRequest:requestObj];
     
     NSLog(@"%@",self.urlAddress);
     NSLog(@"%@", self.searchService);
     
     self.ishome = YES;
-
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -120,6 +128,7 @@
     self.loadingLabel.hidden = YES;
 
     [self.activityIndicator stopAnimating];
+    
 }
 
 //- (void)webViewDidFinishLoading:(UIWebView *)zestyBooking

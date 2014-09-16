@@ -619,6 +619,30 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         [self rotateImage:self.locationIcon duration:0.2
                     curve:UIViewAnimationCurveEaseIn degrees:-90];
         
+        UINavigationBar *navBar = self.navigationController.navigationBar;
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        float animationDuration;
+        if(statusBarFrame.size.height > 20) { // in-call
+            animationDuration = 0.2;
+        } else { // normal status bar
+            animationDuration = 0.2;
+        }
+        
+        [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                                withAnimation:UIStatusBarAnimationSlide];
+        [UIView animateWithDuration:animationDuration animations:^{
+            
+            navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                      20,
+                                      navBar.frame.size.width,
+                                      navBar.frame.size.height);
+            
+        } completion:nil];
+        
+        [UIView animateWithDuration:0.3f animations:^ {
+            self.view.frame = CGRectMake(0, 0, 320, 568);
+        }];
+        
     }
     else if([sender tag] == 3){
         

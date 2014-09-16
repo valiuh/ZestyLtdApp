@@ -124,34 +124,6 @@
 
     cell.tag = indexPath.row;
     
-//    
-//    if (indexPath.section == 0) {
-//        
-//        
-//        if (cell.tag == 0){
-//            cell.backgroundColor = [UIColor colorWithRed:55.0/255.0 green:86.0/255.0 blue:129.0/255.0 alpha:0.50];
-//        } else if (cell.tag == 1){
-//            cell.backgroundColor = [UIColor colorWithRed:61.0/255.0 green:95.0/255.0 blue:143.0/255.0 alpha:0.50];
-//        } else if (cell.tag == 2){
-//            cell.backgroundColor = [UIColor colorWithRed:67.0/255.0 green:105.0/255.0 blue:157.0/255.0 alpha:0.50];
-//        } else if (cell.tag == 3){
-//            cell.backgroundColor = [UIColor redColor];
-//        }
-//        
-//    } else if (indexPath.section == 1){
-//        
-//        if (cell.tag == 0){
-//            cell.backgroundColor = [UIColor colorWithRed:73.0/255.0 green:114.0/255.0 blue:171.0/255.0 alpha:0.50];
-//        } else if (cell.tag == 1){
-//            cell.backgroundColor = [UIColor colorWithRed:84.0/255.0 green:124.0/255.0 blue:182.0/255.0 alpha:0.50];
-//        } else if (cell.tag == 2){
-//            cell.backgroundColor = [UIColor colorWithRed:98.0/255.0 green:135.0/255.0 blue:188.0/255.0 alpha:0.50];
-//        }
-//
-//        
-//    }
-//    
-    
     UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 20 , 20)];
     if (indexPath.section == 0){
         imv.image = [UIImage imageNamed:[self.sideBarIcons1 objectAtIndex:indexPath.row]];
@@ -179,26 +151,6 @@
 {
     return 4;
 }
-
-//- (UILabel *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    
-//    if(section == 0){
-//        
-//        UILabel *header = [[UILabel alloc]initWithFrame:CGRectMake(20, 100, self.tableView.frame.size.width, self.tableView.frame.size.height)];
-//        header.text = @"Discover Zesty";
-//        header.backgroundColor = [UIColor redColor];
-//        [self.tableView addSubview:header];
-//        
-//        return header;
-////        return @"    Discover Zesty";
-//        
-//    }
-//    if(section == 1){
-////        return @"    Legal";
-//    }
-//    
-//    return 0;
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -387,12 +339,6 @@
 
         }
 
-
-        
-        
-        
-        
-        
     }
     else if ([segue.identifier isEqualToString:@"showHome"]){
         
