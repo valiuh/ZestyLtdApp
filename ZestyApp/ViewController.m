@@ -239,12 +239,12 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //
     //
     //view all services button below the collectionView
-    if( IS_IPHONE_5 )
+//    if( IS_IPHONE_5 )
     {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 328+20, self.view.frame.size.width-40, 48)];
-    }
-    else
-    {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 240 , self.view.frame.size.width-40, 48)];
-    }
+//    }
+//    else
+//    {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 240 , self.view.frame.size.width-40, 48)];
+//    }
     [self.viewServices setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3]];
     self.viewServices.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:20.0f];
     [self.viewServices setTitle:@"View All Services" forState:UIControlStateNormal];
@@ -289,18 +289,18 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //
     //
     //setup auto-complete for service textField
-    if( IS_IPHONE_5 )
-    {
+//    if( IS_IPHONE_5 )
+//    {
         self.autocompleteTableView = [[UITableView alloc] initWithFrame:
                                       CGRectMake(20, 184, self.service.frame.size.width, allServices.count * 35) style:UITableViewStylePlain];
-
-    }
-    else
-    {
-        self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-                                      CGRectMake(20, 184, self.service.frame.size.width, (allServices.count /2) * 35) style:UITableViewStylePlain];
-
-    }
+//
+//    }
+//    else
+//    {
+//        self.autocompleteTableView = [[UITableView alloc] initWithFrame:
+//                                      CGRectMake(20, 184, self.service.frame.size.width, (allServices.count /2) * 35) style:UITableViewStylePlain];
+//
+//    }
 
     self.autocompleteTableView.delegate = self;
     self.autocompleteTableView.dataSource = self;
@@ -315,18 +315,18 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     //
     //
     //setup auto-complete for service textField
-    if( IS_IPHONE_5 )
-    {
+//    if( IS_IPHONE_5 )
+//    {
         self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
                                            CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/2 - 10) style:UITableViewStylePlain];
         
-    }
-    else
-    {
-        self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
-                                           CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/4 + 40) style:UITableViewStylePlain];
-        
-    }
+//    }
+//    else
+//    {
+//        self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
+//                                           CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/4 + 40) style:UITableViewStylePlain];
+//        
+//    }
     self.startAutocompleteTableView.delegate = self;
     self.startAutocompleteTableView.dataSource = self;
     self.startAutocompleteTableView.scrollEnabled = YES;
@@ -339,12 +339,12 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
     //collection view
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-    if( IS_IPHONE_5 )
+//    if( IS_IPHONE_5 )
     {_collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10, 204-64, 300, 206) collectionViewLayout:layout];
-    }
-    else
-    {_collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10, 204-74+5, 300, 206/2) collectionViewLayout:layout];
-    }
+//    }
+//    else
+//    {_collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10, 204-74+5, 300, 206/2) collectionViewLayout:layout];
+//    }
     [_collectionView setDataSource:self];
     [_collectionView setDelegate:self];
     [_collectionView setScrollEnabled:YES];
@@ -364,16 +364,17 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self.locationManager startUpdatingLocation];
 //    [self animateSearchFieldsUp];
     
-    if( IS_IPHONE_5 )
-    {
+//    if( IS_IPHONE_5 )
+//    {
         self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 375+20, 280, 0)];
-
-    }
-    else
-    {
-        self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 240+20, 280, 0)];
-
-    }
+//
+        
+//    }
+//    else
+//    {
+//        self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 240+20, 280, 0)];
+//
+//    }
     self.servicesTableView.backgroundColor = [UIColor  clearColor];
     self.servicesTableView.scrollEnabled = YES;
     self.servicesTableView.bounces = NO;
@@ -398,6 +399,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //                                                 name:UIKeyboardWillHideNotification
 //                                               object:nil];
     
+        }
+    }
 }
 
 -(void)showServices:(id)sender
