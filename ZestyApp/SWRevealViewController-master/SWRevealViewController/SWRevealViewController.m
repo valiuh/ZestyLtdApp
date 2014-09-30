@@ -824,11 +824,12 @@ const int FrontViewPositionNone = 0xff;
 
 - (void)revealToggleAnimated:(BOOL)animated
 {
-    FrontViewPosition toggledFrontViewPosition = FrontViewPositionLeft;
+    FrontViewPosition toogledFrontViewPosition = FrontViewPositionLeft;
     if (_frontViewPosition <= FrontViewPositionLeft)
-        toggledFrontViewPosition = FrontViewPositionRight;
+        toogledFrontViewPosition = FrontViewPositionRight;
+    NSLog(@"show sidebar!!");
     
-    [self setFrontViewPosition:toggledFrontViewPosition animated:animated];
+    [self setFrontViewPosition:toogledFrontViewPosition animated:animated];
 }
 
 
@@ -932,7 +933,7 @@ const int FrontViewPositionNone = 0xff;
 - (IBAction)revealToggle:(id)sender
 {    
     [self revealToggleAnimated:YES];
-    
+
 }
 
 
@@ -1145,32 +1146,34 @@ const int FrontViewPositionNone = 0xff;
 - (BOOL)_panGestureShouldBegin
 {
     
-    // forbid gesture if the initial translation is not horizontal
-    UIView *recognizerView = _panGestureRecognizer.view;
-    CGPoint translation = [_panGestureRecognizer translationInView:recognizerView];
-//        NSLog( @"translation:%@", NSStringFromCGPoint(translation) );
-//    if ( fabs(translation.y/translation.x) > 1 )
-//        return NO;
-
-    // forbid gesture if the following delegate is implemented and returns NO
-    if ( [_delegate respondsToSelector:@selector(revealControllerPanGestureShouldBegin:)] )
-        if ( [_delegate revealControllerPanGestureShouldBegin:self] == NO )
-            return NO;
-
-    CGFloat xLocation = [_panGestureRecognizer locationInView:recognizerView].x;
-    CGFloat width = recognizerView.bounds.size.width;
+//    // forbid gesture if the initial translation is not horizontal
+//    UIView *recognizerView = _panGestureRecognizer.view;
+//    CGPoint translation = [_panGestureRecognizer translationInView:recognizerView];
+////        NSLog( @"translation:%@", NSStringFromCGPoint(translation) );
+////    if ( fabs(translation.y/translation.x) > 1 )
+////        return NO;
+//
+//    // forbid gesture if the following delegate is implemented and returns NO
+//    if ( [_delegate respondsToSelector:@selector(revealControllerPanGestureShouldBegin:)] )
+//        if ( [_delegate revealControllerPanGestureShouldBegin:self] == NO )
+//            return NO;
+//
+//    CGFloat xLocation = [_panGestureRecognizer locationInView:recognizerView].x;
+//    CGFloat width = recognizerView.bounds.size.width;
+//    
+//    BOOL draggableBorderAllowing = (
+//         /*_frontViewPosition != FrontViewPositionLeft ||*/ _draggableBorderWidth == 0.0f ||
+//         (_rearViewController && xLocation <= _draggableBorderWidth) ||
+//         (_rightViewController && xLocation >= (width - _draggableBorderWidth)) );
+//    
+//    
+//    BOOL translationForbidding = ( _frontViewPosition == FrontViewPositionLeft &&
+//        ((_rearViewController == nil && translation.x > 0) || (_rightViewController == nil && translation.x < 0)) );
+//
+//    // allow gesture only within the bounds defined by the draggableBorderWidth property
+//    return draggableBorderAllowing && !translationForbidding ;
     
-    BOOL draggableBorderAllowing = (
-         /*_frontViewPosition != FrontViewPositionLeft ||*/ _draggableBorderWidth == 0.0f ||
-         (_rearViewController && xLocation <= _draggableBorderWidth) ||
-         (_rightViewController && xLocation >= (width - _draggableBorderWidth)) );
-    
-    
-    BOOL translationForbidding = ( _frontViewPosition == FrontViewPositionLeft &&
-        ((_rearViewController == nil && translation.x > 0) || (_rightViewController == nil && translation.x < 0)) );
-
-    // allow gesture only within the bounds defined by the draggableBorderWidth property
-    return draggableBorderAllowing && !translationForbidding ;
+    return NO;
 }
 
 
@@ -1182,9 +1185,8 @@ const int FrontViewPositionNone = 0xff;
     [self _setFrontViewPosition:FrontViewPositionLeft withDuration:duration];
 }
 
-
 - (void)_handleRevealGesture:(UIPanGestureRecognizer *)recognizer
-{
+{    
     switch ( recognizer.state )
     {
         case UIGestureRecognizerStateBegan:
@@ -1337,7 +1339,6 @@ const int FrontViewPositionNone = 0xff;
     [self _notifyPanGestureEnded];
     [self _dequeue];
 }
-
 
 #pragma mark Enqueued position and controller setup
 

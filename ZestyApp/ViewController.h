@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "SWRevealViewController.h"
 
 
-@interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, UIActionSheetDelegate> {
+@interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, UIActionSheetDelegate, SWRevealViewControllerDelegate> {
     NSMutableArray *pastUrls;
     NSMutableArray *allServices;
     NSMutableArray *iconLabel;

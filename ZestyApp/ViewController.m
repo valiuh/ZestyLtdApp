@@ -80,8 +80,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 
     [self.scroll setContentMode:UIViewContentModeScaleAspectFit];
     // then set frame to be the size of the view's frame
-    self.scroll.frame = CGRectMake(0, 64, 320, 640);
-    self.scroll.contentSize = CGSizeMake(320, 660);
+    self.scroll.frame = CGRectMake(0, 0, 320, 640);
+    self.scroll.contentSize = CGSizeMake(320, 560);
     // now add our scroll view to the main view
     self.scroll.scrollEnabled = YES;
     self.scroll.userInteractionEnabled = YES;
@@ -126,23 +126,14 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     // Set the gesture
     SWRevealViewController *revealController = [self revealViewController];
     [revealController resignFirstResponder];
-    [revealController panGestureRecognizer];
+//    [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
     
-
-    //
-    //
     //setup textField background panel
     self.labelBackground = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 120)];
     self.labelBackground.backgroundColor = [UIColor clearColor];
     [self.scroll addSubview:self.labelBackground];
-//    labelBackgroundDrag = [[UIPanGestureRecognizer alloc]
-//                                            initWithTarget:self
-//                                                    action:@selector(labelBackgroundDown)];
-//    [self.labelBackground addGestureRecognizer:labelBackgroundDrag];
-    
-    //
-    //
+
     //search title label text
     self.searchLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 6, 320, 20)];
     self.searchLabel.text = @"Find and book Healthcare in London";
@@ -151,8 +142,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self.searchLabel setTextAlignment:NSTextAlignmentCenter];
     [self.labelBackground addSubview:self.searchLabel];
 
-    //
-    //
     //setup the location label
     self.location = [[UITextField alloc] initWithFrame:CGRectMake(20, 40, self.view.frame.size.width - 40, 35)];
     self.location.delegate = self;
@@ -181,7 +170,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.locationIcon.image = [[UIImage imageNamed:@"geoPin"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [locationSpacerView addSubview:_locationIcon];
     [_location setLeftViewMode:UITextFieldViewModeAlways];
-//    _locationIcon.tintColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0];
     _locationIcon.tintColor = [UIColor whiteColor];
     [self.location setLeftView:locationSpacerView];
     [locationSpacerView setUserInteractionEnabled:NO];
@@ -192,8 +180,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [locationPaddingView setUserInteractionEnabled:NO];
     [self.labelBackground addSubview:self.location];
     
-    //
-    //
     //setup the service label
     self.service = [[UITextField alloc] initWithFrame:CGRectMake(20, 85, self.view.frame.size.width - 40, 35)];
     self.service.delegate = self;
@@ -202,7 +188,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.service.placeholder = @"What service do you need?";
     [self.service setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.25]];
     [self.service  setKeyboardAppearance:UIKeyboardAppearanceLight];
-//    [self.service setTextColor:[UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0]];
     [self.service setTextColor:[UIColor whiteColor]];
     [self.service.layer setCornerRadius:0.0f];
     [self.service setAdjustsFontSizeToFitWidth:NO];
@@ -225,7 +210,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     self.serviceIcon.image = [[UIImage imageNamed:@"searchIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [serviceSpacerView addSubview:_serviceIcon];
     [_service setLeftViewMode:UITextFieldViewModeAlways];
-//    _serviceIcon.tintColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0];
     _serviceIcon.tintColor = [UIColor whiteColor];
     [self.service setLeftView:serviceSpacerView];
     [serviceSpacerView setUserInteractionEnabled:NO];
@@ -236,15 +220,8 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [servicePaddingView setUserInteractionEnabled:NO];
     [self.labelBackground addSubview:self.service];
     
-    //
-    //
     //view all services button below the collectionView
-//    if( IS_IPHONE_5 )
     {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 328+20, self.view.frame.size.width-40, 48)];
-//    }
-//    else
-//    {self.viewServices = [[UIButton alloc]initWithFrame:CGRectMake(20, 240 , self.view.frame.size.width-40, 48)];
-//    }
     [self.viewServices setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3]];
     self.viewServices.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:20.0f];
     [self.viewServices setTitle:@"View All Services" forState:UIControlStateNormal];
@@ -255,18 +232,16 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self.viewServices setTag:2];
     [self.scroll addSubview:self.viewServices];
     
-    //
-    //
     //setup findAppointments button
-    self.findAppointments = [[UIButton alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 50)];
+    self.findAppointments = [[UIButton alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height-80, self.view.frame.size.width - 40, 50)];
     [self.findAppointments setTitle:@"Find Appointments" forState:UIControlStateNormal];
     self.findAppointments.titleLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:22.0f];
     [self.findAppointments.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [self.findAppointments setBackgroundImage:[UIImage imageNamed:@"findAppts"] forState:UIControlStateNormal];
-    [self.findAppointments.layer setCornerRadius:8.0f];
+    [self.findAppointments.layer setCornerRadius:2.0f];
     [self.findAppointments addTarget:self action:@selector(findAppointments:) forControlEvents:UIControlEventTouchUpInside];
     [self.findAppointments setTag:3];
-    [self.scroll addSubview:self.findAppointments];
+    [self.view addSubview:self.findAppointments];
     
     allServices = [[NSMutableArray alloc] initWithObjects:@"Dental Hygienist", @"Health Screening", @"General Consultation",@"Travel Health",@"Private Sexual Health Services", @"NHS Sexual Health Services",@"Sports Massage", nil];
     
@@ -286,22 +261,10 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
     autocompleteUrls = [[NSMutableArray alloc] init];
     
-    //
-    //
-    //setup auto-complete for service textField
-//    if( IS_IPHONE_5 )
-//    {
-        self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-                                      CGRectMake(20, 184, self.service.frame.size.width, allServices.count * 35) style:UITableViewStylePlain];
-//
-//    }
-//    else
-//    {
-//        self.autocompleteTableView = [[UITableView alloc] initWithFrame:
-//                                      CGRectMake(20, 184, self.service.frame.size.width, (allServices.count /2) * 35) style:UITableViewStylePlain];
-//
-//    }
 
+    //setup auto-complete for service textField
+    self.autocompleteTableView = [[UITableView alloc] initWithFrame:
+                                      CGRectMake(20, 184, self.service.frame.size.width, allServices.count * 35) style:UITableViewStylePlain];
     self.autocompleteTableView.delegate = self;
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
@@ -311,22 +274,9 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //    [self.autocompleteTableView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:1.0]];
     [self.view addSubview:self.autocompleteTableView];
     
-    
-    //
-    //
     //setup auto-complete for service textField
-//    if( IS_IPHONE_5 )
-//    {
-        self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
-                                           CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/2 - 10) style:UITableViewStylePlain];
-        
-//    }
-//    else
-//    {
-//        self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
-//                                           CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/4 + 40) style:UITableViewStylePlain];
-//        
-//    }
+    self.startAutocompleteTableView = [[UITableView alloc] initWithFrame:
+                                           CGRectMake(20, 184, self.service.frame.size.width, 0) style:UITableViewStylePlain];
     self.startAutocompleteTableView.delegate = self;
     self.startAutocompleteTableView.dataSource = self;
     self.startAutocompleteTableView.scrollEnabled = YES;
@@ -339,12 +289,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     
     //collection view
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-//    if( IS_IPHONE_5 )
     {_collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10, 204-64, 300, 206) collectionViewLayout:layout];
-//    }
-//    else
-//    {_collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(10, 204-74+5, 300, 206/2) collectionViewLayout:layout];
-//    }
     [_collectionView setDataSource:self];
     [_collectionView setDelegate:self];
     [_collectionView setScrollEnabled:YES];
@@ -353,36 +298,22 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [_collectionView setShowsHorizontalScrollIndicator:NO];
     [_collectionView setShowsVerticalScrollIndicator:NO];
     [_collectionView setBackgroundColor:[UIColor clearColor]];
-//    selectedCell = YES;
     [self.scroll addSubview:_collectionView];
-//    [self.scroll bringSubviewToFront:_collectionView];
     geocoder = [[CLGeocoder alloc] init];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
     [self.locationManager startUpdatingLocation];
-//    [self animateSearchFieldsUp];
-    
-//    if( IS_IPHONE_5 )
-//    {
-        self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 375+20, 280, 0)];
-//
-        
-//    }
-//    else
-//    {
-//        self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 240+20, 280, 0)];
-//
-//    }
+
+    self.servicesTableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 375+20, 280, 0)];
     self.servicesTableView.backgroundColor = [UIColor  clearColor];
     self.servicesTableView.scrollEnabled = YES;
     self.servicesTableView.bounces = NO;
     [self.servicesTableView setShowsHorizontalScrollIndicator:NO];
-    [self.servicesTableView setShowsVerticalScrollIndicator:NO];
-//    [self.servicesTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.servicesTableView setShowsVerticalScrollIndicator:YES];
     [self.servicesTableView setSeparatorColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3]];
-    [self.servicesTableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 280, 0)];
+    [self.servicesTableView setSeparatorInset:UIEdgeInsetsMake(20,20, 200, 20)];
     self.servicesTableView.layer.cornerRadius = 0.0f;
     self.servicesTableView.delegate = self;
     self.servicesTableView.dataSource = self;
@@ -393,12 +324,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                                              selector:@selector(keyboardWillShow)
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillHide)
-//                                                 name:UIKeyboardWillHideNotification
-//                                               object:nil];
-    
         }
     }
 }
@@ -406,59 +331,40 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 -(void)showServices:(id)sender
 {
     showServices = !showServices;
-
+    
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
     
     if (showServices) {
         NSLog(@"expand the list");
         
         //expand the scrollable page
-//        [self.scroll setFrame:CGRectMake(0, 0, 320, 640)];]
         
         [self.viewServices setTitle:@"Hide All Services" forState:UIControlStateNormal];
         
-        if( IS_IPHONE_5 )
-        {
-            [self.scroll setContentSize:CGSizeMake(320, 800)];
-
-        }
-        else
-        {
-            [self.scroll setContentSize:CGSizeMake(320, 800)];
-
-        }
         
         [UIView animateWithDuration:0.4
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
+        
+                             //move the find appointments button to the bottom and navbar up
                              
-                             //move the find appointments button to the bottom
-                            
-                             if( IS_IPHONE_5 )
-                             {
-                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 200-25+20, 280, 48)];
-                                 
-                                 [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 180)];
-                                 
-                                 CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
-                                 [self.scroll setContentOffset:bottomOffset animated:YES];
-                                 
-                                 
-                             }
-                             else
-                             {
-                                 [self.findAppointments setFrame:CGRectMake(20, self.scroll.contentSize.height - 300, 280, 48)];
-                                 
-                                 [self.servicesTableView setFrame:CGRectMake(20, 267+20, 280, 180)];
-                                 
-                                 CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
-                                 [self.scroll setContentOffset:bottomOffset animated:YES];
-                                 
-                             }
+                             [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                                                     withAnimation:UIStatusBarAnimationSlide];
                              
-                             //show the tableview of other verticals
-
+                             navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                                       -navBar.frame.size.height,
+                                                       navBar.frame.size.width,
+                                                       navBar.frame.size.height);
+        
                              
+                             [self.servicesTableView setFrame:CGRectMake(self.servicesTableView.frame.origin.x, self.servicesTableView.frame.origin.y, self.servicesTableView.frame.size.width, (allServices.count * 44)+88)];
+        
+                             [self.scroll setFrame:CGRectMake(self.scroll.frame.origin.x, self.scroll.frame.origin.y - allServices.count *44 - 66, self.scroll.frame.size.width, self.scroll.frame.size.height * 2 + 88)];
+        
+//                             CGPoint bottomOffset = CGPointMake(0, self.scroll.contentSize.height - self.scroll.bounds.size.height);
+//                                [self.scroll setContentOffset:bottomOffset animated:YES];
                              
                          }completion:nil];
         
@@ -467,7 +373,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         [self.viewServices setTitle:@"View All Services" forState:UIControlStateNormal];
 
-        
         //withdraw the scrollable page
        //move the find appointments button back up
         [UIView animateWithDuration:0.4
@@ -475,28 +380,17 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              
-                             if( IS_IPHONE_5 )
-                             {
-                                 [self.scroll setContentSize:CGSizeMake(320, 640)];
-                                 
-                                 [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 0)];
-                                 
-                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-80-74+20, self.view.frame.size.width - 40, 48)];
-
-                                 
-                             }
-                             else
-                             {
-                                 [self.scroll setContentSize:CGSizeMake(320, 640)];
-                                 
-                                 [self.servicesTableView setFrame:CGRectMake(20, 267+20, 280, 0)];
-                                 
-                                 [self.findAppointments setFrame:CGRectMake(20, self.view.frame.size.height-180, self.view.frame.size.width - 40, 48)];
-
-                                 
-                             }
+                             [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                                                     withAnimation:UIStatusBarAnimationSlide];
                              
+                             navBar.frame = CGRectMake(navBar.frame.origin.x,
+                                                       navBar.frame.size.height - 20,
+                                                       navBar.frame.size.width,
+                                                       navBar.frame.size.height);
                              
+                             [self.servicesTableView setFrame:CGRectMake(20, 375+20, 280, 0)];
+                             self.scroll.frame = CGRectMake(0, 0, 320, 640);
+                             self.scroll.contentSize = CGSizeMake(320, 660);
                              
                          }completion:nil];
         
@@ -548,7 +442,15 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 }
 
 -(void)findAppointments:(id)sender{
-    NSLog(@"go to the next screen: %@ %@", placemark.postalCode, self.service.text);
+    
+    if (showServices == YES) {
+        
+        
+        [UIView animateWithDuration:0.2 animations:^{ [self showServices:self];} completion:^(BOOL finished){
+            
+            NSLog(@"go to the next screen: %@ %@", placemark.postalCode, self.service.text);
+        }];}
+    
     if (self.location.text.length == 0 || self.service.text.length == 0) {
         UIAlertView *details = [[UIAlertView alloc] initWithTitle:@"Almost there!"
                                                           message:@"Make sure that you've entered your location correctly and have selected one of our services."
@@ -557,9 +459,13 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                                                 otherButtonTitles: nil];
         [details show];
     } else {
-         [self performSegueWithIdentifier:@"bookAppointments" sender:self];
+      
+            [self performSegueWithIdentifier:@"bookAppointments" sender:self];
+        
+
     }
 
+    
 }
 
 - (void)willPresentActionSheet:(UIActionSheet *)actionSheet
@@ -621,71 +527,77 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         
         [self rotateImage:self.locationIcon duration:0.2
                     curve:UIViewAnimationCurveEaseIn degrees:-90];
-        
-        UINavigationBar *navBar = self.navigationController.navigationBar;
-        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-        float animationDuration;
-        if(statusBarFrame.size.height > 20) { // in-call
-            animationDuration = 0.2;
-        } else { // normal status bar
-            animationDuration = 0.2;
-        }
-        
-        [[UIApplication sharedApplication] setStatusBarHidden:NO
-                                                withAnimation:UIStatusBarAnimationSlide];
-        [UIView animateWithDuration:animationDuration animations:^{
-            
-            navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                      20,
-                                      navBar.frame.size.width,
-                                      navBar.frame.size.height);
-            
-        } completion:nil];
-        
-        [UIView animateWithDuration:0.3f animations:^ {
-            self.view.frame = CGRectMake(0, 0, 320, 568);
-        }];
-        
+//        
+//        UINavigationBar *navBar = self.navigationController.navigationBar;
+//        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+//        float animationDuration;
+//        if(statusBarFrame.size.height > 20) { // in-call
+//            animationDuration = 0.2;
+//        } else { // normal status bar
+//            animationDuration = 0.2;
+//        }
+//        
+//        [[UIApplication sharedApplication] setStatusBarHidden:NO
+//                                                withAnimation:UIStatusBarAnimationSlide];
+//        [UIView animateWithDuration:animationDuration animations:^{
+//            
+//            navBar.frame = CGRectMake(navBar.frame.origin.x,
+//                                      20,
+//                                      navBar.frame.size.width,
+//                                      navBar.frame.size.height);
+//            
+//        } completion:nil];
+//        
+//        [UIView animateWithDuration:0.3f animations:^ {
+//            self.view.frame = CGRectMake(0, 0, 320, 568);
+//        }];
+//        
     }
     else if([sender tag] == 3){
         
         self.screenTap.enabled = NO;
 
-        UINavigationBar *navBar = self.navigationController.navigationBar;
-        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-        float animationDuration;
-        if(statusBarFrame.size.height > 20) { // in-call
-            animationDuration = 0.2;
-        } else { // normal status bar
-            animationDuration = 0.2;
-        }
-        
-   
-        [[UIApplication sharedApplication] setStatusBarHidden:YES
-                                                withAnimation:UIStatusBarAnimationSlide];
-        [UIView animateWithDuration:animationDuration animations:^{
-            navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                      -navBar.frame.size.height,
-                                      navBar.frame.size.width,
-                                      navBar.frame.size.height);
-        } completion:nil];
+//        UINavigationBar *navBar = self.navigationController.navigationBar;
+//        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+//        float animationDuration;
+//        if(statusBarFrame.size.height > 20) { // in-call
+//            animationDuration = 0.2;
+//        } else { // normal status bar
+//            animationDuration = 0.2;
+//        }
+//        
+//   
+//        [[UIApplication sharedApplication] setStatusBarHidden:YES
+//                                                withAnimation:UIStatusBarAnimationSlide];
+//        [UIView animateWithDuration:animationDuration animations:^{
+//            navBar.frame = CGRectMake(navBar.frame.origin.x,
+//                                      -navBar.frame.size.height,
+//                                      navBar.frame.size.width,
+//                                      navBar.frame.size.height);
+//        } completion:nil];
 
         
-        [UIView animateWithDuration:0.3f animations:^ {
-            self.view.frame = CGRectMake(0, -120, 320, 768);}];
-        
-//        [self keyboardWillShow];
-        
-        self.scroll.scrollEnabled = NO;
-        
-        //Do some cool shit to the service text field
+//        [UIView animateWithDuration:0.3f animations:^ {
+//            self.view.frame = CGRectMake(0, -120, 320, 768);}];
+//        
+////        [self keyboardWillShow];
+//        
+//        self.scroll.scrollEnabled = NO;
+//        
+//        //Do some cool shit to the service text field
         [self.service.layer setBorderWidth:1.0f];
         [self.service.layer setBorderColor:[[UIColor whiteColor] CGColor]];
 //        self.serviceIcon.tintColor = [UIColor colorWithRed:69.0/255.0 green:208.0/255.0 blue:249.0/255.0  alpha:1.0];
-        [self.startAutocompleteTableView setHidden:NO];
-
+        
+         [self.startAutocompleteTableView setHidden:NO];
+        [UIView animateWithDuration:0.4 animations:^{
+            [self.startAutocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, pastUrls.count * 35/4 - 10)];
+            
         [self rotateImage:self.serviceIcon duration:0.2
-                    curve:UIViewAnimationCurveEaseIn degrees:100];
+                        curve:UIViewAnimationCurveEaseIn degrees:100];
+
+            
+        }] ;
     }
 }
 
@@ -739,40 +651,16 @@ UIPanGestureRecognizer *labelBackgroundDrag;
             
             [self rotateImage:self.serviceIcon duration:0.2
                         curve:UIViewAnimationCurveEaseIn degrees:0];
-            
-            self.startAutocompleteTableView.hidden = YES;
-            self.scroll.scrollEnabled = YES;
-            
-            
-            UINavigationBar *navBar = self.navigationController.navigationBar;
-            CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-            float animationDuration;
-            if(statusBarFrame.size.height > 20) { // in-call
-                animationDuration = 0.2;
-            } else { // normal status bar
-                animationDuration = 0.2;
-            
-            
-            navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                      -200,
-                                      navBar.frame.size.width,
-                                      navBar.frame.size.height);
-            
-
-            }
-            
-            [[UIApplication sharedApplication] setStatusBarHidden:NO
-                                                    withAnimation:UIStatusBarAnimationSlide];
-            [UIView animateWithDuration:animationDuration animations:^{
-                
-                navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                          20,
-                                          navBar.frame.size.width,
-                                          navBar.frame.size.height);
-                
-            } completion:nil];
-
-
+            [UIView animateWithDuration:0.2
+                             animations:^{
+                                 [UIView animateWithDuration:0.4 animations:^{
+                                     [self.startAutocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, 0)];
+                                     
+                             }completion:^(BOOL finished){
+                                 self.startAutocompleteTableView.hidden = YES;
+                                 self.scroll.scrollEnabled = YES;
+                             }];
+                    }];
             
             [self dismissKeyboard];
 
@@ -820,9 +708,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [self keyboardWillHide];
     
                 if (textField.tag == 3) {
-                
-                
-                
+                    
                 UINavigationBar *navBar = self.navigationController.navigationBar;
                 CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
                 float animationDuration;
@@ -868,8 +754,6 @@ UIPanGestureRecognizer *labelBackgroundDrag;
                      stringByReplacingCharactersInRange:range withString:string];
         [self searchAutocompleteEntriesWithSubstring:substring];
         
-        if( IS_IPHONE_5 )
-        {
             [self.autocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, autocompleteUrls.count * 35)];
             
             UINavigationBar *navBar = self.navigationController.navigationBar;
@@ -892,13 +776,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
             } completion:nil];}
             
         }
-        else
-        {
-            [self.autocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, (autocompleteUrls.count/2)* 35)];
-
-        }
-
-    }
+    
       return YES;
 }
 
@@ -1045,58 +923,55 @@ UIPanGestureRecognizer *labelBackgroundDrag;
 //set the uitextfield text as the selected cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+
     if (tableView == self.startAutocompleteTableView) {
         
                 NSLog(@"LIST CELL SELECTED");
-                
-                UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-                self.service.text = selectedCell.textLabel.text;
-                
-                NSArray *visibleCells = [self.collectionView visibleCells];
-                for (iconCell *cell in visibleCells) {
-                    
-                    cell.tickImage.hidden = YES;
-                    cell.selected = NO;
-                    cell.alpha = 0.9f;
-                    
-                    cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:cell.tag]];
-                    
-                }
-                
-                self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
-                self.service.layer.borderWidth = 1.0f;
         
-                
-                self.startAutocompleteTableView.hidden = YES;
-                
-                self.screenTap.enabled = YES;
-        
-        UINavigationBar *navBar = self.navigationController.navigationBar;
-        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-        float animationDuration;
-        if(statusBarFrame.size.height > 20) { // in-call
-            animationDuration = 0.2;
-        } else { // normal status bar
-            animationDuration = 0.2;
-        }
-        
-        [[UIApplication sharedApplication] setStatusBarHidden:NO
-                                                withAnimation:UIStatusBarAnimationSlide];
-        [UIView animateWithDuration:animationDuration animations:^{
-            
-            navBar.frame = CGRectMake(navBar.frame.origin.x,
-                                      20,
-                                      navBar.frame.size.width,
-                                      navBar.frame.size.height);
-            
-        } completion:nil];
-        
-        [UIView animateWithDuration:0.3f animations:^ {
-            self.view.frame = CGRectMake(0, 0, 320, 568);
-        }];
-        
-        [self dismissKeyboard];
+        [UIView animateWithDuration:0.2
+                         animations:^{
+                             [UIView animateWithDuration:0.4 animations:^{
+                                 
+                                 [self.startAutocompleteTableView setFrame:CGRectMake(20, 184, self.service.frame.size.width, 0)];
+                                 selectedCell.textLabel.textColor = [UIColor whiteColor];
 
+                                 
+                             }completion:^(BOOL finished){
+                                 self.startAutocompleteTableView.hidden = YES;
+                                 self.scroll.scrollEnabled = YES;
+                                 
+                                 self.service.text = selectedCell.textLabel.text;
+                                 
+                                 NSArray *visibleCells = [self.collectionView visibleCells];
+                                 for (iconCell *cell in visibleCells) {
+                                     
+                                     cell.tickImage.hidden = YES;
+                                     cell.selected = NO;
+                                     cell.alpha = 0.9f;
+                                     
+                                     cell.icon.image = [UIImage imageNamed:[self.verticalIcons objectAtIndex:cell.tag]];
+                                     
+                                 }
+                                 
+                                 self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
+                                 self.service.layer.borderWidth = 1.0f;
+                                 
+                                 self.screenTap.enabled = YES;
+                                 
+                                 showServices = NO;
+                                 
+                                 [UIView animateWithDuration:0.3f animations:^ {
+                                     self.view.frame = CGRectMake(0, 0, 320, 568);
+                                 }];
+                                 
+                                 [self dismissKeyboard];
+
+                             }];
+                         }];
+
+                
+        
         
     }
     
@@ -1110,7 +985,7 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
         self.service.layer.borderWidth = 1.0f;
 
-        self.autocompleteTableView.hidden = YES;
+//        self.autocompleteTableView.hidden = YES;
         
         
     }
@@ -1143,6 +1018,24 @@ UIPanGestureRecognizer *labelBackgroundDrag;
         self.service.layer.borderColor = [[UIColor whiteColor] CGColor];
         self.service.layer.borderWidth = 1.0f;
       
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (tableView == self.startAutocompleteTableView) {
+        UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+        selectedCell.textLabel.textColor = [UIColor colorWithRed:33.0/255.0 green:60.0/255.0 blue:97.0/255.0 alpha:1.0];
+        
+    }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
+    if([view isKindOfClass:[UITableViewHeaderFooterView class]]) {
+        UITableViewHeaderFooterView *headerIndexText = (UITableViewHeaderFooterView *)view;
+        [headerIndexText.textLabel setTextColor:[UIColor whiteColor]];
+    } else {
+        NSLog(@"This is the new iOS case where the delegate gets called on a custom view.");
     }
 }
 
@@ -1409,6 +1302,26 @@ UIPanGestureRecognizer *labelBackgroundDrag;
     [UIView animateWithDuration:0.3f animations:^ {
         self.view.frame = CGRectMake(0, 0, 320, 568);
     }];
+}
+
+
+#pragma mark - SWRevealViewControllerDelegate
+
+- (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
+{
+    
+    [self dismissKeyboard];
+    // NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+    if(position == FrontViewPositionRight) //check the where to move
+    {
+//        UINavigationController *viewController = revealController.frontViewController;
+//        
+//        if([viewController.visibleViewController isKindOfClass:[ class]])
+//        {
+//            [(FrontViewController *)viewController.visibleViewController dismissKeyboard]; //where this is the method declared in the FrontViewController.h file
+//        }
+        [self dismissKeyboard];
+    }
 }
 
 @end

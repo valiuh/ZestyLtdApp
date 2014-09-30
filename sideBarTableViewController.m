@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 
     self.tableView.backgroundColor = [UIColor colorWithRed:30.0/255.0 green:57.0/255.0 blue:99.0/255.0 alpha:1.0f];
 //    self.tableView.backgroundColor = [UIColor clearColor];
@@ -163,14 +162,19 @@
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
     
-    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
- 
-    header.textLabel.textColor = [UIColor whiteColor];
-//    header.backgroundView.backgroundColor = [UIColor clearColor];
-    header.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:20.0f];
-    header.textLabel.textAlignment = NSTextAlignmentLeft;
+    if([view isKindOfClass:[UITableViewHeaderFooterView class]]) {
+        UITableViewHeaderFooterView *headerIndexText = (UITableViewHeaderFooterView *)view;
+        [headerIndexText.textLabel setTextColor:[UIColor whiteColor]];
+        headerIndexText.textLabel.font = [UIFont fontWithName:@"GothamNarrow-Book" size:20.0f];
+        headerIndexText.textLabel.textAlignment = NSTextAlignmentLeft;
+        
+       
+    } else {
+        NSLog(@"This is the new iOS case where the delegate gets called on a custom view.");
+    }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -254,14 +258,14 @@
         page.sideBarText = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height)];
         [page.sideBarText setContentSize:CGSizeMake(320, 800)];
         
-        page.infoText = [[UITextView alloc] initWithFrame:CGRectMake(20, 64, 280, 800)];
+        page.infoText = [[UITextView alloc] initWithFrame:CGRectMake(20, 0, 280, 800)];
         page.infoText.backgroundColor = [UIColor clearColor];
         page.infoText.textColor = [UIColor whiteColor];
         [page.infoText setTextAlignment:NSTextAlignmentJustified];
         page.infoText.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:14.0f];
         page.infoText.scrollEnabled = NO;
         
-        page.infoPageTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
+        page.infoPageTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, -64, 320, 64)];
         page.infoPageTitle.textColor = [UIColor whiteColor];
         page.infoPageTitle.backgroundColor = [UIColor clearColor];
         [page.infoPageTitle setTextAlignment:NSTextAlignmentCenter];
@@ -295,7 +299,7 @@
             
             page.infoText.text= [dict objectForKey:@"trust"];
             
-            page.infoText.frame = CGRectMake(20, 64, 280, 1000);
+            page.infoText.frame = CGRectMake(20, 0, 280, 1000);
             
             page.sideBarText.contentSize = CGSizeMake(320, 1100);
 
@@ -306,7 +310,7 @@
             
             page.infoText.text= [dict objectForKey:@"privacy"];
             
-            page.infoText.frame = CGRectMake(20, 64, 280, 5750);
+            page.infoText.frame = CGRectMake(20, 0, 280, 5750);
             
             page.sideBarText.contentSize = CGSizeMake(320, 5750);
             
@@ -319,14 +323,12 @@
             
             page.infoText.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:12.0f];
             
-            page.infoText.frame = CGRectMake(20, 64, 280, 8000);
+            page.infoText.frame = CGRectMake(20, 0, 280, 8000);
             
             page.sideBarText.contentSize = CGSizeMake(320, 8000);
             
             
         } else if ([sender isEqualToString:@"Blog"]){
-
-
             
             page.blogPage = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, 320, 640)];
             
