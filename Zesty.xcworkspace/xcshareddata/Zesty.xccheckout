@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5E526E71-B0B6-45BE-B971-609DC246A3F5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Zesty</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>430B9B5486988F6B6C6CD3133D1BFAFB31F7C384</key>
+		<string>https://github.com/valiuh/ZestyLtdApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Zesty.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>430B9B5486988F6B6C6CD3133D1BFAFB31F7C384</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/valiuh/ZestyLtdApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>430B9B5486988F6B6C6CD3133D1BFAFB31F7C384</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>430B9B5486988F6B6C6CD3133D1BFAFB31F7C384</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Zesty</string>
+		</dict>
+	</array>
+</dict>
+</plist>

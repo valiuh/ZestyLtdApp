@@ -29,6 +29,7 @@
 		3A0009F21A82665D00A31253 /* ZAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009EB1A82665D00A31253 /* ZAInfoViewController.m */; };
 		3A0009F31A82665D00A31253 /* ZASideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */; };
 		3A0009F51A8271D500A31253 /* infoPage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009F41A8271D500A31253 /* infoPage.plist */; };
+		C5706603DE4807C6859FE2AA /* libPods-ZestyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0617DF091BF8812834F2F /* libPods-ZestyApp.a */; };
 		F327969C19654B7200082B6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969B19654B7200082B6A /* Foundation.framework */; };
 		F327969E19654B7200082B6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969D19654B7200082B6A /* CoreGraphics.framework */; };
 		F32796A019654B7200082B6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969F19654B7200082B6A /* UIKit.framework */; };
@@ -44,7 +45,6 @@
 		F32796C819654B7300082B6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32796C619654B7300082B6A /* InfoPlist.strings */; };
 		F32796CA19654B7300082B6A /* ZestyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796C919654B7300082B6A /* ZestyAppTests.m */; };
 		F32796E2197E9FE700082B6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32796E1197E9FE700082B6A /* CoreLocation.framework */; };
-		F32796E5197FB88F00082B6A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796E4197FB88F00082B6A /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AD0617DF091BF8812834F2F /* libPods-ZestyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZestyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CEA815AE8AC4A9B0ECC6E60 /* Pods-ZestyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZestyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZestyApp/Pods-ZestyApp.release.xcconfig"; sourceTree = "<group>"; };
 		3A0009BF1A825C9B00A31253 /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Black.otf"; sourceTree = "<group>"; };
 		3A0009C01A825C9B00A31253 /* GothamNarrow-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-BlackItalic.otf"; sourceTree = "<group>"; };
 		3A0009C11A825C9B00A31253 /* GothamNarrow-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Bold.otf"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		3A0009ED1A82665D00A31253 /* ZASideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASideBarTableViewController.h; sourceTree = "<group>"; };
 		3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASideBarTableViewController.m; sourceTree = "<group>"; };
 		3A0009F41A8271D500A31253 /* infoPage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = infoPage.plist; sourceTree = "<group>"; };
+		93540ACA2ECCF674B8DCCC8B /* Pods-ZestyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZestyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZestyApp/Pods-ZestyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F327969819654B7200082B6A /* ZestyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZestyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F327969B19654B7200082B6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F327969D19654B7200082B6A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,8 +107,6 @@
 		F32796C719654B7300082B6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F32796C919654B7300082B6A /* ZestyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZestyAppTests.m; sourceTree = "<group>"; };
 		F32796E1197E9FE700082B6A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F32796E3197FB88F00082B6A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
-		F32796E4197FB88F00082B6A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		F3AEEA8319ACB8A40075DDA1 /* Zesty.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zesty.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +119,7 @@
 				F327969E19654B7200082B6A /* CoreGraphics.framework in Frameworks */,
 				F32796A019654B7200082B6A /* UIKit.framework in Frameworks */,
 				F327969C19654B7200082B6A /* Foundation.framework in Frameworks */,
+				C5706603DE4807C6859FE2AA /* libPods-ZestyApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +226,15 @@
 			path = SideBar;
 			sourceTree = "<group>";
 		};
+		E4BF28C048EE91D129CC565E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93540ACA2ECCF674B8DCCC8B /* Pods-ZestyApp.debug.xcconfig */,
+				2CEA815AE8AC4A9B0ECC6E60 /* Pods-ZestyApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F327968F19654B7200082B6A = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +243,7 @@
 				F32796C319654B7300082B6A /* ZestyAppTests */,
 				F327969A19654B7200082B6A /* Frameworks */,
 				F327969919654B7200082B6A /* Products */,
+				E4BF28C048EE91D129CC565E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +264,7 @@
 				F327969D19654B7200082B6A /* CoreGraphics.framework */,
 				F327969F19654B7200082B6A /* UIKit.framework */,
 				F32796BD19654B7300082B6A /* XCTest.framework */,
+				1AD0617DF091BF8812834F2F /* libPods-ZestyApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,8 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				3A0009F41A8271D500A31253 /* infoPage.plist */,
-				F32796E3197FB88F00082B6A /* SWRevealViewController.h */,
-				F32796E4197FB88F00082B6A /* SWRevealViewController.m */,
 				F32796A319654B7200082B6A /* ZestyApp-Info.plist */,
 				F32796A419654B7200082B6A /* InfoPlist.strings */,
 				F32796A719654B7200082B6A /* main.m */,
@@ -308,9 +319,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F32796CD19654B7300082B6A /* Build configuration list for PBXNativeTarget "ZestyApp" */;
 			buildPhases = (
+				A76CBBAAEF76C68EF368D47E /* Check Pods Manifest.lock */,
 				F327969419654B7200082B6A /* Sources */,
 				F327969519654B7200082B6A /* Frameworks */,
 				F327969619654B7200082B6A /* Resources */,
+				22859F466E1A5AB81524C1E2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -414,6 +427,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22859F466E1A5AB81524C1E2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZestyApp/Pods-ZestyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A76CBBAAEF76C68EF368D47E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F327969419654B7200082B6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -424,7 +470,6 @@
 				F32796AC19654B7200082B6A /* ZAAppDelegate.m in Sources */,
 				F32796A819654B7200082B6A /* main.m in Sources */,
 				3A0009EF1A82665D00A31253 /* ZABookingViewController.m in Sources */,
-				F32796E5197FB88F00082B6A /* SWRevealViewController.m in Sources */,
 				3A0009F21A82665D00A31253 /* ZAInfoViewController.m in Sources */,
 				3A0009F01A82665D00A31253 /* ZAIconCell.m in Sources */,
 			);
@@ -520,6 +565,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "0f0eacae-7716-4ba3-ba8c-9c5e94965fb5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -552,6 +598,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "0f0eacae-7716-4ba3-ba8c-9c5e94965fb5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -560,6 +607,7 @@
 		};
 		F32796CE19654B7300082B6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93540ACA2ECCF674B8DCCC8B /* Pods-ZestyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -578,6 +626,7 @@
 		};
 		F32796CF19654B7300082B6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CEA815AE8AC4A9B0ECC6E60 /* Pods-ZestyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
