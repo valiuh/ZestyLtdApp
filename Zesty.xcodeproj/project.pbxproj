@@ -7,31 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F31B3342199E1C570015422F /* GothamNarrow-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3332199E1C560015422F /* GothamNarrow-Black.otf */; };
-		F31B3343199E1C570015422F /* GothamNarrow-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3333199E1C560015422F /* GothamNarrow-BlackItalic.otf */; };
-		F31B3344199E1C570015422F /* GothamNarrow-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3334199E1C560015422F /* GothamNarrow-Bold.otf */; };
-		F31B3345199E1C570015422F /* GothamNarrow-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3335199E1C560015422F /* GothamNarrow-BoldItalic.otf */; };
-		F31B3346199E1C570015422F /* GothamNarrow-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3336199E1C560015422F /* GothamNarrow-Book.otf */; };
-		F31B3347199E1C570015422F /* GothamNarrow-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3337199E1C560015422F /* GothamNarrow-BookItalic.otf */; };
-		F31B3348199E1C570015422F /* GothamNarrow-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3338199E1C570015422F /* GothamNarrow-Light.otf */; };
-		F31B3349199E1C570015422F /* GothamNarrow-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3339199E1C570015422F /* GothamNarrow-LightItalic.otf */; };
-		F31B334A199E1C570015422F /* GothamNarrow-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333A199E1C570015422F /* GothamNarrow-Medium.otf */; };
-		F31B334B199E1C570015422F /* GothamNarrow-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333B199E1C570015422F /* GothamNarrow-MediumItalic.otf */; };
-		F31B334C199E1C570015422F /* GothamNarrow-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333C199E1C570015422F /* GothamNarrow-Thin.otf */; };
-		F31B334D199E1C570015422F /* GothamNarrow-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333D199E1C570015422F /* GothamNarrow-ThinItalic.otf */; };
-		F31B334E199E1C570015422F /* GothamNarrow-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333E199E1C570015422F /* GothamNarrow-Ultra.otf */; };
-		F31B334F199E1C570015422F /* GothamNarrow-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B333F199E1C570015422F /* GothamNarrow-UltraItalic.otf */; };
-		F31B3350199E1C570015422F /* GothamNarrow-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3340199E1C570015422F /* GothamNarrow-XLight.otf */; };
-		F31B3351199E1C570015422F /* GothamNarrow-XLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F31B3341199E1C570015422F /* GothamNarrow-XLightItalic.otf */; };
+		3A0009CF1A825C9B00A31253 /* GothamNarrow-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009BF1A825C9B00A31253 /* GothamNarrow-Black.otf */; };
+		3A0009D01A825C9B00A31253 /* GothamNarrow-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C01A825C9B00A31253 /* GothamNarrow-BlackItalic.otf */; };
+		3A0009D11A825C9B00A31253 /* GothamNarrow-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C11A825C9B00A31253 /* GothamNarrow-Bold.otf */; };
+		3A0009D21A825C9B00A31253 /* GothamNarrow-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C21A825C9B00A31253 /* GothamNarrow-BoldItalic.otf */; };
+		3A0009D31A825C9B00A31253 /* GothamNarrow-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C31A825C9B00A31253 /* GothamNarrow-Book.otf */; };
+		3A0009D41A825C9B00A31253 /* GothamNarrow-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C41A825C9B00A31253 /* GothamNarrow-BookItalic.otf */; };
+		3A0009D51A825C9B00A31253 /* GothamNarrow-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C51A825C9B00A31253 /* GothamNarrow-Light.otf */; };
+		3A0009D61A825C9B00A31253 /* GothamNarrow-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C61A825C9B00A31253 /* GothamNarrow-LightItalic.otf */; };
+		3A0009D71A825C9B00A31253 /* GothamNarrow-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C71A825C9B00A31253 /* GothamNarrow-Medium.otf */; };
+		3A0009D81A825C9B00A31253 /* GothamNarrow-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C81A825C9B00A31253 /* GothamNarrow-MediumItalic.otf */; };
+		3A0009D91A825C9B00A31253 /* GothamNarrow-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009C91A825C9B00A31253 /* GothamNarrow-Thin.otf */; };
+		3A0009DA1A825C9B00A31253 /* GothamNarrow-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009CA1A825C9B00A31253 /* GothamNarrow-ThinItalic.otf */; };
+		3A0009DB1A825C9B00A31253 /* GothamNarrow-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009CB1A825C9B00A31253 /* GothamNarrow-Ultra.otf */; };
+		3A0009DC1A825C9B00A31253 /* GothamNarrow-UltraItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009CC1A825C9B00A31253 /* GothamNarrow-UltraItalic.otf */; };
+		3A0009DD1A825C9B00A31253 /* GothamNarrow-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009CD1A825C9B00A31253 /* GothamNarrow-XLight.otf */; };
+		3A0009DE1A825C9B00A31253 /* GothamNarrow-XLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009CE1A825C9B00A31253 /* GothamNarrow-XLightItalic.otf */; };
+		3A0009EF1A82665D00A31253 /* ZABookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009E21A82665D00A31253 /* ZABookingViewController.m */; };
+		3A0009F01A82665D00A31253 /* ZAIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009E61A82665D00A31253 /* ZAIconCell.m */; };
+		3A0009F11A82665D00A31253 /* ZAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009E81A82665D00A31253 /* ZAHomeViewController.m */; };
+		3A0009F21A82665D00A31253 /* ZAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009EB1A82665D00A31253 /* ZAInfoViewController.m */; };
+		3A0009F31A82665D00A31253 /* ZASideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */; };
+		3A0009F51A8271D500A31253 /* infoPage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009F41A8271D500A31253 /* infoPage.plist */; };
 		F327969C19654B7200082B6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969B19654B7200082B6A /* Foundation.framework */; };
 		F327969E19654B7200082B6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969D19654B7200082B6A /* CoreGraphics.framework */; };
 		F32796A019654B7200082B6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969F19654B7200082B6A /* UIKit.framework */; };
 		F32796A619654B7200082B6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32796A419654B7200082B6A /* InfoPlist.strings */; };
 		F32796A819654B7200082B6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796A719654B7200082B6A /* main.m */; };
-		F32796AC19654B7200082B6A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796AB19654B7200082B6A /* AppDelegate.m */; };
+		F32796AC19654B7200082B6A /* ZAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796AB19654B7200082B6A /* ZAAppDelegate.m */; };
 		F32796AF19654B7200082B6A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32796AD19654B7200082B6A /* Main_iPhone.storyboard */; };
 		F32796B219654B7200082B6A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32796B019654B7200082B6A /* Main_iPad.storyboard */; };
-		F32796B519654B7200082B6A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796B419654B7200082B6A /* ViewController.m */; };
 		F32796B719654B7200082B6A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32796B619654B7200082B6A /* Images.xcassets */; };
 		F32796BE19654B7300082B6A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32796BD19654B7300082B6A /* XCTest.framework */; };
 		F32796BF19654B7300082B6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969B19654B7200082B6A /* Foundation.framework */; };
@@ -40,11 +45,6 @@
 		F32796CA19654B7300082B6A /* ZestyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796C919654B7300082B6A /* ZestyAppTests.m */; };
 		F32796E2197E9FE700082B6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32796E1197E9FE700082B6A /* CoreLocation.framework */; };
 		F32796E5197FB88F00082B6A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796E4197FB88F00082B6A /* SWRevealViewController.m */; };
-		F32796E8197FBA1000082B6A /* sideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796E7197FBA1000082B6A /* sideBarTableViewController.m */; };
-		F32796EE1981149300082B6A /* iconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796ED1981149300082B6A /* iconCell.m */; };
-		F32796F1198151B300082B6A /* bookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32796F0198151B300082B6A /* bookingViewController.m */; };
-		F3AEEA8119ACA5060075DDA1 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */; };
-		F3CFA68819B47923007DE224 /* infoPage.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3CFA68719B47923007DE224 /* infoPage.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,22 +58,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F31B3332199E1C560015422F /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Black.otf"; path = "../GothamNarrow-Black.otf"; sourceTree = "<group>"; };
-		F31B3333199E1C560015422F /* GothamNarrow-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-BlackItalic.otf"; path = "../GothamNarrow-BlackItalic.otf"; sourceTree = "<group>"; };
-		F31B3334199E1C560015422F /* GothamNarrow-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Bold.otf"; path = "../GothamNarrow-Bold.otf"; sourceTree = "<group>"; };
-		F31B3335199E1C560015422F /* GothamNarrow-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-BoldItalic.otf"; path = "../GothamNarrow-BoldItalic.otf"; sourceTree = "<group>"; };
-		F31B3336199E1C560015422F /* GothamNarrow-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Book.otf"; path = "../GothamNarrow-Book.otf"; sourceTree = "<group>"; };
-		F31B3337199E1C560015422F /* GothamNarrow-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-BookItalic.otf"; path = "../GothamNarrow-BookItalic.otf"; sourceTree = "<group>"; };
-		F31B3338199E1C570015422F /* GothamNarrow-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Light.otf"; path = "../GothamNarrow-Light.otf"; sourceTree = "<group>"; };
-		F31B3339199E1C570015422F /* GothamNarrow-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-LightItalic.otf"; path = "../GothamNarrow-LightItalic.otf"; sourceTree = "<group>"; };
-		F31B333A199E1C570015422F /* GothamNarrow-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Medium.otf"; path = "../GothamNarrow-Medium.otf"; sourceTree = "<group>"; };
-		F31B333B199E1C570015422F /* GothamNarrow-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-MediumItalic.otf"; path = "../GothamNarrow-MediumItalic.otf"; sourceTree = "<group>"; };
-		F31B333C199E1C570015422F /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Thin.otf"; path = "../GothamNarrow-Thin.otf"; sourceTree = "<group>"; };
-		F31B333D199E1C570015422F /* GothamNarrow-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-ThinItalic.otf"; path = "../GothamNarrow-ThinItalic.otf"; sourceTree = "<group>"; };
-		F31B333E199E1C570015422F /* GothamNarrow-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-Ultra.otf"; path = "../GothamNarrow-Ultra.otf"; sourceTree = "<group>"; };
-		F31B333F199E1C570015422F /* GothamNarrow-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-UltraItalic.otf"; path = "../GothamNarrow-UltraItalic.otf"; sourceTree = "<group>"; };
-		F31B3340199E1C570015422F /* GothamNarrow-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-XLight.otf"; path = "../GothamNarrow-XLight.otf"; sourceTree = "<group>"; };
-		F31B3341199E1C570015422F /* GothamNarrow-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamNarrow-XLightItalic.otf"; path = "../GothamNarrow-XLightItalic.otf"; sourceTree = "<group>"; };
+		3A0009BF1A825C9B00A31253 /* GothamNarrow-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Black.otf"; sourceTree = "<group>"; };
+		3A0009C01A825C9B00A31253 /* GothamNarrow-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-BlackItalic.otf"; sourceTree = "<group>"; };
+		3A0009C11A825C9B00A31253 /* GothamNarrow-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Bold.otf"; sourceTree = "<group>"; };
+		3A0009C21A825C9B00A31253 /* GothamNarrow-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-BoldItalic.otf"; sourceTree = "<group>"; };
+		3A0009C31A825C9B00A31253 /* GothamNarrow-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Book.otf"; sourceTree = "<group>"; };
+		3A0009C41A825C9B00A31253 /* GothamNarrow-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-BookItalic.otf"; sourceTree = "<group>"; };
+		3A0009C51A825C9B00A31253 /* GothamNarrow-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Light.otf"; sourceTree = "<group>"; };
+		3A0009C61A825C9B00A31253 /* GothamNarrow-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-LightItalic.otf"; sourceTree = "<group>"; };
+		3A0009C71A825C9B00A31253 /* GothamNarrow-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Medium.otf"; sourceTree = "<group>"; };
+		3A0009C81A825C9B00A31253 /* GothamNarrow-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-MediumItalic.otf"; sourceTree = "<group>"; };
+		3A0009C91A825C9B00A31253 /* GothamNarrow-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Thin.otf"; sourceTree = "<group>"; };
+		3A0009CA1A825C9B00A31253 /* GothamNarrow-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-ThinItalic.otf"; sourceTree = "<group>"; };
+		3A0009CB1A825C9B00A31253 /* GothamNarrow-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-Ultra.otf"; sourceTree = "<group>"; };
+		3A0009CC1A825C9B00A31253 /* GothamNarrow-UltraItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-UltraItalic.otf"; sourceTree = "<group>"; };
+		3A0009CD1A825C9B00A31253 /* GothamNarrow-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-XLight.otf"; sourceTree = "<group>"; };
+		3A0009CE1A825C9B00A31253 /* GothamNarrow-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamNarrow-XLightItalic.otf"; sourceTree = "<group>"; };
+		3A0009E11A82665D00A31253 /* ZABookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABookingViewController.h; sourceTree = "<group>"; };
+		3A0009E21A82665D00A31253 /* ZABookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABookingViewController.m; sourceTree = "<group>"; };
+		3A0009E51A82665D00A31253 /* ZAIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAIconCell.h; sourceTree = "<group>"; };
+		3A0009E61A82665D00A31253 /* ZAIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAIconCell.m; sourceTree = "<group>"; };
+		3A0009E71A82665D00A31253 /* ZAHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAHomeViewController.h; sourceTree = "<group>"; };
+		3A0009E81A82665D00A31253 /* ZAHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAHomeViewController.m; sourceTree = "<group>"; };
+		3A0009EA1A82665D00A31253 /* ZAInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAInfoViewController.h; sourceTree = "<group>"; };
+		3A0009EB1A82665D00A31253 /* ZAInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAInfoViewController.m; sourceTree = "<group>"; };
+		3A0009ED1A82665D00A31253 /* ZASideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASideBarTableViewController.h; sourceTree = "<group>"; };
+		3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASideBarTableViewController.m; sourceTree = "<group>"; };
+		3A0009F41A8271D500A31253 /* infoPage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = infoPage.plist; sourceTree = "<group>"; };
 		F327969819654B7200082B6A /* ZestyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZestyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F327969B19654B7200082B6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F327969D19654B7200082B6A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,12 +93,10 @@
 		F32796A519654B7200082B6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F32796A719654B7200082B6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F32796A919654B7200082B6A /* ZestyApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZestyApp-Prefix.pch"; sourceTree = "<group>"; };
-		F32796AA19654B7200082B6A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F32796AB19654B7200082B6A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F32796AA19654B7200082B6A /* ZAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAAppDelegate.h; sourceTree = "<group>"; };
+		F32796AB19654B7200082B6A /* ZAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZAAppDelegate.m; sourceTree = "<group>"; };
 		F32796AE19654B7200082B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		F32796B119654B7200082B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		F32796B319654B7200082B6A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F32796B419654B7200082B6A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F32796B619654B7200082B6A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F32796BC19654B7300082B6A /* ZestyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZestyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32796BD19654B7300082B6A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -97,16 +106,7 @@
 		F32796E1197E9FE700082B6A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F32796E3197FB88F00082B6A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		F32796E4197FB88F00082B6A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
-		F32796E6197FBA1000082B6A /* sideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sideBarTableViewController.h; path = ../sideBarTableViewController.h; sourceTree = "<group>"; };
-		F32796E7197FBA1000082B6A /* sideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = sideBarTableViewController.m; path = ../sideBarTableViewController.m; sourceTree = "<group>"; };
-		F32796EC1981149300082B6A /* iconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iconCell.h; path = ../iconCell.h; sourceTree = "<group>"; };
-		F32796ED1981149300082B6A /* iconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iconCell.m; path = ../iconCell.m; sourceTree = "<group>"; };
-		F32796EF198151B300082B6A /* bookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bookingViewController.h; path = ../bookingViewController.h; sourceTree = "<group>"; };
-		F32796F0198151B300082B6A /* bookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bookingViewController.m; path = ../bookingViewController.m; sourceTree = "<group>"; };
-		F3AEEA7F19ACA5060075DDA1 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = ../InfoViewController.h; sourceTree = "<group>"; };
-		F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = ../InfoViewController.m; sourceTree = "<group>"; };
 		F3AEEA8319ACB8A40075DDA1 /* Zesty.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zesty.mobileprovision; sourceTree = "<group>"; };
-		F3CFA68719B47923007DE224 /* infoPage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = infoPage.plist; path = ../infoPage.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +134,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0009BD1A825C9B00A31253 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009BE1A825C9B00A31253 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A0009BE1A825C9B00A31253 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009BF1A825C9B00A31253 /* GothamNarrow-Black.otf */,
+				3A0009C01A825C9B00A31253 /* GothamNarrow-BlackItalic.otf */,
+				3A0009C11A825C9B00A31253 /* GothamNarrow-Bold.otf */,
+				3A0009C21A825C9B00A31253 /* GothamNarrow-BoldItalic.otf */,
+				3A0009C31A825C9B00A31253 /* GothamNarrow-Book.otf */,
+				3A0009C41A825C9B00A31253 /* GothamNarrow-BookItalic.otf */,
+				3A0009C51A825C9B00A31253 /* GothamNarrow-Light.otf */,
+				3A0009C61A825C9B00A31253 /* GothamNarrow-LightItalic.otf */,
+				3A0009C71A825C9B00A31253 /* GothamNarrow-Medium.otf */,
+				3A0009C81A825C9B00A31253 /* GothamNarrow-MediumItalic.otf */,
+				3A0009C91A825C9B00A31253 /* GothamNarrow-Thin.otf */,
+				3A0009CA1A825C9B00A31253 /* GothamNarrow-ThinItalic.otf */,
+				3A0009CB1A825C9B00A31253 /* GothamNarrow-Ultra.otf */,
+				3A0009CC1A825C9B00A31253 /* GothamNarrow-UltraItalic.otf */,
+				3A0009CD1A825C9B00A31253 /* GothamNarrow-XLight.otf */,
+				3A0009CE1A825C9B00A31253 /* GothamNarrow-XLightItalic.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3A0009DF1A82665D00A31253 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				F32796AD19654B7200082B6A /* Main_iPhone.storyboard */,
+				F32796B019654B7200082B6A /* Main_iPad.storyboard */,
+				3A0009E01A82665D00A31253 /* Booking */,
+				3A0009E31A82665D00A31253 /* Home */,
+				3A0009E91A82665D00A31253 /* Info */,
+				3A0009EC1A82665D00A31253 /* SideBar */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		3A0009E01A82665D00A31253 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009E11A82665D00A31253 /* ZABookingViewController.h */,
+				3A0009E21A82665D00A31253 /* ZABookingViewController.m */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		3A0009E31A82665D00A31253 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009E41A82665D00A31253 /* Cells */,
+				3A0009E71A82665D00A31253 /* ZAHomeViewController.h */,
+				3A0009E81A82665D00A31253 /* ZAHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3A0009E41A82665D00A31253 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009E51A82665D00A31253 /* ZAIconCell.h */,
+				3A0009E61A82665D00A31253 /* ZAIconCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3A0009E91A82665D00A31253 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009EA1A82665D00A31253 /* ZAInfoViewController.h */,
+				3A0009EB1A82665D00A31253 /* ZAInfoViewController.m */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		3A0009EC1A82665D00A31253 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009ED1A82665D00A31253 /* ZASideBarTableViewController.h */,
+				3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */,
+			);
+			path = SideBar;
+			sourceTree = "<group>";
+		};
 		F327968F19654B7200082B6A = {
 			isa = PBXGroup;
 			children = (
@@ -169,20 +259,10 @@
 		F32796A119654B7200082B6A /* ZestyApp */ = {
 			isa = PBXGroup;
 			children = (
-				F32796AA19654B7200082B6A /* AppDelegate.h */,
-				F32796AB19654B7200082B6A /* AppDelegate.m */,
-				F32796EC1981149300082B6A /* iconCell.h */,
-				F32796ED1981149300082B6A /* iconCell.m */,
-				F32796AD19654B7200082B6A /* Main_iPhone.storyboard */,
-				F32796B019654B7200082B6A /* Main_iPad.storyboard */,
-				F32796B319654B7200082B6A /* ViewController.h */,
-				F32796B419654B7200082B6A /* ViewController.m */,
-				F32796E6197FBA1000082B6A /* sideBarTableViewController.h */,
-				F32796E7197FBA1000082B6A /* sideBarTableViewController.m */,
-				F32796EF198151B300082B6A /* bookingViewController.h */,
-				F32796F0198151B300082B6A /* bookingViewController.m */,
-				F3AEEA7F19ACA5060075DDA1 /* InfoViewController.h */,
-				F3AEEA8019ACA5060075DDA1 /* InfoViewController.m */,
+				3A0009DF1A82665D00A31253 /* GUI */,
+				3A0009BD1A825C9B00A31253 /* Resources */,
+				F32796AA19654B7200082B6A /* ZAAppDelegate.h */,
+				F32796AB19654B7200082B6A /* ZAAppDelegate.m */,
 				F32796B619654B7200082B6A /* Images.xcassets */,
 				F32796A219654B7200082B6A /* Supporting Files */,
 			);
@@ -192,11 +272,10 @@
 		F32796A219654B7200082B6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F3A38984199CC98E004499CD /* Fonts */,
+				3A0009F41A8271D500A31253 /* infoPage.plist */,
 				F32796E3197FB88F00082B6A /* SWRevealViewController.h */,
 				F32796E4197FB88F00082B6A /* SWRevealViewController.m */,
 				F32796A319654B7200082B6A /* ZestyApp-Info.plist */,
-				F3CFA68719B47923007DE224 /* infoPage.plist */,
 				F32796A419654B7200082B6A /* InfoPlist.strings */,
 				F32796A719654B7200082B6A /* main.m */,
 				F32796A919654B7200082B6A /* ZestyApp-Prefix.pch */,
@@ -220,29 +299,6 @@
 				F32796C619654B7300082B6A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F3A38984199CC98E004499CD /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F31B3332199E1C560015422F /* GothamNarrow-Black.otf */,
-				F31B3333199E1C560015422F /* GothamNarrow-BlackItalic.otf */,
-				F31B3334199E1C560015422F /* GothamNarrow-Bold.otf */,
-				F31B3335199E1C560015422F /* GothamNarrow-BoldItalic.otf */,
-				F31B3336199E1C560015422F /* GothamNarrow-Book.otf */,
-				F31B3337199E1C560015422F /* GothamNarrow-BookItalic.otf */,
-				F31B3338199E1C570015422F /* GothamNarrow-Light.otf */,
-				F31B3339199E1C570015422F /* GothamNarrow-LightItalic.otf */,
-				F31B333A199E1C570015422F /* GothamNarrow-Medium.otf */,
-				F31B333B199E1C570015422F /* GothamNarrow-MediumItalic.otf */,
-				F31B333C199E1C570015422F /* GothamNarrow-Thin.otf */,
-				F31B333D199E1C570015422F /* GothamNarrow-ThinItalic.otf */,
-				F31B333E199E1C570015422F /* GothamNarrow-Ultra.otf */,
-				F31B333F199E1C570015422F /* GothamNarrow-UltraItalic.otf */,
-				F31B3340199E1C570015422F /* GothamNarrow-XLight.otf */,
-				F31B3341199E1C570015422F /* GothamNarrow-XLightItalic.otf */,
-			);
-			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +349,7 @@
 				ORGANIZATIONNAME = ZestyLtd;
 				TargetAttributes = {
 					F327969719654B7200082B6A = {
-						DevelopmentTeam = 56S6UBF69V;
+						DevelopmentTeam = G5EG5T3U3L;
 					};
 					F32796BB19654B7300082B6A = {
 						TestTargetID = F327969719654B7200082B6A;
@@ -326,25 +382,25 @@
 			files = (
 				F32796B219654B7200082B6A /* Main_iPad.storyboard in Resources */,
 				F32796B719654B7200082B6A /* Images.xcassets in Resources */,
+				3A0009CF1A825C9B00A31253 /* GothamNarrow-Black.otf in Resources */,
+				3A0009DC1A825C9B00A31253 /* GothamNarrow-UltraItalic.otf in Resources */,
+				3A0009DA1A825C9B00A31253 /* GothamNarrow-ThinItalic.otf in Resources */,
+				3A0009D11A825C9B00A31253 /* GothamNarrow-Bold.otf in Resources */,
 				F32796AF19654B7200082B6A /* Main_iPhone.storyboard in Resources */,
+				3A0009D91A825C9B00A31253 /* GothamNarrow-Thin.otf in Resources */,
+				3A0009DD1A825C9B00A31253 /* GothamNarrow-XLight.otf in Resources */,
+				3A0009D31A825C9B00A31253 /* GothamNarrow-Book.otf in Resources */,
 				F32796A619654B7200082B6A /* InfoPlist.strings in Resources */,
-				F31B3342199E1C570015422F /* GothamNarrow-Black.otf in Resources */,
-				F31B3343199E1C570015422F /* GothamNarrow-BlackItalic.otf in Resources */,
-				F31B3344199E1C570015422F /* GothamNarrow-Bold.otf in Resources */,
-				F31B3345199E1C570015422F /* GothamNarrow-BoldItalic.otf in Resources */,
-				F31B3346199E1C570015422F /* GothamNarrow-Book.otf in Resources */,
-				F31B3347199E1C570015422F /* GothamNarrow-BookItalic.otf in Resources */,
-				F31B3348199E1C570015422F /* GothamNarrow-Light.otf in Resources */,
-				F31B3349199E1C570015422F /* GothamNarrow-LightItalic.otf in Resources */,
-				F31B334A199E1C570015422F /* GothamNarrow-Medium.otf in Resources */,
-				F31B334B199E1C570015422F /* GothamNarrow-MediumItalic.otf in Resources */,
-				F31B334C199E1C570015422F /* GothamNarrow-Thin.otf in Resources */,
-				F31B334D199E1C570015422F /* GothamNarrow-ThinItalic.otf in Resources */,
-				F31B334E199E1C570015422F /* GothamNarrow-Ultra.otf in Resources */,
-				F31B334F199E1C570015422F /* GothamNarrow-UltraItalic.otf in Resources */,
-				F3CFA68819B47923007DE224 /* infoPage.plist in Resources */,
-				F31B3350199E1C570015422F /* GothamNarrow-XLight.otf in Resources */,
-				F31B3351199E1C570015422F /* GothamNarrow-XLightItalic.otf in Resources */,
+				3A0009D61A825C9B00A31253 /* GothamNarrow-LightItalic.otf in Resources */,
+				3A0009D51A825C9B00A31253 /* GothamNarrow-Light.otf in Resources */,
+				3A0009DB1A825C9B00A31253 /* GothamNarrow-Ultra.otf in Resources */,
+				3A0009D71A825C9B00A31253 /* GothamNarrow-Medium.otf in Resources */,
+				3A0009DE1A825C9B00A31253 /* GothamNarrow-XLightItalic.otf in Resources */,
+				3A0009D21A825C9B00A31253 /* GothamNarrow-BoldItalic.otf in Resources */,
+				3A0009D81A825C9B00A31253 /* GothamNarrow-MediumItalic.otf in Resources */,
+				3A0009F51A8271D500A31253 /* infoPage.plist in Resources */,
+				3A0009D01A825C9B00A31253 /* GothamNarrow-BlackItalic.otf in Resources */,
+				3A0009D41A825C9B00A31253 /* GothamNarrow-BookItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,14 +419,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F32796B519654B7200082B6A /* ViewController.m in Sources */,
-				F32796F1198151B300082B6A /* bookingViewController.m in Sources */,
-				F3AEEA8119ACA5060075DDA1 /* InfoViewController.m in Sources */,
-				F32796AC19654B7200082B6A /* AppDelegate.m in Sources */,
-				F32796E8197FBA1000082B6A /* sideBarTableViewController.m in Sources */,
+				3A0009F31A82665D00A31253 /* ZASideBarTableViewController.m in Sources */,
+				3A0009F11A82665D00A31253 /* ZAHomeViewController.m in Sources */,
+				F32796AC19654B7200082B6A /* ZAAppDelegate.m in Sources */,
 				F32796A819654B7200082B6A /* main.m in Sources */,
-				F32796EE1981149300082B6A /* iconCell.m in Sources */,
+				3A0009EF1A82665D00A31253 /* ZABookingViewController.m in Sources */,
 				F32796E5197FB88F00082B6A /* SWRevealViewController.m in Sources */,
+				3A0009F21A82665D00A31253 /* ZAInfoViewController.m in Sources */,
+				3A0009F01A82665D00A31253 /* ZAIconCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +463,7 @@
 				F32796AE19654B7200082B6A /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F32796B019654B7200082B6A /* Main_iPad.storyboard */ = {
@@ -415,6 +472,7 @@
 				F32796B119654B7200082B6A /* Base */,
 			);
 			name = Main_iPad.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F32796C619654B7300082B6A /* InfoPlist.strings */ = {
