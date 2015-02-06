@@ -1,23 +1,19 @@
 //
-//  InfoViewController.h
+//  ZASomeInfoViewController.h
 //  Zesty
 //
-//  Created by George Goldhagen on 26/08/2014.
-//  Copyright (c) 2014 ZestyLtd. All rights reserved.
+//  Created by Антон on 06.02.15.
+//  Copyright (c) 2015 ZestyLtd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "ZABaseNavBarViewController.h"
 
-@interface ZAInfoViewController : UIViewController
+@interface ZAInfoViewController : ZABaseNavBarViewController
 
-@property (nonatomic) NSString *urlAddress;
+@property (nonatomic) id sender;
 
-@property (nonatomic) UIWebView *blogPage;
-
-@property (nonatomic) UIScrollView *sideBarText;
-
-@property (nonatomic) UITextView *infoText;
-
-@property (nonatomic) UILabel *infoPageTitle;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UITextView *infoText;
 
 @end

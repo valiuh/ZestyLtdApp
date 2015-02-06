@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="03T-aw-vS5">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="GothamNarrow-Bold.otf">
+            <string>GothamNarrow-Bold</string>
+        </mutableArray>
+        <mutableArray key="GothamNarrow-Medium.otf">
+            <string>GothamNarrow-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="qYr-sB-PvL">
             <objects>
                 <viewController id="03T-aw-vS5" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u9z-gA-mg7"/>
-                        <viewControllerLayoutGuide type="bottom" id="9r3-ec-rFM"/>
+                        <viewControllerLayoutGuide type="top" id="YNS-sF-gEX"/>
+                        <viewControllerLayoutGuide type="bottom" id="lOb-Wk-ECS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Law-Xv-f4h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -25,15 +34,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFE-gr-hoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="-222"/>
+            <point key="canvasLocation" x="508" y="-630"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ZAHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="puG-GU-zgX"/>
+                        <viewControllerLayoutGuide type="bottom" id="qmD-yR-6dE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="SWRevealView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -47,15 +56,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1587" y="82"/>
+            <point key="canvasLocation" x="1595" y="-324"/>
         </scene>
         <!--Booking View Controller-->
         <scene sceneID="RdM-mf-J49">
             <objects>
                 <viewController id="sQJ-Rf-rGO" customClass="ZABookingViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Nm-5n-J6A"/>
-                        <viewControllerLayoutGuide type="bottom" id="pz4-8c-Zlr"/>
+                        <viewControllerLayoutGuide type="top" id="Ub6-2z-hSB"/>
+                        <viewControllerLayoutGuide type="bottom" id="SjN-DK-dh8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Fx-Ul-cEN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -66,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRT-YY-R04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017" y="82"/>
+            <point key="canvasLocation" x="2103" y="-324"/>
         </scene>
         <!--Side Bar Table View Controller-->
         <scene sceneID="PgK-3k-3mY">
@@ -142,32 +151,85 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="OlS-XS-m4i" kind="custom" identifier="showInfo" customClass="SWRevealViewControllerSegue" id="RLD-G1-ujn"/>
                         <segue destination="vXZ-lx-hvc" kind="custom" identifier="showHome" customClass="SWRevealViewControllerSegue" id="1AN-ZC-iKV"/>
+                        <segue destination="qTI-BH-nQu" kind="custom" identifier="showBlog" customClass="SWRevealViewControllerSegue" id="7eH-aU-pan"/>
+                        <segue destination="w0l-cp-0Ry" kind="custom" identifier="showInfo" customClass="SWRevealViewControllerSegue" id="dgL-a2-BGl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gU-Xh-kCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-585"/>
+            <point key="canvasLocation" x="1137" y="-1041"/>
+        </scene>
+        <!--Blog View Controller-->
+        <scene sceneID="WnB-gL-gQw">
+            <objects>
+                <viewController id="qTI-BH-nQu" customClass="ZABlogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tvq-Td-hfS"/>
+                        <viewControllerLayoutGuide type="bottom" id="NjC-8X-qdo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c4z-bL-ILA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aqf-XE-RJ0">
+                                <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="blogWebview" destination="Aqf-XE-RJ0" id="IK7-hB-WxI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XOz-Pa-n6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1605" y="-1529"/>
         </scene>
         <!--Info View Controller-->
-        <scene sceneID="hCk-5c-Odx">
+        <scene sceneID="Rhr-4D-Rdy">
             <objects>
-                <viewController id="OlS-XS-m4i" customClass="ZAInfoViewController" sceneMemberID="viewController">
+                <viewController id="w0l-cp-0Ry" customClass="ZAInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="koG-kq-CQb"/>
-                        <viewControllerLayoutGuide type="bottom" id="XQ0-rH-rum"/>
+                        <viewControllerLayoutGuide type="top" id="DJd-7H-ufO"/>
+                        <viewControllerLayoutGuide type="bottom" id="qle-yY-bwn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="b3q-VO-vwr">
+                    <view key="view" contentMode="scaleToFill" id="12n-kn-kMw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvm-TF-Bfc">
+                                <rect key="frame" x="8" y="0.0" width="304" height="634"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCC-xx-DYO">
+                                        <rect key="frame" x="8" y="23" width="288" height="21"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="GothamNarrow-Bold" family="Gotham Narrow" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHF-Dg-gi7">
+                                        <rect key="frame" x="4" y="60" width="296" height="336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="GothamNarrow-Medium" family="Gotham Narrow" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Iwa-QN-ZE5"/>
+                    <connections>
+                        <outlet property="infoText" destination="nHF-Dg-gi7" id="2cs-ho-26D"/>
+                        <outlet property="titleLabel" destination="FCC-xx-DYO" id="bBJ-QA-k8X"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oVz-Oi-UIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rg-jT-wbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1587" y="-585"/>
+            <point key="canvasLocation" x="2103" y="-1041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dM-JY-chh">
@@ -185,7 +247,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6y-of-doc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="82"/>
+            <point key="canvasLocation" x="1159" y="-158"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

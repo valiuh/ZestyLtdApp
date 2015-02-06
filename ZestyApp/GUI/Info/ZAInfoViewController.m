@@ -1,14 +1,12 @@
 //
-//  InfoViewController.m
+//  ZASomeInfoViewController.m
 //  Zesty
 //
-//  Created by George Goldhagen on 26/08/2014.
-//  Copyright (c) 2014 ZestyLtd. All rights reserved.
+//  Created by Антон on 06.02.15.
+//  Copyright (c) 2015 ZestyLtd. All rights reserved.
 //
 
 #import "ZAInfoViewController.h"
-#import "ZAHomeViewController.h"
-#import "SWRevealViewController.h"
 
 @interface ZAInfoViewController ()
 
@@ -16,94 +14,43 @@
 
 @implementation ZAInfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0/255.0 green:87.0/255.0 blue:158.0/255.0 alpha:1.0];
-    UIImageView *title = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 93, 20)];
-    [title setContentMode:UIViewContentModeScaleAspectFit];
-    title.image = [UIImage imageNamed:@"zestyLogo"];
-    self.navigationItem.titleView = title;
-    //setup the uibarbuttonitems
-    UIBarButtonItem *phoneButton = [[UIBarButtonItem alloc]
-                                    initWithImage:[UIImage imageNamed:@"callIcon"]
-                                    style:UIBarButtonItemStylePlain
-                                    target:self
-                                    action:@selector(call:)];
-    self.navigationItem.rightBarButtonItem = phoneButton;
-    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                   initWithImage:[UIImage imageNamed:@"menuIcon"]
-                                   style:UIBarButtonItemStylePlain
-                                   target:self.revealViewController
-                                   action:@selector(revealToggle:)];
-    self.navigationItem.leftBarButtonItem = backButton;
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"zestyLondonSB"]];
+    [self initCurrentViews];
+}
 
+-(void) initCurrentViews {
     
- 
-    [self.view addSubview:self.sideBarText];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"infoPage" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     
-    [self.sideBarText addSubview:self.infoPageTitle];
-
-    [self.sideBarText addSubview:self.infoText];
-    
+    if ( [self.sender isEqualToString:@"About Zesty"] ) {
         
-    [self.view addSubview:self.blogPage];
-
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(IBAction)cancel:(UIBarButtonItem *)sender
-{
-    //go back to the login page
+        self.titleLabel.text = @"About Zesty";
+        self.infoText.text = [dict objectForKey:@"aboutZesty"];
         
+    } else if ([self.sender isEqualToString:@"Press"]){
+        
+        self.titleLabel.text = @"Press Enquiries";
+        self.infoText.text = [dict objectForKey:@"press"];
+        
+    } else if ([self.sender isEqualToString:@"Trust & Safety"]){
+        
+        self.titleLabel.text = @"Trust & Safety";
+        self.infoText.text = [dict objectForKey:@"trust"];
+        
+    } else if ([self.sender isEqualToString:@"Privacy Policy"]){
+        
+        self.titleLabel.text = @"Privacy Policy";
+        self.infoText.text = [dict objectForKey:@"privacy"];
+       
+    } else if ([self.sender isEqualToString:@"Terms & Conditions"]){
+        
+        self.titleLabel.text = @"Terms & Conditions";
+        self.infoText.text = [dict objectForKey:@"terms"];
+        
+    }
 }
--(void)call:(UIBarButtonItem *)sender
-{
-    //    NSString *phoneNumber = @"0203 287 5416";
-    //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
-    NSLog(@"phoneIcon pressed");
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Need help?"
-                                                    message:@"Contact the Zesty Customer Support Team."
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"Call Zesty", nil];
-    
-    [alert show];
-}
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

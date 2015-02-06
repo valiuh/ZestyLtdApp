@@ -8,8 +8,9 @@
 
 #import "ZASideBarTableViewController.h"
 #import "SWRevealViewController.h"
-#import "ZAInfoViewController.h"
 #import "ZAHomeViewController.h"
+#import "ZABlogViewController.h"
+#import "ZAInfoViewController.h"
 
 
 @interface ZASideBarTableViewController ()
@@ -232,123 +233,26 @@
         
         [self performSegueWithIdentifier:@"showHome" sender:selectedCell];
 
+    } else if ([selectedCell isEqualToString:@"Blog"]){
+        
+        [self performSegueWithIdentifier:@"showBlog" sender:selectedCell];
+        
     } else {
         
         [self performSegueWithIdentifier:@"showInfo" sender:selectedCell];
 
     }
-    
-    
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    
-    // Set the title of navigation bar by using the menu items
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-    destViewController.title = @"Hello";
-    
-    // Set the photo if it navigates to the PhotoView
-    if ([segue.identifier isEqualToString:@"showInfo"]) {
-        ZAInfoViewController *page = (ZAInfoViewController*)segue.destinationViewController;
-        
-        page.sideBarText = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, 320, self.view.frame.size.height)];
-        [page.sideBarText setContentSize:CGSizeMake(320, 800)];
-        
-        page.infoText = [[UITextView alloc] initWithFrame:CGRectMake(20, 0, 280, 800)];
-        page.infoText.backgroundColor = [UIColor clearColor];
-        page.infoText.textColor = [UIColor whiteColor];
-        [page.infoText setTextAlignment:NSTextAlignmentJustified];
-        page.infoText.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:14.0f];
-        page.infoText.scrollEnabled = NO;
-        
-        page.infoPageTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, -64, 320, 64)];
-        page.infoPageTitle.textColor = [UIColor whiteColor];
-        page.infoPageTitle.backgroundColor = [UIColor clearColor];
-        [page.infoPageTitle setTextAlignment:NSTextAlignmentCenter];
-        page.infoPageTitle.font = [UIFont fontWithName:@"GothamNarrow-Bold" size:24.0f];
-
-        
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"infoPage" ofType:@"plist"];
-        
-        // Load the file content and read the data into arrays
-        NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-        
-        
-        if ( [sender isEqualToString:@"About Zesty"] ) {
-        
-            page.infoPageTitle.text = @"About Zesty";
-            
-            page.infoText.text= [dict objectForKey:@"aboutZesty"];
-
-            
-        } else if ([sender isEqualToString:@"Press"]){
-            
-            page.infoPageTitle.text = @"Press Enquiries";
-
-            page.infoText.text= [dict objectForKey:@"press"];
-            
-
-
-        } else if ([sender isEqualToString:@"Trust & Safety"]){
-         
-            page.infoPageTitle.text = @"Trust & Safety";
-            
-            page.infoText.text= [dict objectForKey:@"trust"];
-            
-            page.infoText.frame = CGRectMake(20, 0, 280, 1000);
-            
-            page.sideBarText.contentSize = CGSizeMake(320, 1100);
-
-            
-        }else if ([sender isEqualToString:@"Privacy Policy"]){
-            
-            page.infoPageTitle.text = @"Privacy Policy";
-            
-            page.infoText.text= [dict objectForKey:@"privacy"];
-            
-            page.infoText.frame = CGRectMake(20, 0, 280, 5750);
-            
-            page.sideBarText.contentSize = CGSizeMake(320, 5750);
-            
-            
-        } else if ([sender isEqualToString:@"Terms & Conditions"]){
-            
-            page.infoPageTitle.text = @"Terms & Conditions";
-            
-            page.infoText.text= [dict objectForKey:@"terms"];
-            
-            page.infoText.font = [UIFont fontWithName:@"GothamNarrow-Medium" size:12.0f];
-            
-            page.infoText.frame = CGRectMake(20, 0, 280, 8000);
-            
-            page.sideBarText.contentSize = CGSizeMake(320, 8000);
-            
-            
-        } else if ([sender isEqualToString:@"Blog"]){
-            
-            page.blogPage = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, 320, 640)];
-            
-            NSString * urlAddress = [NSString stringWithFormat:@"http://blog.zesty.co.uk/"];
-            
-            NSURL *url = [NSURL URLWithString:urlAddress];
-            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-            [page.blogPage loadRequest:requestObj];
-            
-
-        }
-
+    if ([segue.identifier isEqualToString:@"showInfo"]){
+        ZAInfoViewController *infoScreen = (ZAInfoViewController *)segue.destinationViewController;
+        infoScreen.sender = sender;
     }
-    else if ([segue.identifier isEqualToString:@"showHome"]){
-        
-//        ViewController *homeScreen = (ViewController *)segue.destinationViewController;
-        
-    }
-    
-    
     
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;

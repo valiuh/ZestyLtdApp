@@ -26,9 +26,11 @@
 		3A0009EF1A82665D00A31253 /* ZABookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009E21A82665D00A31253 /* ZABookingViewController.m */; };
 		3A0009F01A82665D00A31253 /* ZAIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009E61A82665D00A31253 /* ZAIconCell.m */; };
 		3A0009F11A82665D00A31253 /* ZAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009E81A82665D00A31253 /* ZAHomeViewController.m */; };
-		3A0009F21A82665D00A31253 /* ZAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009EB1A82665D00A31253 /* ZAInfoViewController.m */; };
 		3A0009F31A82665D00A31253 /* ZASideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */; };
 		3A0009F51A8271D500A31253 /* infoPage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A0009F41A8271D500A31253 /* infoPage.plist */; };
+		3A0009F91A8365BE00A31253 /* ZABlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009F81A8365BE00A31253 /* ZABlogViewController.m */; };
+		3A0009FD1A84B04300A31253 /* ZABaseNavBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009FC1A84B04300A31253 /* ZABaseNavBarViewController.m */; };
+		3A000A001A84C00900A31253 /* ZAInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0009FF1A84C00900A31253 /* ZAInfoViewController.m */; };
 		C5706603DE4807C6859FE2AA /* libPods-ZestyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0617DF091BF8812834F2F /* libPods-ZestyApp.a */; };
 		F327969C19654B7200082B6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969B19654B7200082B6A /* Foundation.framework */; };
 		F327969E19654B7200082B6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F327969D19654B7200082B6A /* CoreGraphics.framework */; };
@@ -82,11 +84,15 @@
 		3A0009E61A82665D00A31253 /* ZAIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAIconCell.m; sourceTree = "<group>"; };
 		3A0009E71A82665D00A31253 /* ZAHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAHomeViewController.h; sourceTree = "<group>"; };
 		3A0009E81A82665D00A31253 /* ZAHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAHomeViewController.m; sourceTree = "<group>"; };
-		3A0009EA1A82665D00A31253 /* ZAInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAInfoViewController.h; sourceTree = "<group>"; };
-		3A0009EB1A82665D00A31253 /* ZAInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAInfoViewController.m; sourceTree = "<group>"; };
 		3A0009ED1A82665D00A31253 /* ZASideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZASideBarTableViewController.h; sourceTree = "<group>"; };
 		3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZASideBarTableViewController.m; sourceTree = "<group>"; };
 		3A0009F41A8271D500A31253 /* infoPage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = infoPage.plist; sourceTree = "<group>"; };
+		3A0009F71A8365BE00A31253 /* ZABlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABlogViewController.h; sourceTree = "<group>"; };
+		3A0009F81A8365BE00A31253 /* ZABlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABlogViewController.m; sourceTree = "<group>"; };
+		3A0009FB1A84B04300A31253 /* ZABaseNavBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABaseNavBarViewController.h; sourceTree = "<group>"; };
+		3A0009FC1A84B04300A31253 /* ZABaseNavBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABaseNavBarViewController.m; sourceTree = "<group>"; };
+		3A0009FE1A84C00900A31253 /* ZAInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAInfoViewController.h; sourceTree = "<group>"; };
+		3A0009FF1A84C00900A31253 /* ZAInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAInfoViewController.m; sourceTree = "<group>"; };
 		93540ACA2ECCF674B8DCCC8B /* Pods-ZestyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZestyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZestyApp/Pods-ZestyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F327969819654B7200082B6A /* ZestyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZestyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F327969B19654B7200082B6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +176,8 @@
 		3A0009DF1A82665D00A31253 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				3A0009FA1A84B01B00A31253 /* Base */,
+				3A0009F61A83659500A31253 /* Blog */,
 				F32796AD19654B7200082B6A /* Main_iPhone.storyboard */,
 				F32796B019654B7200082B6A /* Main_iPad.storyboard */,
 				3A0009E01A82665D00A31253 /* Booking */,
@@ -211,8 +219,8 @@
 		3A0009E91A82665D00A31253 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				3A0009EA1A82665D00A31253 /* ZAInfoViewController.h */,
-				3A0009EB1A82665D00A31253 /* ZAInfoViewController.m */,
+				3A0009FE1A84C00900A31253 /* ZAInfoViewController.h */,
+				3A0009FF1A84C00900A31253 /* ZAInfoViewController.m */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -224,6 +232,24 @@
 				3A0009EE1A82665D00A31253 /* ZASideBarTableViewController.m */,
 			);
 			path = SideBar;
+			sourceTree = "<group>";
+		};
+		3A0009F61A83659500A31253 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009F71A8365BE00A31253 /* ZABlogViewController.h */,
+				3A0009F81A8365BE00A31253 /* ZABlogViewController.m */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		3A0009FA1A84B01B00A31253 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3A0009FB1A84B04300A31253 /* ZABaseNavBarViewController.h */,
+				3A0009FC1A84B04300A31253 /* ZABaseNavBarViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E4BF28C048EE91D129CC565E /* Pods */ = {
@@ -470,8 +496,10 @@
 				F32796AC19654B7200082B6A /* ZAAppDelegate.m in Sources */,
 				F32796A819654B7200082B6A /* main.m in Sources */,
 				3A0009EF1A82665D00A31253 /* ZABookingViewController.m in Sources */,
-				3A0009F21A82665D00A31253 /* ZAInfoViewController.m in Sources */,
 				3A0009F01A82665D00A31253 /* ZAIconCell.m in Sources */,
+				3A0009F91A8365BE00A31253 /* ZABlogViewController.m in Sources */,
+				3A0009FD1A84B04300A31253 /* ZABaseNavBarViewController.m in Sources */,
+				3A000A001A84C00900A31253 /* ZAInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
